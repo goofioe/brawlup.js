@@ -18,4 +18,4 @@ Brawlup.js is a Brawl Stars API wrapper for the [official Brawl Stars API](https
 ## Support
 [<img src="https://cdn.discordapp.com/emojis/855869527061561384.gif" height="15" alt="Up Bots logo"> Discord](https://discord.gg/XUuHjEbwhb) | [<img src="https://cdn.discordapp.com/emojis/855869527061561384.gif" height="15" alt="Up Bots logo"> Twitter](https://twitter.com/UpBotsOfficial)
 
-Some resources we used: [BrawlStars.js](https://github.com/dannyhpy/brawlstars-nodejs), <img src="https://cdn.brawlify.com/front/Star.svg" height="15" alt="BrawlAPI logo">[BrawlAPI](https://brawlapi.com/) (from [Brawlify](https://brawlify.com/))
+Some resources we used: [BrawlStars.js](https://github.com/dannyhpy/brawlstars-nodejs), <img src="https://cdn.brawlify.com/front/Star.svg" height="25" alt="BrawlAPI logo">[BrawlAPI](https://brawlapi.com/) (from [Brawlify](https://brawlify.com/))
