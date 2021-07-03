@@ -4,6 +4,8 @@ const Player = require('./player')
 const Brawlers = require('./brawlers')
 const Ranking = require('./rankings')
 
+const moduleError = require('./moduleError')
+
 class Client {
 
   /**
