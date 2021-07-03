@@ -1,3 +1,6 @@
+const Requesting = require('./requesting')
+const moduleError = require('./moduleError')
+
 class Club {
   constructor(data) {
     this.tag = data.tag
@@ -32,24 +35,28 @@ class Club {
   }
 
   /**
-  * @param {string} tag Player TAG
-  * @description check if the player can join the club
+  * @param {string} Player tag
+  * @description Checks if this player can join this club.
   * @returns {boolean}
   */
 
-  playerCanJoin(tag) {
+  async playerCanJoin(tag) {
     let x = this.members.map(x => x.tag)
     if (x.includes(tag)) return true
-    return this.members.filter(m => m.tag == tag).map(x => x.trophies).join("") >= this.requiredTrophies
+    Requesting.getPlayer(tag).then(p => {
+    return p.trophies >= this.requiredTrophies
+    }).catch(e => {
+    return moduleError(`${e.message}`)
+    })
   }
 
   /**
-  * @description sort club members by trophies
-  * @returns {object} object
+  * @description Sorts this club's members by trophies.
+  * @returns {object} Object
   */
 
   sortMembersByTrophies() {
-    return !this.members ? TypeError("Invalid Club") : this.members.sort((a, b) => b.trophies - a.trophies)
+    return this.members ? this.members.sort((a, b) => b.trophies - a.trophies) : moduleError(`The club you provided is invalid.`)
   }
 }
 
