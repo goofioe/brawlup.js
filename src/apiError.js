@@ -7,7 +7,7 @@ class apiError extends Error {
     this.code = res.status
     this.headers = res.headers
 
-    if (body.startsWith('{') && body.endsWith('}')) {
+    if (JSON.parse(body).reason) {
     this.reason = JSON.parse(body).reason
     } else {
     this.reason = body
