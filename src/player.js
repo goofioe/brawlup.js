@@ -46,6 +46,7 @@ class Player {
   
   /**
    * @param {number} 1: Big Game | 2: Robo Rumble
+   * @description Best time for the old ticketed events will be converted into minutes and seconds.
    * @returns {string} The best time converted into minutes and seconds. Ex: 6 min. 30 sec.   
    */
   
@@ -63,6 +64,24 @@ class Player {
   }
     
   return convert(time)
+  }
+  
+  /**
+   * @param {options} Which one you want to sort by? (trophies, highest trophies, power level, rank)
+   * @description Player's brawlers will be sorted.
+   * @returns {object} The sorted brawlers in an object.
+   */
+  
+  sortBrawlers(options) {
+   if (!options.sortBy) throw new moduleError(`You didn't specified the sortBy option, which is required for this method! ( Ex: player.sortBrawlers({sortBy: 'rank'}) )`) 
+   
+   let sortBy = options.sortBytoLowerCase()
+   if (sortBy !== "trophies" && sortBy !== "highest trophies" && sortBy !== "power level" && sortBy !== "rank") throw new moduleError(`You didn't specified a correct sortBy option! (trophies, highest trophies, power level, rank)`) 
+   
+   if (sortBy === "trophies") return this.brawlers.sort((a, b) => a.trophies - b.trophies)
+   if (sortBy === "highest trophies") return this.brawlers.sort((a, b) => a.highestTrophies - b.highestTrophies)
+   if (sortBy === "power level") return this.brawlers.sort((a, b) => a.power - b.power)
+   if (sortBy === "rank") return this.brawlers.sort((a, b) => a.rank - b.rank)
   }
   
 }
