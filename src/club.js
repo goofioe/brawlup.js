@@ -43,7 +43,7 @@ class Club {
   async playerCanJoin(tag) {
     let x = this.members.map(x => x.tag)
     if (x.includes(tag)) return true
-    Requesting.getPlayer(tag).then(p => {
+    await Requesting.getPlayer(tag).then(p => {
     return p.trophies >= this.requiredTrophies
     }).catch(e => {
     return moduleError(`${e.message}`)
