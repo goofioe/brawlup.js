@@ -2,6 +2,7 @@ const fetch = require('node-fetch')
 const BSApiUrl = 'https://api.brawlstars.com/v1/'
 
 const apiError = require('./apiError')
+const moduleError = require('./moduleError')
 
 class requesting {
   constructor(client) {
