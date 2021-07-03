@@ -12,13 +12,13 @@ Brawlup.js is a Brawl Stars API wrapper for the [official Brawl Stars API](https
 * Create an API key [here](https://developer.brawlstars.com/#/account)
 * Read the docs
 
+## Thanks
+to [<img src="https://cdn.brawlify.com/front/Star.svg" height="17" alt="BrawlAPI logo"> BrawlAPI](https://brawlapi.com/) (from [<img src="https://cdn.brawlify.com/front/Star.svg" height="17" alt="Brawlify logo"> Brawlify](https://brawlify.com/)) to allow us to use their API for this module.
+
+and also we used [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" height="17" alt="GitHub logo"> brawlstars.js](https://github.com/dannyhpy/brawlstars-nodejs) as well.
+
 ## Examples
 <img src="https://i.imgur.com/ZpYVebU.png" alt="Example 1" height="400">
 
 ## Support
 [<img src="https://cdn.discordapp.com/emojis/855869527061561384.gif" height="15" alt="Up Bots logo"> Discord](https://discord.gg/XUuHjEbwhb) | [<img src="https://cdn.discordapp.com/emojis/855869527061561384.gif" height="15" alt="Up Bots logo"> Twitter](https://twitter.com/UpBotsOfficial)
-
-## Thanks
-to [<img src="https://cdn.brawlify.com/front/Star.svg" height="17" alt="BrawlAPI logo"> BrawlAPI](https://brawlapi.com/) (from [<img src="https://cdn.brawlify.com/front/Star.svg" height="17" alt="Brawlify logo"> Brawlify](https://brawlify.com/)) to allow us to use their API for this module.
-
-and also we used [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" height="17" alt="GitHub logo"> brawlstars.js](https://github.com/dannyhpy/brawlstars-nodejs) as well.
