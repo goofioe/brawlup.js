@@ -1,3 +1,5 @@
+const moment = require('moment')
+
 class BattleLog {
   constructor(data) {
   this.data = ourArray(data)
@@ -22,7 +24,7 @@ let battleTime = m.battleTime
 let event = m.event
 let battle = m.battle
 
-arr.push( {"matchAt": battleTime, "modeInfo": event, "matchInfo": battle} )
+arr.push( {"matchAt": moment(battleTime).utc().format('Do MM YYYY - HH:mm:ss'), "modeInfo": event, "matchInfo": battle} )
 })
 
 return arr;
