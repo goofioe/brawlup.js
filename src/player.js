@@ -1,5 +1,5 @@
 const moduleError = require('./moduleError')
-const Client = require('./src/client.js')
+const Client = require('./client.js')
 
 class Player {
   constructor(data) {
@@ -21,7 +21,7 @@ class Player {
   this.bestRoboRumbleTime = data.bestRoboRumbleTime
   this.bestTimeAsBigBrawler = data.bestTimeAsBigBrawler
   this.brawlers = data.brawlers
-  this.brawlerCount = data.brawler.count
+  this.brawlerCount = data.brawlers.length
   this.club = data.club.tag ? data.club : null
   this.gadgetCount = data.brawlers.map(value => value.gadgets).flat().length.toString()
   this.starPowerCount = data.brawlers.map(value => value.starPowers).flat().length.toString()
@@ -38,9 +38,11 @@ class Player {
  
   if (!isNaN(brawler)) {
   let b = this.brawlers.filter(x => x.id == brawler)
-  return b ? b : false
+  if (b.length === 0) return null;
+  return b ? b : null
   } else {
   let b = this.brawlers.filter(x => x.name == brawler.toUpperCase())
+  if (b.length === 0) return null;
   return b ? b : false
   } 
   }

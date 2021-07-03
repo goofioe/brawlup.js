@@ -3,6 +3,8 @@ const Club = require('./club')
 const Player = require('./player')
 const BattleLog = require('./battlelog')
 const Brawlers = require('./brawlers')
+const Map = require('./map')
+const Events = require('./events')
 const Ranking = require('./rankings')
 
 const moduleError = require('./moduleError')
@@ -13,11 +15,10 @@ class Client {
   * @param {string} Your Brawl Stars API access token.
   */
 
-  constructor(tokn) {
-    if (typeof(tokn) === 'string') opts = { token: tokn }
-    if (!tokn) throw new moduleError(`You didn't provided a Brawl Stars API token, which is required for this module.`)
+  constructor(token = String) {
+    if (!token) throw new moduleError(`You didn't provided a Brawl Stars API token, which is required for this module.`)
 
-    this.token = tokn.token
+    this.token = token
     this.req = new Requesting(this)
   }
 
@@ -42,6 +43,14 @@ class Client {
 
   async getBrawlers() {
     return new Brawlers(await this.req.getBrawlers())
+  }
+
+  async getMaps() {
+    return new Map(await this.req.getMaps())
+  }
+
+  async getEvents() {
+   return new Events(await this.req.getEvents())
   }
 }
 

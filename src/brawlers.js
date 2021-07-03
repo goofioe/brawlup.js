@@ -7,7 +7,7 @@ class Brawlers {
   }
   
   /**
-  * @param {string} The brawler's name or id.
+  * @param {brawler} The brawler's name or id.
   * @description Finds the brawler from the game.
   * @returns null (if the brawler doesn't found) | Object (if the brawler does found)
   */

@@ -1,5 +1,6 @@
 const fetch = require('node-fetch')
 const BSApiUrl = 'https://api.brawlstars.com/v1/'
+const BrawlifyApiUrl = 'https://api.brawlapi.com/v1/'
 
 const apiError = require('./apiError')
 const moduleError = require('./moduleError')
@@ -20,6 +21,12 @@ class requesting {
     const res = await fetch(BSApiUrl + endpoint, {
       headers: this.headers()
     })
+    if (!res.ok) throw new apiError(res, await res.text())
+    return await res.json()
+  }
+
+  async requestBrawlify(endpoint) {
+    const res = await fetch(BrawlifyApiUrl + endpoint)
     if (!res.ok) throw new apiError(res, await res.text())
     return await res.json()
   }
@@ -66,6 +73,14 @@ class requesting {
   async getBrawlersRankings(brawler, country = 'global') {
     if (!brawler) throw new moduleError(`You didn't specified an in-game brawler id, which is required for this method!`)
     return await this.request(`rankings/${country}/brawlers/${brawler}`)
+  }
+
+  async getMaps() {
+    return await this.requestBrawlify(`maps`)
+  }
+
+  async getEvents() {
+    return await this.requestBrawlify(`events`)
   }
 }
 

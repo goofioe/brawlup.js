@@ -7,13 +7,9 @@ class apiError extends Error {
     this.code = res.status
     this.headers = res.headers
 
-    if (JSON.parse(body).reason) {
-    this.reason = JSON.parse(body).reason
-    } else {
-    this.reason = body
-    }
+    this.reason = JSON.parse(body).message || body
 
-    this.message = `❌ Brawl Stars API error!\n\n📋 ${body}\n🔗 ${this.url}`
+    this.message = `❌ Brawl Stars API error!\n\n📋 ${body}\n🔗 ${this.url}\n`
   }
 }
 
