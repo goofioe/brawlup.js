@@ -41,3 +41,8 @@ class Player {
   return b ? b : false
   } 
   }
+  
+  function convertTime(timestamp) {
+    sc = timestamp%60
+    return `${((timestamp-sc)/60)} min. ${sc}sec.`
+}
