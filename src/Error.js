@@ -13,7 +13,7 @@ class Error extends Error {
     this.reason = body
     }
 
-    this.message = `❌ Brawl Stars error!\n\n📋 ${body}\n🔗 ${this.url}`
+    this.message = `❌ Brawl Stars API error!\n\n📋 ${body}\n🔗 ${this.url}`
   }
 }
 
