@@ -24,11 +24,11 @@ class Club {
 
   /**
   * @param {string} Player tag
-  * @returns {string} Player's club rank (member,if the player is not in this club)
+  * @returns {string} Player's club role (member, senior, vicePresident, president) | null (if the player is not in this club)
   */
 
   getMemberRole(tag) {
-    return !this.members.filter(m => m.tag == tag) ? TypeError("This member isn't in a club") : this.members.filter(m => m.tag == tag).map(m => m.role).join("\n")
+    return this.members.filter(m => m.tag === tag) ? this.members.filter(m => m.tag === tag).map(m => m.role).join("\n") : null
   }
 
   /**
