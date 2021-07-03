@@ -1,0 +1,40 @@
+{
+  "name": "brawlup.js",
+  "version": "1.1.0",
+  "description": "An API wrapper for the official Brawl Stars API.",
+  "main": "index.js",
+  "directories": {
+    "example": "example",
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brawlup/brawlup.js.git"
+  },
+  "keywords": [
+    "brawl stars",
+    "brawl stars api",
+    "brawlup",
+    "brawl",
+    "api wrapper",
+    "javascript"
+  ],
+  "author": "@brawlup",
+  "contributors": [
+    {
+      "name": "@alputv",
+      "email" : "rekortmenstars@gmail.com"
+    }
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/brawlup/brawlup.js/issues"
+  },
+  "homepage": "https://github.com/brawlup/brawlup.js#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }/*,
+  "scripts": {
+    "test": "node examples/test.js"
+  }*/
+}
