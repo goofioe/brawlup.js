@@ -12,7 +12,7 @@ class Client {
 
   constructor(tokn) {
     if (typeof(tokn) === 'string') opts = { token: tokn }
-    if (!tokn) throw new moduleError('You didn't provided a Brawl Stars API token, which is required for this module.')
+    if (!tokn) throw new moduleError(`You didn't provided a Brawl Stars API token, which is required for this module.`)
 
     this.token = tokn.token
     this.req = new Requesting(this)
