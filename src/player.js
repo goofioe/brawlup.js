@@ -1,4 +1,5 @@
 const moduleError = require('./moduleError')
+const Client = require('./src/client.js')
 
 class Player {
   constructor(data) {
@@ -42,6 +43,15 @@ class Player {
   let b = this.brawlers.filter(x => x.name == brawler.toUpperCase())
   return b ? b : false
   } 
+  }
+  
+  /**
+  * @description Gets the battle log (last battles) of this player.
+  * @returns {Array} Array of this player's battle log.
+  */
+  
+  async getBattleLog() {
+  return await Client.getBattleLog(this.tag)
   }
   
   /**
