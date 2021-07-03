@@ -7,7 +7,11 @@ class Error extends Error {
     this.code = res.status
     this.headers = res.headers
 
-    this.reason = body.startsWith('{') && body.endsWith('}') ? JSON.parse(body).reason || body : body
+    if (body.startsWith('{') && body.endsWith('}')) {
+    this.reason = JSON.parse(body).reason
+    } else {
+    this.reason = body
+    }
 
     this.message = `❌ Brawl Stars error!\n\n📋 ${body}\n🔗 ${this.url}`
   }
