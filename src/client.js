@@ -1,6 +1,7 @@
 const Requesting = require('./requesting')
 const Club = require('./club')
 const Player = require('./player')
+const BattleLog = require('./battlelog')
 const Brawlers = require('./brawlers')
 const Ranking = require('./rankings')
 
@@ -23,6 +24,11 @@ class Client {
   async getPlayer(tag) {
     if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
     return new Player(await this.req.getPlayer(tag))
+  }
+  
+  async getBattleLog(tag) {
+    if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
+    return new BattleLog(await this.req.getBattleLog(tag))
   }
 
   async getRanking(country = 'global', type = 'players') {
