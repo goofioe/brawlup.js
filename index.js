@@ -1,5 +1,6 @@
 exports.Brawlers  = require('./src/brawlers.js')
 exports.Client = require('./src/client.js')
 exports.Player = require('./src/player.js')
+exports.BattleLog = require('./src/battlelog.js')
 exports.Club = require('./src/club.js')
 exports.Ranking = require('./src/ranking.js')
