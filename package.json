@@ -33,8 +33,5 @@
   "dependencies": {
     "moment": "^2.29.1",
     "node-fetch": "^2.6.0"
-  }/*,
-  "scripts": {
-    "test": "node examples/test.js"
-  }*/
+  }
 }
