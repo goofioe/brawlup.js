@@ -1,4 +1,4 @@
-class Error extends Error {
+class apiError extends Error {
   constructor (res, body) {
     super()
 
@@ -17,4 +17,4 @@ class Error extends Error {
   }
 }
 
-module.exports = Error
+module.exports = apiError
