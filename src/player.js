@@ -65,7 +65,11 @@ class Player {
   return convert(time)
   }
   
+}
+  
   function convert(timestamp) {
     sc = timestamp%60
     return `${((timestamp-sc)/60)} min. ${sc}sec.`
 }
+
+module.exports = Player
