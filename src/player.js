@@ -44,7 +44,28 @@ class Player {
   } 
   }
   
-  function convertTime(timestamp) {
+  /**
+   * @param {number} 1: Big Game | 2: Robo Rumble
+   * @returns {string} The best time converted into minutes and seconds. Ex: 6 min. 30 sec.   
+   */
+  
+  bestTime(mode) {
+  if (!mode) throw new moduleError(`You didn't specified a mode number, which is required for this method! (1: Big Game, 2: Robo Rumble)`)
+    
+  let time
+  
+  if (mode === 1) {
+  time = this.bestTimeAsBigBrawler
+  } else if (mode === 2) {
+  time = this.bestRoboRumbleTime
+  } else {
+  throw new moduleError(`You didn't specified a correct mode number! (1: Big Game, 2: Robo Rumble)`)
+  }
+    
+  return convert(time)
+  }
+  
+  function convert(timestamp) {
     sc = timestamp%60
     return `${((timestamp-sc)/60)} min. ${sc}sec.`
 }
