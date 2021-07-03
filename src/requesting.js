@@ -30,7 +30,7 @@ class requesting {
     return await this.request(`players/%23${tag.replace("#", "")}`)
   }
 
-  async getPlayerBattlelog(tag) {
+  async getPlayerBattleLog(tag) {
     if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
     tag = tag.toUpperCase()
     return await this.request(`players/%23${tag.replace("#", "")}/battlelog`)
