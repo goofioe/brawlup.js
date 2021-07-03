@@ -1,3 +1,5 @@
+const moduleError = require('./moduleError')
+
 class Player {
   constructor(data) {
   this.tag = data.tag
@@ -31,7 +33,7 @@ class Player {
   */
   
   findBrawler(brawler) {
-  if (!brawler) throw new TypeError(`You didn't specified a brawler, which is required for this method!`)
+  if (!brawler) throw new moduleError(`You didn't specified a brawler, which is required for this method!`)
  
   if (!isNaN(brawler)) {
   let b = this.brawlers.filter(x => x.id == brawler)
