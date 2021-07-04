@@ -7,7 +7,7 @@ class Club {
     this.name = data.name
     this.type = data.type
     this.badge = data.badgeId
-    this.description = data.description
+    this.description = data.description ? data.description : null
     this.trophies = data.trophies
     this.requiredTrophies = data.requiredTrophies
     this.members = data.members
