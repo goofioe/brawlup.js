@@ -64,7 +64,7 @@ class requesting {
     return await this.request(`brawlers`, { before, after, limit })
   }
 
-  async getRanking(country, type) {
+  async getRankings(country, type) {
     if (!country) throw new moduleError(`You didn't specified a country, which is required for this method!`)
     if (!type) throw new moduleError(`You didn't specified a type, which is required for this method!`)
     return { ranks: await this.request(`rankings/${country}/${type}`), country: country, type: type }
