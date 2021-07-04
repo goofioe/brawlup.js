@@ -32,8 +32,8 @@ class Client {
     return new BattleLog(await this.req.getBattleLog(tag))
   }
 
-  async getRanking(country = 'global', type = 'players') {
-    return new Ranking(await this.req.getRanking(country, type))
+  async getRankings(country = 'global', type = 'players') {
+    return new Ranking(await this.req.getRankings(country, type))
   }
 
   async getClub(tag) {
