@@ -44,7 +44,7 @@ class Player {
   } else {
   let b = this.brawlers.filter(x => x.name == brawler.toUpperCase())
   if (b.length === 0) return null;
-  return b ? b : false
+  return b ? b : null
   } 
   }
   
