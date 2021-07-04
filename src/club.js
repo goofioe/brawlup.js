@@ -44,7 +44,7 @@ class Club {
     let x = this.members.map(x => x.tag)
     if (x.includes(tag)) return true
     await Requesting.getPlayer(tag).then(p => {
-    return p.trophies >= this.requiredTrophies
+    return p.trophies >= this.requiredTrophies && this.type !== "closed"
     }).catch(e => {
     return moduleError(`${e.message}`)
     })
