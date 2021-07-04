@@ -21,6 +21,7 @@ class Player {
   this.bestRoboRumbleTime = data.bestRoboRumbleTime
   this.bestTimeAsBigBrawler = data.bestTimeAsBigBrawler
   this.brawlers = data.brawlers
+  this.listBrawlers = data.brawlers.sort((a, b) => a.trophies - b.trophies).map(b => capitalLetters(b.name))
   this.brawlerCount = data.brawlers.length
   this.club = data.club.tag ? data.club : null
   this.gadgetCount = data.brawlers.map(value => value.gadgets).flat().length.toString()
@@ -97,11 +98,16 @@ class Player {
    if (sortBy === "rank") return this.brawlers.sort((a, b) => a.rank - b.rank)
   }
   
+  
 }
   
   function convert(timestamp) {
     sc = timestamp%60
     return `${((timestamp-sc)/60)} min. ${sc}sec.`
 }
+
+function capitalLetters(str) {
+        return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase();
+   }
 
 module.exports = Player
