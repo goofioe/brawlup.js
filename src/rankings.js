@@ -1,4 +1,4 @@
-class Ranking {
+class Rankings {
     constructor(data) {
         this.country = data.country
         this.type = data.type   
@@ -30,4 +30,4 @@ class Ranking {
     }
 }
 
-module.exports = Ranking
+module.exports = Rankings
