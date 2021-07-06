@@ -12,15 +12,8 @@ class Map {
     this.madeBy = data.credit
     this.lastActive = data.lastActive
     this.dataUpdated = data.dataUpdated
-    this.enverioment = data.environment.name
-    this.enveriomentID = data.environment.id
-    this.enveriomentImage = data.environment.imageUrl
-    this.gameMode = data.gameMode.name
-    this.gameModeID = data.gameMode.id
-    this.gameModeHash = data.gameMode.hash
-    this.gameModeLink = data.gameMode.link
-    this.gameModeColor = data.gameMode.color
-    this.gameModeImage = data.gameMode.imageUrl
+    this.enverioment = { name: data.environment.name, id: data.environment.id, image: data.environment.imageUrl }
+    this.gameMode = { name: data.gameMode.name, id: data.gameMode.id, hash: data.gameMode.hash, link: data.gameMode.link, color: data.gameMode.color, image: data.gameMode.imageUrl }
     }
 
     /**
