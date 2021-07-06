@@ -3,7 +3,7 @@ const moment = require('moment')
 class BattleLog {
   constructor(data, index) {
   this.all = ourArray(data)
-  this.index = index
+  this.index = index ? index : 1
   this.object = ourArray(data)[this.index]
   this.matchAt = this.object.matchAt
   this.modeID = this.object.modeInfo.id
