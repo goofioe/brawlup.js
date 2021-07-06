@@ -3,6 +3,7 @@ const Club = require('./club')
 const Player = require('./player')
 const BattleLog = require('./battlelog')
 const Brawlers = require('./brawlers')
+const AllMaps = require('./allMaps')
 const Map = require('./map')
 const Events = require('./events')
 const Ranking = require('./rankings')
@@ -12,10 +13,10 @@ const moduleError = require('./moduleError')
 class Client {
 
   /**
-  * @param {string} Your Brawl Stars API access token.
+  * @param {string} Token Your Brawl Stars API access token.
   */
 
-  constructor(token = String) {
+  constructor(token) {
     if (!token) throw new moduleError(`You didn't provided a Brawl Stars API token, which is required for this module.`)
 
     this.token = token
@@ -27,9 +28,10 @@ class Client {
     return new Player(await this.req.getPlayer(tag))
   }
   
-  async getBattleLog(tag) {
+  async getBattleLog(tag, index) {
     if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
-    return new BattleLog(await this.req.getBattleLog(tag))
+    if (!index) throw new moduleError(`You didn't specified a battle log match index, which is required for this method!`)
+    return new BattleLog(await this.req.getBattleLog(tag), index)
   }
 
   async getRankings(country = 'global', type = 'players') {
@@ -45,8 +47,12 @@ class Client {
     return new Brawlers(await this.req.getBrawlers())
   }
 
-  async getMaps() {
-    return new Map(await this.req.getMaps())
+  async getAllMaps() {
+    return new AllMaps(await this.req.getAllMaps())
+  }
+
+  async getMap(mapID) {
+    return new Map(await this.req.getMap(mapID))
   }
 
   async getEvents() {

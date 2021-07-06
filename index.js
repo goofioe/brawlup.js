@@ -1,6 +1,7 @@
 exports.Brawlers = require('./src/brawlers.js')
 exports.Client = require('./src/client.js')
 exports.Player = require('./src/player.js')
+exports.AllMaps = require('./src/allMaps.js')
 exports.Map = require('./src/map.js')
 exports.Events = require('./src/events.js')
 exports.BattleLog = require('./src/battlelog.js')

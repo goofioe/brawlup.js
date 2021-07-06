@@ -53,8 +53,9 @@ class Player {
   * @returns {Array} Array of this player's battle log.
   */
   
-  async getBattleLog() {
-  return await Client.getBattleLog(this.tag)
+  async getBattleLog(index) {
+  if (!index) throw new moduleError(`You didn't specified a battle log match index, which is required for this method!`)
+  return await Client.getBattleLog(this.tag, index)
   }
   
   /**

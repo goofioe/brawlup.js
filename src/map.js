@@ -1,18 +1,35 @@
 class Map {
     constructor(data) {
     this.data = data
+    this.id = data.id
+    this.new = data.new
+    this.disabled = data.disabled
+    this.name = data.name
+    this.hash = data.hash
+    this.version = data.version
+    this.mapLink = data.link
+    this.mapImage = data.imageUrl
+    this.madeBy = data.credit
+    this.lastActive = data.lastActive
+    this.dataUpdated = data.dataUpdated
+    this.enverioment = data.environment.name
+    this.enveriomentID = data.environment.id
+    this.enveriomentImage = data.environment.imageUrl
+    this.gameMode = data.gameMode.name
+    this.gameModeID = data.gameMode.id
+    this.gameModeHash = data.gameMode.hash
+    this.gameModeLink = data.gameMode.link
+    this.gameModeColor = data.gameMode.color
+    this.gameModeImage = data.gameMode.imageUrl
     }
 
-
     /**
-     * @param {mapName} The map's name you want to get stats about.
-     * @description Finds the map you specified.
-     * @returns Object (if the map exists) | null (if the map doesn't exists)
+     * @description Returns all of the data of this map.
+     * @returns {Array}
      */
 
-    findMap(mapName) {
-      const map = this.data.list.find( ({ name }) => name === mapName )
-      return map ? map : null
+    all() {
+    return this.data
     }
   }
 

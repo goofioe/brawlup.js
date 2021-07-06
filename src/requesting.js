@@ -75,8 +75,22 @@ class requesting {
     return await this.request(`rankings/${country}/brawlers/${brawler}`)
   }
 
-  async getMaps() {
+  async getAllMaps() {
     return await this.requestBrawlify(`maps`)
+  }
+
+  async getMap(mapID) {
+    if (!mapID) throw new moduleError(`You didn't specified an in-game map id, which is required for this method!`)
+    return await this.requestBrawlify(`maps/${mapID}`)
+  }
+
+  async getMap(mapID) {
+    if (!mapID) throw new moduleError(`You didn't specified an in-game map id, which is required for this method!`)
+    return await this.requestBrawlify(`maps/${mapID}`)
+  }
+
+  async getPowerLeagueMaps() {
+    return await this.requestBrawlify(`league`)
   }
 
   async getEvents() {
