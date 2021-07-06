@@ -6,8 +6,7 @@ class BattleLog {
   this.index = index ? index : 1
   this.object = ourArray(data)[this.index]
   this.matchAt = this.object.matchAt
-  this.modeID = this.object.modeInfo.id
-  this.modeName = this.object.modeInfo.mode
+  this.mode = { id: this.object.modeInfo.id, name: this.object.modeInfo.mode }
   this.map = this.object.modeInfo.map ? this.object.modeInfo.map : 'Player map'
   this.type = this.object.matchInfo.type
   this.result = this.object.matchInfo.result
@@ -16,11 +15,7 @@ class BattleLog {
   this.players = this.object.matchInfo.players ? this.object.matchInfo.players : null
   this.teams = this.object.matchInfo.teams ? this.object.matchInfo.teams : null
   this.bigBrawler = this.object.matchInfo.bigBrawler ? this.object.matchInfo.bigBrawler : null
-  this.starPlayerTag = this.object.matchInfo.starPlayer.tag
-  this.starPlayerName = this.object.matchInfo.starPlayer.name
-  this.starPlayerBrawler = this.object.matchInfo.starPlayer.brawler
-  this.starPlayerBrawlerID = this.object.matchInfo.starPlayer.brawler.id
-  this.starPlayerBrawlerName = this.object.matchInfo.starPlayer.brawler.name
+  this.starPlayer = { tag: this.object.matchInfo.starPlayer.tag, name: this.object.matchInfo.starPlayer.name, brawler: { id: this.object.matchInfo.starPlayer.brawler.id, name: this.object.matchInfo.starPlayer.brawler.name } }
   }
 }
 
