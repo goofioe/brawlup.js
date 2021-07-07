@@ -34,6 +34,6 @@ const bsClient = new bs.Client('Your Brawl Stars API Token')
 ```
 
 ## Support
-[<img src="https://cdn.discordapp.com/emojis/855869527061561384.gif" height="15" alt="Up Bots logo"> Discord](https://discord.gg/XUuHjEbwhb) | [<img src="https://cdn.discordapp.com/emojis/855869527061561384.gif" height="15" alt="Up Bots logo"> Twitter](https://twitter.com/UpBotsOfficial)
+[<img src="https://cdn.discordapp.com/emojis/855869527061561384.gif" height="15" alt="Up Bots logo"> Discord](https://discord.gg/PhW2XJa2yy) | [<img src="https://cdn.discordapp.com/emojis/855869527061561384.gif" height="15" alt="Up Bots logo"> Twitter](https://twitter.com/UpBotsOfficial)
 
 
