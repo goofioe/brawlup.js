@@ -12,7 +12,7 @@ Brawlup.js is an API wrapper for [official <img src="https://i.pinimg.com/474x/e
 
 * Install `brawlup.js` with `npm i brawlup.js`
 * Create an API key [here](https://developer.brawlstars.com/#/account)
-* Read our [docs](https://brawlup.github.io/js/)
+* Read our [docs](https://brawlup.github.io/js/stable/)
 
 ## Thanks
 to [<img src="https://cdn.brawlify.com/front/Star.svg" height="17" alt="BrawlAPI logo"> BrawlAPI](https://brawlapi.com/) (from [<img src="https://cdn.brawlify.com/front/Star.svg" height="17" alt="Brawlify logo"> Brawlify](https://brawlify.com/)) to allow us to use their API for this module.
