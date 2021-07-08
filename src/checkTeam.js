@@ -1,5 +1,0 @@
-class checkTeam {
-    constructor (data) {
-
-    }
-}
