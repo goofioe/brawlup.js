@@ -4,8 +4,10 @@ const Player = require('./player')
 const BattleLog = require('./battlelog')
 const Brawlers = require('./brawlers')
 const AllMaps = require('./allMaps')
+const PowerLeagueMaps = require('./powerLeagueMaps')
 const Map = require('./map')
 const Events = require('./events')
+const CheckTeam = require('./checkTeam')
 const Ranking = require('./rankings')
 
 const moduleError = require('./moduleError')
@@ -50,6 +52,10 @@ class Client {
   async getAllMaps() {
     return new AllMaps(await this.req.getAllMaps())
   }
+  
+  async getPowerLeagueMaps() {
+    return new PowerLeagueMaps(await this.req.getPowerLeagueMaps())
+  }
 
   async getMap(mapID) {
     return new Map(await this.req.getMap(mapID))
@@ -57,6 +63,13 @@ class Client {
 
   async getEvents() {
    return new Events(await this.req.getEvents())
+  }
+  
+  async checkTeam(brawler1, brawler2, brawler3) {
+   if (!brawler1) throw new moduleError(`You didn't specified a brawler (min. 3), which is required for this method!`)
+   if (!brawler2) throw new moduleError(`You didn't specified the second brawler (min. 3), which is required for this method!`)
+   if (!brawler3) throw new moduleError(`You didn't specified the third, which is required for this method!`)
+   return new CheckTeam(await this.getPowerLeagueMaps().data.find( ({ map }) => map.teamStats.hash === `${brawler1}+${brawler2}+${brawler3}` ))
   }
 }
 
