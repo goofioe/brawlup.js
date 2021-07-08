@@ -1,6 +1,6 @@
 {
   "name": "brawlup.js",
-  "version": "0.0.46",
+  "version": "0.0.47",
   "description": "An API wrapper for the official Brawl Stars API.",
   "main": "index.js",
   "directories": {
@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/brawlup/brawlup.js/issues"
   },
-  "homepage": "https://github.com/brawlup/brawlup.js#readme",
+  "homepage": "https://brawlup.js.org/js/stable/#brawlup-js",
   "dependencies": {
     "moment": "^2.29.1",
     "node-fetch": "^2.6.0"
