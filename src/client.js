@@ -63,21 +63,6 @@ class Client {
   async getEvents() {
    return new Events(await this.req.getEvents())
   }
-  
-  async checkTeam(brawler1, brawler2, brawler3) {
-   if (!brawler1) throw new moduleError(`You didn't specified a brawler (min. 3), which is required for this method!`)
-   if (!brawler2) throw new moduleError(`You didn't specified the second brawler (min. 3), which is required for this method!`)
-   if (!brawler3) throw new moduleError(`You didn't specified the third, which is required for this method!`)
-    
-   const data = await this.getPowerLeagueMaps().data.find( ({ map }) => map.teamStats.hash === `${brawler1}+${brawler2}+${brawler3}` )
-   if (!data) return { rating: { result: "Unknown", id: 0 }, winRate: null }
-   
-   let winrate = data.data.winRate
-   if (winrate < 47) return { rating: { result: "Bad", id: 1 }, winRate: winrate }
-   if (winrate > 47 && winrate < 60) return { rating: { result: "Average", id: 2 }, winRate: winrate }
-   if (winrate > 60 && winrate < 75) return { rating: { result: "Very Good", id: 3 }, winRate: winrate }
-   if (winrate > 75) return { rating: { result: "Godly", id: 4 }, winRate: winrate }
-  }
-}
+}  
 
 module.exports = Client
