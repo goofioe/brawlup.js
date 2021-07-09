@@ -7,7 +7,7 @@ class Rankings {
     }
 
     /**
-     * @param {string} Player tag
+     * @param {String} [tag] Player tag
      * @returns {boolean}
      */
 

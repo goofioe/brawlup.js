@@ -70,9 +70,9 @@ class requesting {
     return { ranks: await this.request(`rankings/${country}/${type}`), country: country, type: type }
   }
 
-  async getBrawlersRankings(brawler, country = 'global') {
+  async getBrawlersRankings(brawler) {
     if (!brawler) throw new moduleError(`You didn't specified an in-game brawler id, which is required for this method!`)
-    return await this.request(`rankings/${country}/brawlers/${brawler}`)
+    return await this.request(`rankings/global/brawlers/${brawler}`)
   }
 
   async getAllMaps() {

@@ -16,31 +16,34 @@ class Club {
   }
 
   /**
-  * @param {string} Player tag
+  * @param {String} [tag] Player tag
   * @returns {number} Player's club rank | null (if the player is not in this club)
   */
 
   getMemberRank(tag) {
+    if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
     let sort = this.members.sort((a, b) => b.trophies - a.trophies).map(x => x.tag).indexOf(tag)+1
     return sort >= 1 ? parseInt(sort) : null
   }
 
   /**
-  * @param {string} Player tag
+  * @param {String} [tag] Player tag
   * @returns {string} Player's club role (member, senior, vicePresident, president) | null (if the player is not in this club)
   */
 
   getMemberRole(tag) {
+    if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
     return this.members.filter(m => m.tag === tag) ? this.members.filter(m => m.tag === tag).map(m => m.role).join("\n") : null
   }
 
   /**
-  * @param {string} Player tag
+  * @param {String} [tag] Player tag
   * @description Checks if this player can join this club.
   * @returns {boolean}
   */
 
   async playerCanJoin(tag) {
+    if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
     let x = this.members.map(x => x.tag)
     if (x.includes(tag)) return true
     await Requesting.getPlayer(tag).then(p => {

@@ -5,12 +5,10 @@ class Brawlers {
     this.all = data['items']
     this.data = data['items']
     this.count = this.all.length
-    this.starPowerCount = this.data.map(value => value.starPowers).flat().length.toString()
-    this.gadgetCount = this.data.map(value => value.gagets).flat().length.toString()
   }
   
   /**
-  * @param {brawler} The brawler's name or id.
+  * @param {String|Object} [brawler] The brawler's name or id.
   * @description Finds the brawler from the game.
   * @returns null (if the brawler doesn't found) | Object (if the brawler does found)
   */
