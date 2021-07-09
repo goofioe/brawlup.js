@@ -5,6 +5,8 @@ class Brawlers {
     this.all = data['items']
     this.data = data['items']
     this.count = this.all.length
+    this.starPowerCount = this.data.map(value => value.starPowers).flat().length.toString()
+    this.gadgetCount = this.data.map(value => value.gagets).flat().length.toString()
   }
   
   /**
