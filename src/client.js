@@ -74,9 +74,9 @@ class Client {
  
     let winrate = data.data.winRate
     if (!winrate) return { rating: { result: "Unknown", id: 0 }, winRate: null }
-    if (winrate < 47) return { rating: { result: "Bad", id: 1 }, winRate: winrate }
-    if (winrate > 47 && winrate < 51) return { rating: { result: "Average", id: 2 }, winRate: winrate }
-    if (winrate > 52 && winrate < 65) return { rating: { result: "Good", id: 3 }, winRate: winrate }
+    if (winrate < 45) return { rating: { result: "Bad", id: 1 }, winRate: winrate }
+    if (winrate > 45 && winrate < 55) return { rating: { result: "Average", id: 2 }, winRate: winrate }
+    if (winrate > 55 && winrate < 65) return { rating: { result: "Good", id: 3 }, winRate: winrate }
     if (winrate > 65 && winrate < 75) return { rating: { result: "Very Good", id: 3 }, winRate: winrate }
     if (winrate > 75) return { rating: { result: "Godly", id: 4 }, winRate: winrate }
    }
