@@ -11,8 +11,8 @@ class Events {
   /**
   * @param {Number} [status] 1: Active | 2: Upcoming
   * @param {Number} [index] The index of the event.
-  * @description Gets the battle log (last battles) of this player.
-  * @returns {Array} Array of this player's battle log.
+  * @description Gets the event from this event data.
+  * @returns {Object} Event object. 
   */
 
    async getEvent(status, index) {
