@@ -11,7 +11,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           scope: '@octocat'
       - run: npm install
-      - run: npm publish
+      - run: npm publish --tag dev
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
