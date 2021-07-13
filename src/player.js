@@ -19,7 +19,6 @@ class Player {
   this.trioVictories = data['3vs3Victories']
   this.totalVictories = parseInt(this.soloVictories + this.duoVictories + this.trioVictories)
   this.bestRoboRumbleLevel = specialLevels(data.bestRoboRumbleTime)
-  this.bestTimeAsBigBrawler = data.bestTimeAsBigBrawler
   this.seasonEnd = { trophies: seasonTrophies(data), starPoints: seasonStarPoints(data) }
   this.brawlers = data.brawlers
   this.listBrawlers = Array.from(data.brawlers.sort((a, b) => b.trophies - a.trophies).map(b => capitalLetters(b.name)))
