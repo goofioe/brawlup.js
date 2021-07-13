@@ -18,7 +18,7 @@ class Player {
   this.duoVictories = data.duoVictories
   this.trioVictories = data['3vs3Victories']
   this.totalVictories = parseInt(this.soloVictories + this.duoVictories + this.trioVictories)
-  this.bestRoboRumbleTime = data.bestRoboRumbleTime
+  this.bestRoboRumbleLevel = specialLevels(data.bestRoboRumbleTime)
   this.bestTimeAsBigBrawler = data.bestTimeAsBigBrawler
   this.seasonEnd = { trophies: seasonTrophies(data), starPoints: seasonStarPoints(data) }
   this.brawlers = data.brawlers
@@ -67,28 +67,6 @@ class Player {
   
   async getClub() {
   return this.club !== null ? await Client.getClub(this.club.tag) : null
-  }
-  
-  /**
-   * @param {Number} [mode] 1: Big Game | 2: Robo Rumble
-   * @description Best time for the old ticketed events will be converted into minutes and seconds.
-   * @returns {string} The best time converted into minutes and seconds. Ex: 6 min. 30 sec.   
-   */
-  
-  bestTime(mode) {
-  if (!mode) throw new moduleError(`You didn't specified a mode number, which is required for this method! (1: Big Game, 2: Robo Rumble)`)
-    
-  let time
-  
-  if (mode === 1) {
-  time = this.bestTimeAsBigBrawler
-  } else if (mode === 2) {
-  time = this.bestRoboRumbleTime
-  } else {
-  throw new moduleError(`You didn't specified a correct mode number! (1: Big Game, 2: Robo Rumble)`)
-  }
-    
-  return convert(time)
   }
   
   /**
@@ -202,6 +180,34 @@ function seasonTrophies(player) {
     })
 
     return player.trophies - minesTrophies
+}
+
+function specialLevels(theNumber) {
+ 
+  if (theNumber === 0 || theNumber === null || theNumber === undefined) return { level: null, id: theNumber, levelsLeft: 16-theNumber }
+  if (theNumber === 1) return { level: "Normal", id: theNumber, insane: false, levelsLeft: 16-theNumber }
+  if (theNumber === 2) return { level: "Hard", id: theNumber, insane: false, levelsLeft: 16-theNumber }
+  if (theNumber === 3) return { level: "Expert", id: theNumber, insane: false, levelsLeft: 16-theNumber }
+  if (theNumber === 4) return { level: "Master", id: theNumber, insane: false, levelsLeft: 16-theNumber }
+  if (theNumber === 5) return { level: "Insane", id: theNumber, insane: false, levelsLeft: 16-theNumber }
+  if (theNumber === 6) return { level: "Insane", id: theNumber, insane: 0, levelsLeft: 16-theNumber }
+  if (theNumber === 7) return { level: "Insane II", id: theNumber, insane: 2, levelsLeft: 16-theNumber }
+  if (theNumber === 8) return { level: "Insane III", id: theNumber, insane: 3, levelsLeft: 16-theNumber }
+  if (theNumber === 9) return { level: "Insane IV", id: theNumber, insane: 4, levelsLeft: 16-theNumber }
+  if (theNumber === 10) return { level: "Insane V", id: theNumber, insane: 5, levelsLeft: 16-theNumber }
+  if (theNumber === 11) return { level: "Insane VI", id: theNumber, insane: 6, levelsLeft: 16-theNumber }
+  if (theNumber === 12) return { level: "Insane VII", id: theNumber, insane: 7, levelsLeft: 16-theNumber }
+  if (theNumber === 13) return { level: "Insane VIII", id: theNumber, insane: 8, levelsLeft: 16-theNumber }
+  if (theNumber === 14) return { level: "Insane IX", id: theNumber, insane: 9, levelsLeft: 16-theNumber }
+  if (theNumber === 15) return { level: "Insane X", id: theNumber, insane: 10, levelsLeft: 16-theNumber }
+  if (theNumber === 16) return { level: "Insane XI", id: theNumber, insane: 11, levelsLeft: 16-theNumber }
+  if (theNumber === 17) return { level: "Insane XII", id: theNumber, insane: 12, levelsLeft: 16-theNumber }
+  if (theNumber === 18) return { level: "Insane XIII", id: theNumber, insane: 13, levelsLeft: 16-theNumber }
+  if (theNumber === 19) return { level: "Insane XIV", id: theNumber, insane: 14, levelsLeft: 16-theNumber }
+  if (theNumber === 20) return { level: "Insane XV", id: theNumber, insane: 15, levelsLeft: 16-theNumber }
+  if (theNumber === 20) return { level: "Insane XVI", id: theNumber, insane: 16, levelsLeft: 16-theNumber }
+  
+  return { level: null, id: theNumber, levelsLeft: 16-theNumber }
 }
 
 module.exports = Player
