@@ -3,6 +3,7 @@ const Client = require('./client.js')
 
 class Player {
   constructor(data) {
+  deprecationWarning("powerPlayPoints and highestPowerPlayPoints are deprecated. When Power League data gets added, these properties will be removed.")
   this.tag = data.tag
   this.name = data.name
   this.icon = data.icon.id
@@ -12,8 +13,8 @@ class Player {
   this.expLevel = data.expLevel
   this.expPoints = data.expPoints
   this.highestTrophies = data.highestTrophies
-  this.powerPlayPoints = data.powerPlayPoints && deprecationWarning("powerPlayPoints is deprecated. Power League data will be added soon (we hope so...)")
-  this.highestPowerPlayPoints = data.highestPowerPlayPoints && deprecationWarning("highestPowerPlayPoints is deprecated. Power League data will be added soon (we hope so...)")
+  this.powerPlayPoints = data.powerPlayPoints
+  this.highestPowerPlayPoints = data.highestPowerPlayPoints
   this.soloVictories = data.soloVictories
   this.duoVictories = data.duoVictories
   this.trioVictories = data['3vs3Victories']
