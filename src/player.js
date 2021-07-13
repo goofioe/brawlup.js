@@ -24,7 +24,7 @@ class Player {
   this.brawlers = data.brawlers
   this.listBrawlers = Array.from(data.brawlers.sort((a, b) => b.trophies - a.trophies).map(b => capitalLetters(b.name)))
   this.brawlerCount = data.brawlers.length
-  this.club = data.club.tag ? Client.getClub(data.club) : null
+  this.club = data.club.tag ? data.club : null
   this.gadgetCount = data.brawlers.map(value => value.gadgets).flat().length
   this.starPowerCount = data.brawlers.map(value => value.starPowers).flat().length
 }
@@ -58,6 +58,15 @@ class Player {
   async getBattleLog(index) {
   if (!index) throw new moduleError(`You didn't specified a battle log match index, which is required for this method!`)
   return await Client.getBattleLog(this.tag, index)
+  }
+  
+  /**
+  * @description Gets the club of this player.
+  * @returns {Object} Object of this player's club.
+  */
+  
+  async getClub() {
+  return this.club !== null ? await Client.getClub(this.club.tag) : null
   }
   
   /**
