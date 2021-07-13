@@ -1,4 +1,4 @@
-const Requesting = require('./requesting')
+const Client = require('./client')
 const moduleError = require('./moduleError')
 
 class Club {
@@ -46,7 +46,7 @@ class Club {
     if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
     let x = this.members.map(x => x.tag)
     if (x.includes(tag)) return true
-    await Requesting.getPlayer(tag).then(p => {
+    await Client.getPlayer(tag).then(p => {
     return p.trophies >= this.requiredTrophies && this.type !== "closed"
     }).catch(e => {
     return moduleError(`${e.message}`)
