@@ -12,8 +12,8 @@ class Player {
   this.expLevel = data.expLevel
   this.expPoints = data.expPoints
   this.highestTrophies = data.highestTrophies
-  this.powerPlayPoints = data.powerPlayPoints
-  this.highestPowerPlayPoints = data.highestPowerPlayPoints
+  this.powerPlayPoints = data.powerPlayPoints && throw new deprecationWarning("powerPlayPoints is deprecated. Power League data will be added soon (we hope so...)")
+  this.highestPowerPlayPoints = data.highestPowerPlayPoints && throw new deprecationWarning("highestPowerPlayPoints is deprecated. Power League data will be added soon (we hope so...)")
   this.soloVictories = data.soloVictories
   this.duoVictories = data.duoVictories
   this.trioVictories = data['3vs3Victories']
