@@ -183,7 +183,7 @@ function seasonTrophies(player) {
 
 function specialLevels(theNumber) {
  
-  if (theNumber === 0 || theNumber === null || theNumber === undefined) return { level: null, id: theNumber, levelsLeft: 21-theNumber }
+  if (theNumber === 0 || theNumber === null || theNumber === undefined) return { level: null, id: theNumber, insane: false, levelsLeft: null }
   if (theNumber === 1) return { level: "Normal", id: theNumber, insane: false, levelsLeft: 21-theNumber }
   if (theNumber === 2) return { level: "Hard", id: theNumber, insane: false, levelsLeft: 21-theNumber }
   if (theNumber === 3) return { level: "Expert", id: theNumber, insane: false, levelsLeft: 21-theNumber }
@@ -206,7 +206,7 @@ function specialLevels(theNumber) {
   if (theNumber === 20) return { level: "Insane XV", id: theNumber, insane: 15, levelsLeft: 21-theNumber }
   if (theNumber === 21) return { level: "Insane XVI", id: theNumber, insane: 16, levelsLeft: 21-theNumber }
   
-  return { level: null, id: theNumber, levelsLeft: 16-theNumber }
+  return { level: null, id: theNumber, insane: false, levelsLeft: null }
 }
 
 module.exports = Player
