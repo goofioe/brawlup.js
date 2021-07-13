@@ -24,7 +24,7 @@ class Player {
   this.brawlers = data.brawlers
   this.listBrawlers = Array.from(data.brawlers.sort((a, b) => a.trophies - b.trophies).map(b => capitalLetters(b.name)))
   this.brawlerCount = data.brawlers.length
-  this.club = data.club.tag ? data.club : null
+  this.club = data.club.tag ? await Client.getClub(data.club) : null
   this.gadgetCount = data.brawlers.map(value => value.gadgets).flat().length
   this.starPowerCount = data.brawlers.map(value => value.starPowers).flat().length
 }
