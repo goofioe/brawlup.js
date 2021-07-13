@@ -3,7 +3,6 @@ const Client = require('./client.js')
 
 class Player {
   constructor(data) {
-  deprecationWarning("powerPlayPoints and highestPowerPlayPoints are deprecated. When Power League data gets added, these properties will be removed.")
   this.tag = data.tag
   this.name = data.name
   this.icon = data.icon.id
