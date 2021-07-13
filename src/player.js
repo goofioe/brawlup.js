@@ -22,7 +22,7 @@ class Player {
   this.bestTimeAsBigBrawler = data.bestTimeAsBigBrawler
   this.seasonEnd = { trophies: seasonTrophies(data), starPoints: seasonStarPoints(data) }
   this.brawlers = data.brawlers
-  this.listBrawlers = Array.from(data.brawlers.sort((a, b) => a.trophies - b.trophies).map(b => capitalLetters(b.name)))
+  this.listBrawlers = Array.from(data.brawlers.sort((a, b) => b.trophies - a.trophies).map(b => capitalLetters(b.name)))
   this.brawlerCount = data.brawlers.length
   this.club = data.club.tag ? await Client.getClub(data.club) : null
   this.gadgetCount = data.brawlers.map(value => value.gadgets).flat().length
@@ -95,10 +95,10 @@ class Player {
    let sortBy = options.sortBytoLowerCase()
    if (sortBy !== "trophies" && sortBy !== "highest trophies" && sortBy !== "power level" && sortBy !== "rank") throw new moduleError(`You didn't specified a correct sortBy option! (trophies, highest trophies, power level, rank)`) 
    
-   if (sortBy === "trophies") return this.brawlers.sort((a, b) => a.trophies - b.trophies)
-   if (sortBy === "highest trophies") return this.brawlers.sort((a, b) => a.highestTrophies - b.highestTrophies)
-   if (sortBy === "power level") return this.brawlers.sort((a, b) => a.power - b.power)
-   if (sortBy === "rank") return this.brawlers.sort((a, b) => a.rank - b.rank)
+   if (sortBy === "trophies") return this.brawlers.sort((a, b) => b.trophies - a.trophies)
+   if (sortBy === "highest trophies") return this.brawlers.sort((a, b) => b.highestTrophies - a.highestTrophies)
+   if (sortBy === "power level") return this.brawlers.sort((a, b) => b.power - a.power)
+   if (sortBy === "rank") return this.brawlers.sort((a, b) => b.rank - a.rank)
   }
   
   
