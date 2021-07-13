@@ -7,7 +7,7 @@ class Player {
   this.name = data.name
   this.icon = data.icon.id
   this.nameColor = data.nameColor
-  this.hexColor = !this.nameColor ? '#ffffff' : `#${this.nameColor.slice(4)}`;
+  this.hexColor = this.nameColor ? `#${this.nameColor.slice(4)}` : '#ffffff'
   this.trophies = data.trophies
   this.expLevel = data.expLevel
   this.expPoints = data.expPoints
