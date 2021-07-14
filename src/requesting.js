@@ -91,6 +91,10 @@ class requesting {
   async getEvents() {
     return await this.requestBrawlify(`events`)
   }
+  
+  async getAllRecords() {
+    return await this.requestBrawlify(`records`)
+  }
 }
 
 module.exports = requesting
