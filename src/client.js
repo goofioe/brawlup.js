@@ -8,6 +8,7 @@ const PowerLeagueMaps = require('./powerLeagueMaps')
 const Map = require('./map')
 const Events = require('./events')
 const Ranking = require('./rankings')
+const AllRecords = require('./allRecords')
 
 const moduleError = require('./moduleError')
 
@@ -80,6 +81,10 @@ class Client {
     if (winrate > 52 && winrate < 65) return { rating: { result: "Good", id: 3 }, winRate: winrate }
     if (winrate > 65 && winrate < 75) return { rating: { result: "Very Good", id: 3 }, winRate: winrate }
     if (winrate > 75) return { rating: { result: "Godly", id: 4 }, winRate: winrate }
+   }
+  
+   async getAllRecords() {
+    return new AllRecords(await this.req.getAllRecords())
    }
 }
 
