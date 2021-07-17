@@ -1,8 +1,10 @@
 class moduleError extends Error {
   constructor (err) {
     super()
+    
+    this.name = '❌ brawlup.js Error'
 
-    this.message = `❌ brawlup.js error!\n\n📋 ${err}\n🔗 Read the docs for more info: https://brawlup.js.org/js/#welcome`
+    this.message = `${err}\n🔗 Read the docs for more info: https://brawlup.js.org/js/#welcome`
   }
 }
 
