@@ -54,10 +54,10 @@ class Client {
   
   /**
   * @description Gets the rankings (aka leaderboard) from the API.
-  * @param [options] RankingsOptions
-  * @param [options.country] Rankings country code or 'global'
-  * @param [options.type] Rankings type (clubs, players or brawlers)
-  * @param [options.brawler] Rankings brawler id. ONLY USE IF 'options.type' IS 'brawlers'.
+  * @param {Object} [options] RankingsOptions
+  * @param {String} [options.country] Rankings country code or 'global'
+  * @param {String} [options.type] Rankings type (clubs, players or brawlers)
+  * @param {String|Number} [options.brawler] Rankings brawler id. ONLY USE IF 'options.type' IS 'brawlers'.
   * @returns {Object} Player object.
   */
 
@@ -89,22 +89,48 @@ class Client {
     return new Club(await this.req.getClub(tag))
   }
 
+  /**
+  * @description Gets all the brawlers from the API.
+  * @returns {Object} Brawlers object.
+  */
+  
   async getBrawlers() {
     return new Brawlers(await this.req.getBrawlers())
   }
 
+  /**
+  * @description Gets all the maps from BrawlAPI.
+  * @returns {Object} All the map's object.
+  */
+  
   async getAllMaps() {
     return new AllMaps(await this.req.getAllMaps())
   }
   
+  /**
+  * @description Gets all the Power League maps from BrawlAPI.
+  * @returns {Object} All the Power League map's object.
+  */
+  
   async getPowerLeagueMaps() {
     return new PowerLeagueMaps(await this.req.getPowerLeagueMaps())
   }
+  
+  /**
+  * @description Gets a map's info from BrawlAPI.
+  * @param {Number} Map id.
+  * @returns {Object} This map's object.
+  */
 
   async getMap(mapID) {
     return new Map(await this.req.getMap(mapID))
   }
 
+  /**
+  * @description Gets the active and upcoming events from BrawlAPI.
+  * @returns {Object} Events object.
+  */
+  
   async getEvents() {
    return new Events(await this.req.getEvents())
   }
@@ -132,6 +158,11 @@ class Client {
     if (winrate > 65 && winrate < 75) return { rating: { result: "Very Good", id: 3 }, winRate: winrate }
     if (winrate > 75) return { rating: { result: "Godly", id: 4 }, winRate: winrate }
    }
+  
+  /**
+  * @description Gets all the brawler records from BrawlAPI.
+  * @returns {Object} Brawler records object.
+  */
   
    async getAllRecords() {
     return new AllRecords(await this.req.getAllRecords())
