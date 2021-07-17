@@ -65,14 +65,15 @@ class requesting {
   }
 
   async getRankings(country, type) {
-    if (!country) throw new moduleError(`You didn't specified a country, which is required for this method!`)
+    if (!country) throw new moduleError(`You didn't specified a country tag, which is required for this method!`)
     if (!type) throw new moduleError(`You didn't specified a type, which is required for this method!`)
     return { ranks: await this.request(`rankings/${country}/${type}`), country: country, type: type }
   }
 
-  async getBrawlersRankings(brawler) {
+  async getBrawlersRankings(country, brawler) {
+    if (!country) throw new moduleError(`You didn't specified a country tag, which is required for this method!`)
     if (!brawler) throw new moduleError(`You didn't specified an in-game brawler id, which is required for this method!`)
-    return await this.request(`rankings/global/brawlers/${brawler}`)
+    return await this.request(`rankings/${country}/brawlers/${brawler}`)
   }
 
   async getAllMaps() {
@@ -90,6 +91,10 @@ class requesting {
 
   async getEvents() {
     return await this.requestBrawlify(`events`)
+  }
+  
+  async getAllRecords() {
+    return await this.requestBrawlify(`records`)
   }
 }
 

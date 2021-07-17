@@ -8,12 +8,14 @@ const PowerLeagueMaps = require('./powerLeagueMaps')
 const Map = require('./map')
 const Events = require('./events')
 const Ranking = require('./rankings')
+const AllRecords = require('./allRecords')
 
 const moduleError = require('./moduleError')
 
 class Client {
 
   /**
+  * @description Your Brawl Stars client setup.
   * @param {String} [token] Your Brawl Stars API access token.
   * @param {Object} [options] Client options.
   * @param {Boolean} [options.sendWarnings] Should the module send warnings like updates?
@@ -26,45 +28,120 @@ class Client {
     this.req = new Requesting(this)
   }
 
+  /**
+  * @description Gets a player from the API.
+  * @param {String} [tag] A player tag in Brawl Stars.
+  * @returns {Object} Player object.
+  */
+  
   async getPlayer(tag) {
     if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
     return new Player(await this.req.getPlayer(tag))
   }
+  
+  /**
+  * @description Gets a player's battle log from the API.
+  * @param {String} [tag] A player tag in Brawl Stars.
+  * @param {String} [index] The battle log match index.
+  * @returns {Object} Player battle log object.
+  */
   
   async getBattleLog(tag, index) {
     if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
     if (!index) throw new moduleError(`You didn't specified a battle log match index, which is required for this method!`)
     return new BattleLog(await this.req.getBattleLog(tag), index)
   }
+  
+  /**
+  * @description Gets the rankings (aka leaderboard) from the API.
+  * @param {Object} [options] RankingsOptions
+  * @param {String} [options.country] Rankings country code or 'global'
+  * @param {String} [options.type] Rankings type (clubs, players or brawlers)
+  * @param {String|Number} [options.brawler] Rankings brawler id. ONLY USE IF 'options.type' IS 'brawlers'.
+  * @returns {Object} Player object.
+  */
 
-  async getRankings(country = 'global', type = 'players') {
-    return new Ranking(await this.req.getRankings(country, type))
+  async getRankings(options) {
+    if (!options) throw new moduleError(`You didn't specified RankingsOptions, which is required for this method!`)
+    if (!options.country) throw new moduleError(`You didn't specified a country, which is required for this method!`)
+    if (!options.type) throw new moduleError(`You didn't specified a type, which is required for this method!`)
+    
+    options.country === options.country.toLowerCase()
+    options.type === options.type.toLowerCase()
+    
+    if (options.type === 'brawlers' && !options.brawler) throw new moduleError(`You didn't specified an in-game brawler id, which is required for this method!`)
+    
+    if (options.type === 'brawlers' && options.brawler) {
+    return new Ranking(await this.req.getBrawlersRankings(options.country, options.brawler))
+    } else {
+    return new Ranking(await this.req.getRankings(options.country, options.type))
+    }
   }
+  
+  /**
+  * @description Gets a club from the API.
+  * @param {String} [tag] A player tag in Brawl Stars.
+  * @returns {Object} Player object.
+  */
 
   async getClub(tag) {
     if (!tag) throw new moduleError(`You didn't specified an in-game club tag, which is required for this method!`)
     return new Club(await this.req.getClub(tag))
   }
 
+  /**
+  * @description Gets all the brawlers from the API.
+  * @returns {Object} Brawlers object.
+  */
+  
   async getBrawlers() {
     return new Brawlers(await this.req.getBrawlers())
   }
 
+  /**
+  * @description Gets all the maps from BrawlAPI.
+  * @returns {Object} All the map's object.
+  */
+  
   async getAllMaps() {
     return new AllMaps(await this.req.getAllMaps())
   }
   
+  /**
+  * @description Gets all the Power League maps from BrawlAPI.
+  * @returns {Object} All the Power League map's object.
+  */
+  
   async getPowerLeagueMaps() {
     return new PowerLeagueMaps(await this.req.getPowerLeagueMaps())
   }
+  
+  /**
+  * @description Gets a map's info from BrawlAPI.
+  * @param {Number} Map id.
+  * @returns {Object} This map's object.
+  */
 
   async getMap(mapID) {
     return new Map(await this.req.getMap(mapID))
   }
 
+  /**
+  * @description Gets the active and upcoming events from BrawlAPI.
+  * @returns {Object} Events object.
+  */
+  
   async getEvents() {
    return new Events(await this.req.getEvents())
   }
+  
+  /**
+  * @description Checks a team using Power League map data.
+  * @param {String} [brawler1] A brawler name in Brawl Stars.
+  * @param {String} [brawler2] A brawler name in Brawl Stars.
+  * @param {String} [brawler3] A brawler name in Brawl Stars.
+  * @returns {Object} Team's data.
+  */
   
   async checkTeam(brawler1, brawler2, brawler3) {
     if (!brawler1) throw new moduleError(`You didn't specified a brawler (min. 3), which is required for this method!`)
@@ -80,6 +157,15 @@ class Client {
     if (winrate > 52 && winrate < 65) return { rating: { result: "Good", id: 3 }, winRate: winrate }
     if (winrate > 65 && winrate < 75) return { rating: { result: "Very Good", id: 3 }, winRate: winrate }
     if (winrate > 75) return { rating: { result: "Godly", id: 4 }, winRate: winrate }
+   }
+  
+  /**
+  * @description Gets all the brawler records from BrawlAPI.
+  * @returns {Object} Brawler records object.
+  */
+  
+   async getAllRecords() {
+    return new AllRecords(await this.req.getAllRecords())
    }
 }
 
