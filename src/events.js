@@ -18,6 +18,8 @@ class Events {
    async getEvent(status, index) {
       if (!status) throw new moduleError(`You didn't specified a map status (upcoming: 1 | active: 2), which is required for this method!`)
       if (!index) throw new moduleError(`You didn't specified an event index, which is required for this method!`)
+      if (typeof status !== "number") throw new moduleError(`You didn't specified a valid type of map status!`)
+      if (typeof index !== "number") throw new moduleError(`You didn't specified a valid type of event index!`)
       if (status === 1) {
       if (index < 0 || index > this.active.length) throw new moduleError(`This number (event index) is too high or too low!`)
        const evnet = this.active[index]
