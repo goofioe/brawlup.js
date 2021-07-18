@@ -3,8 +3,9 @@ const moduleError = require('./moduleError')
 class Brawlers {
   constructor (data) {
     this.all = data['items']
-    this.data = data['items']
     this.count = this.all.length
+    this.gadgetCount = this.all.data.map(value => value.gadgets).flat().length
+    this.starPowerCount = this.all.data.map(value => value.starPowers).flat().length
   }
   
   /**
