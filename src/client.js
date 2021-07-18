@@ -96,6 +96,7 @@ class Client {
 
   async getClub(tag) {
     if (!tag) throw new moduleError(`You didn't specified an in-game club tag, which is required for this method!`)
+    if (typeof tag !== "string") throw new moduleError(`You didn't specified a valid type of club tag!`)
     return new Club(await this.req.getClub(tag))
   }
 
@@ -133,6 +134,8 @@ class Client {
   */
 
   async getMap(mapID) {
+    if (!mapID) throw new moduleError(`You didn't specified an in-game map id, which is required for this method!`)
+    if (typeof mapID !== "number") throw new moduleError(`You didn't specified a valid type of map id!`)
     return new Map(await this.req.getMap(mapID))
   }
 
@@ -157,6 +160,10 @@ class Client {
     if (!brawler1) throw new moduleError(`You didn't specified a brawler (min. 3), which is required for this method!`)
     if (!brawler2) throw new moduleError(`You didn't specified the second brawler (min. 3), which is required for this method!`)
     if (!brawler3) throw new moduleError(`You didn't specified the third, which is required for this method!`)
+    
+    if (typeof brawler1 !== "string") throw new moduleError(`You didn't specified a valid type of brawler! (first)`)
+    if (typeof brawler2 !== "string") throw new moduleError(`You didn't specified a valid type of brawler! (second)`)
+    if (typeof brawler3 !== "string") throw new moduleError(`You didn't specified a valid type of brawler! (third)`)
  
     const data = ourArray(await this.req.getPowerLeagueMaps()).find( ({ hash }) => hash === `${brawler1}+${brawler2}+${brawler3}` )
     if (!data) return { rating: { result: "Unknown", id: 0 }, winRate: null }
