@@ -22,6 +22,7 @@ class Club {
 
   getMemberRank(tag) {
     if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
+    if (typeof tag !== "string") throw new moduleError(`You didn't specified a valid type of player tag!`)
     let sort = this.members.sort((a, b) => b.trophies - a.trophies).map(x => x.tag).indexOf(tag)+1
     return sort >= 1 ? parseInt(sort) : null
   }
