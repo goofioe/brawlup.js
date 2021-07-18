@@ -36,6 +36,7 @@ class Client {
   
   async getPlayer(tag) {
     if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
+    if (typeof tag !== "string") throw new moduleError(`You didn't specified a valid type of player tag!`)
     return new Player(await this.req.getPlayer(tag))
   }
   
@@ -49,6 +50,8 @@ class Client {
   async getBattleLog(tag, index) {
     if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
     if (!index) throw new moduleError(`You didn't specified a battle log match index, which is required for this method!`)
+    if (typeof tag !== "string") throw new moduleError(`You didn't specified a valid type of player tag!`)
+    if (typeof index !== "number") throw new moduleError(`You didn't specified a valid type of battle log match index!`)
     return new BattleLog(await this.req.getBattleLog(tag), index)
   }
   
@@ -66,6 +69,10 @@ class Client {
     if (!options.country) throw new moduleError(`You didn't specified a country, which is required for this method!`)
     if (!options.type) throw new moduleError(`You didn't specified a type, which is required for this method!`)
     
+    if (typeof options !== "object") throw new moduleError(`You didn't specified a valid type of RankingOptions!`)
+    if (typeof options.country !== "string") throw new moduleError(`You didn't specified a valid type of country!`)
+    if (typeof options.type !== "string") throw new moduleError(`You didn't specified a valid type of type!`)
+    
     options.country === options.country.toLowerCase()
     options.type === options.type.toLowerCase()
     
@@ -74,6 +81,7 @@ class Client {
     if (options.type === 'brawlers' && !options.brawler) throw new moduleError(`You didn't specified an in-game brawler id, which is required for this method!`)
     
     if (options.type === 'brawlers' && options.brawler) {
+    if (typeof options.brawler !== "number") throw new moduleError(`You didn't specified a valid type of brawler!`)
     return new Ranking(await this.req.getBrawlersRankings(options.country, options.brawler))
     } else {
     return new Ranking(await this.req.getRankings(options.country, options.type))
