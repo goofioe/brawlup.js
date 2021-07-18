@@ -15,6 +15,7 @@ class Brawlers {
   
   findBrawler(brawler) {
   if (!brawler) throw new moduleError(`You didn't specified a brawler, which is required for this method!`)
+  if (typeof brawler !== "number" || typeof brawler !== "string") throw new moduleError(`You didn't specified a valid type of brawler!`)
  
   if (!isNaN(brawler)) {
   let b = this.all.filter(x => x.id == brawler)
