@@ -69,6 +69,8 @@ class Client {
     options.country === options.country.toLowerCase()
     options.type === options.type.toLowerCase()
     
+    if (options.type !== 'players' && options.type !== 'clubs' && options.type !== 'brawlers') throw new moduleError(`Invalid rankings type! Look at the docs for more info: https://brawlup.js.org/js/typedef/rankingsoptions`)
+    
     if (options.type === 'brawlers' && !options.brawler) throw new moduleError(`You didn't specified an in-game brawler id, which is required for this method!`)
     
     if (options.type === 'brawlers' && options.brawler) {
