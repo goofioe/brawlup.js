@@ -190,23 +190,22 @@ function specialLevels(theNumber) {
   if (theNumber === 2) return { level: "Hard", id: theNumber, insane: false, levelsLeft: 21-theNumber }
   if (theNumber === 3) return { level: "Expert", id: theNumber, insane: false, levelsLeft: 21-theNumber }
   if (theNumber === 4) return { level: "Master", id: theNumber, insane: false, levelsLeft: 21-theNumber }
-  if (theNumber === 5) return { level: "Insane", id: theNumber, insane: false, levelsLeft: 21-theNumber }
-  if (theNumber === 6) return { level: "Insane", id: theNumber, insane: 0, levelsLeft: 21-theNumber }
-  if (theNumber === 7) return { level: "Insane II", id: theNumber, insane: 2, levelsLeft: 21-theNumber }
-  if (theNumber === 8) return { level: "Insane III", id: theNumber, insane: 3, levelsLeft: 21-theNumber }
-  if (theNumber === 9) return { level: "Insane IV", id: theNumber, insane: 4, levelsLeft: 21-theNumber }
-  if (theNumber === 10) return { level: "Insane V", id: theNumber, insane: 5, levelsLeft: 21-theNumber }
-  if (theNumber === 11) return { level: "Insane VI", id: theNumber, insane: 6, levelsLeft: 21-theNumber }
-  if (theNumber === 12) return { level: "Insane VII", id: theNumber, insane: 7, levelsLeft: 21-theNumber }
-  if (theNumber === 13) return { level: "Insane VIII", id: theNumber, insane: 8, levelsLeft: 21-theNumber }
-  if (theNumber === 14) return { level: "Insane IX", id: theNumber, insane: 9, levelsLeft: 21-theNumber }
-  if (theNumber === 15) return { level: "Insane X", id: theNumber, insane: 10, levelsLeft: 21-theNumber }
-  if (theNumber === 16) return { level: "Insane XI", id: theNumber, insane: 11, levelsLeft: 21-theNumber }
-  if (theNumber === 17) return { level: "Insane XII", id: theNumber, insane: 12, levelsLeft: 21-theNumber }
-  if (theNumber === 18) return { level: "Insane XIII", id: theNumber, insane: 13, levelsLeft: 21-theNumber }
-  if (theNumber === 19) return { level: "Insane XIV", id: theNumber, insane: 14, levelsLeft: 21-theNumber }
-  if (theNumber === 20) return { level: "Insane XV", id: theNumber, insane: 15, levelsLeft: 21-theNumber }
-  if (theNumber === 21) return { level: "Insane XVI", id: theNumber, insane: 16, levelsLeft: 21-theNumber }
+  if (theNumber === 5) return { level: "Insane", id: theNumber, insane: 1, levelsLeft: 21-theNumber }
+  if (theNumber === 6) return { level: "Insane II", id: theNumber, insane: 2, levelsLeft: 21-theNumber }
+  if (theNumber === 7) return { level: "Insane III", id: theNumber, insane: 3, levelsLeft: 21-theNumber }
+  if (theNumber === 8) return { level: "Insane IV", id: theNumber, insane: 4, levelsLeft: 21-theNumber }
+  if (theNumber === 9) return { level: "Insane V", id: theNumber, insane: 5, levelsLeft: 21-theNumber }
+  if (theNumber === 10) return { level: "Insane VI", id: theNumber, insane: 6, levelsLeft: 21-theNumber }
+  if (theNumber === 11) return { level: "Insane VII", id: theNumber, insane: 7, levelsLeft: 21-theNumber }
+  if (theNumber === 12) return { level: "Insane VIII", id: theNumber, insane: 8, levelsLeft: 21-theNumber }
+  if (theNumber === 13) return { level: "Insane IX", id: theNumber, insane: 9, levelsLeft: 21-theNumber }
+  if (theNumber === 14) return { level: "Insane X", id: theNumber, insane: 10, levelsLeft: 21-theNumber }
+  if (theNumber === 15) return { level: "Insane XI", id: theNumber, insane: 11, levelsLeft: 21-theNumber }
+  if (theNumber === 16) return { level: "Insane XII", id: theNumber, insane: 12, levelsLeft: 21-theNumber }
+  if (theNumber === 17) return { level: "Insane XIII", id: theNumber, insane: 13, levelsLeft: 21-theNumber }
+  if (theNumber === 18) return { level: "Insane XIV", id: theNumber, insane: 14, levelsLeft: 21-theNumber }
+  if (theNumber === 19) return { level: "Insane XV", id: theNumber, insane: 15, levelsLeft: 21-theNumber }
+  if (theNumber === 20) return { level: "Insane XVI", id: theNumber, insane: 16, levelsLeft: 21-theNumber }
   
   return { level: null, id: theNumber, insane: false, levelsLeft: null }
 }
