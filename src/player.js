@@ -77,7 +77,7 @@ class Player {
    */
   
   sortBrawlers(options) {
-   if (typeof(options) === 'string') options = { sortBy: options }
+   if (typeof options === 'string') options = { sortBy: options }
    if (!options.sortBy) throw new moduleError(`You didn't specified the sortBy option, which is required for this method! ( Ex: player.sortBrawlers({sortBy: 'rank'}) )`) 
    
    let sortBy = options.sortBytoLowerCase()
