@@ -36,6 +36,7 @@ class Player {
   
   findBrawler(brawler) {
   if (!brawler) throw new moduleError(`You didn't specified a brawler, which is required for this method!`)
+  if (typeof brawler !== "string" && typeof brawler !== "number") throw new moduleError(`You didn't specified a valid type of brawler!`)
  
   if (!isNaN(brawler)) {
   let b = this.brawlers.filter(x => x.id == brawler)
@@ -56,6 +57,7 @@ class Player {
   
   async getBattleLog(index) {
   if (!index) throw new moduleError(`You didn't specified a battle log match index, which is required for this method!`)
+  if (typeof index !== "number") throw new moduleError(`You didn't specified a valid type of battle log match index!`)
   return await Client.getBattleLog(this.tag, index)
   }
   
