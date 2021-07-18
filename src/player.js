@@ -185,7 +185,7 @@ function seasonTrophies(player) {
 
 function specialLevels(theNumber) {
 
-  if (theNumber === 0 || theNumber === null || theNumber === undefined) return { level: null, id: theNumber, insane: false, otherInsane: false, levelsLeft: null }
+  if (theNumber === 0) return { level: "None", id: theNumber, insane: false, otherInsane: false, levelsLeft: 21-theNumber }
   if (theNumber === 1) return { level: "Normal", id: theNumber, insane: false, otherInsane: false, levelsLeft: 20-theNumber }
   if (theNumber === 2) return { level: "Hard", id: theNumber, insane: false, otherInsane: false, levelsLeft: 20-theNumber }
   if (theNumber === 3) return { level: "Expert", id: theNumber, insane: false, otherInsane: false, levelsLeft: 20-theNumber }
