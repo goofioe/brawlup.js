@@ -33,6 +33,7 @@ class Club {
 
   getMemberRole(tag) {
     if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
+    if (typeof tag !== "string") throw new moduleError(`You didn't specified a valid type of player tag!`)
     return this.members.filter(m => m.tag === tag) ? this.members.filter(m => m.tag === tag).map(m => m.role).join("\n") : null
   }
 
@@ -44,6 +45,7 @@ class Club {
 
   async playerCanJoin(tag) {
     if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
+    if (typeof tag !== "string") throw new moduleError(`You didn't specified a valid type of player tag!`)
     let x = this.members.map(x => x.tag)
     if (x.includes(tag)) return true
     await Client.getPlayer(tag).then(p => {
