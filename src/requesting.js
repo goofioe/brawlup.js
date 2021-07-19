@@ -93,8 +93,9 @@ class requesting {
     return await this.requestBrawlify(`events`)
   }
   
-  async getAllRecords() {
-    return await this.requestBrawlify(`records`)
+  async getBrawlerRecords(brawlerID) {
+    if (!brawlerID) throw new moduleError(`You didn't specified an in-game brawler id, which is required for this method!`)
+    return { records: await this.requestBrawlify(`records`)[brawlerID], brawler: brawlerID }
   }
 }
 
