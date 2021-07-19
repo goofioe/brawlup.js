@@ -6,7 +6,15 @@ const Requesting = require('./requesting')
 class Brawlers {
   constructor (data, client) {
     
-    if (typeof data === Client) new Requesting(client).getBrawlers()
+    let dataa
+    
+  if (tag.token !== undefined) {
+  ;(async() => {
+  dataa = await new Requesting(client).getBrawlers()
+  })()
+  } else {
+    dataa = data
+  }
     
     this.all = data['items']
     this.count = this.all.length
