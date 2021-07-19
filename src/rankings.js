@@ -8,15 +8,35 @@ class Rankings {
     }
 
     /**
-     * @param {String} [tag] Player tag
-     * @returns {boolean}
+     * @description Is this player/club ranked in this rankings?
+     * @param {String} [tag] Player tag/Club tag
+     * @returns {Boolean}
      */
 
     isRanked(tag) {
-        if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
-        if (typeof tag !== "string") throw new moduleError(`You didn't specified a valid type of player tag!`)
+        if (!tag) throw new moduleError(`You didn't specified an in-game player/club tag, which is required for this method!`)
+        if (typeof tag !== "string") throw new moduleError(`You didn't specified a valid type of player/club tag!`)
+        
+        tag = tag.toUpperCase()
+        if (!tag.startsWith('#')) tag = "#" + tag
+        
         return this.ranks.map(r => r.tag).includes(tag)
     }
+    
+    /**
+     * @description Finds the ranked player/club.
+     * @param {String} [pctag] Player tag/Club tag
+     * @returns {Boolean}
+     */
+
+    findRanked(pctag) {
+        if (!pctag) throw new moduleError(`You didn't specified an in-game player/club tag, which is required for this method!`)
+        if (typeof pctag !== "string") throw new moduleError(`You didn't specified a valid type of player/club tag!`)
+        
+        pctag = pctag.toUpperCase()
+        if (!pctag.startsWith('#')) pctag = "#" + pctag
+            
+        return this.ranks.find( ({ tag }) => tag === pctag )) ? this.ranks.find( ({ tag }) => tag === pctag )) : null
 }
 
 module.exports = Rankings
