@@ -1,4 +1,4 @@
-const fetch = require('node-fetch').default
+const fetch = require('node-fetch')
 
 const Requesting = require('./requesting')
 const Club = require('./club')
@@ -42,7 +42,7 @@ class Client {
   }
   
   async loginWithEmail(email, password) {
-    const res = await this.req.request(this.req.dev.login(), {
+    const res = await fetch(this.req.dev.login, {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email, password
