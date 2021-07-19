@@ -2,7 +2,10 @@ const Client = require('./client')
 const moduleError = require('./moduleError')
 
 class Club {
-  constructor(data) {
+  constructor(tag, client) {
+    
+    if (typeof tag === 'string') new Requesting(client).getClub(tag)
+    
     this.tag = data.tag
     this.name = data.name
     this.type = data.type
