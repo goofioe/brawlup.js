@@ -1,7 +1,10 @@
 const moment = require('moment')
 
 class BattleLog {
-  constructor(data, index) {
+  constructor(tag, index, client) {
+    
+  if (typeof tag === 'string') new Requesting(client).getBattleLog(tag)
+  
   this.all = ourArray(data)
   this.index = index ? index : 1
   this.object = ourArray(data)[this.index]
