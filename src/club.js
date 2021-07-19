@@ -1,6 +1,8 @@
 const Client = require('./client')
 const moduleError = require('./moduleError')
 
+const Requesting = require('./requesting')
+
 class Club {
   constructor(tag, client) {
     
