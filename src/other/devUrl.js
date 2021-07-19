@@ -2,23 +2,23 @@ const bsApi = 'developer.brawlstars.com'
 
 const devUrl = {
   
-  portal() {
+  get portal() {
     return `https://${bsApi}/`
   },
 
-  login() {
+  get login() {
     return `https://${bsApi}/api/login`
   },
 
-  createKey() {
+  get createKey() {
     return `https://${bsApi}/api/apikey/create`
   },
 
-  revokeKey() {
+  get revokeKey() {
     return `https://${bsApi}/api/apikey/revoke`
   },
 
-  keyList() {
+  get keyList() {
     return `https://${bsApi}/api/apikey/list`
   }
 }
