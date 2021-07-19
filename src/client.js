@@ -16,16 +16,25 @@ class Client {
 
   /**
   * @description Your Brawl Stars client setup.
-  * @param {String} [token] Your Brawl Stars API access token.
   * @param {Object} [options] Client options.
-  * @param {Boolean} [options.sendWarnings] Should the module send warnings like updates?
   */
 
-  constructor(token) {
-    if (!token) throw new moduleError(`You didn't provided a Brawl Stars API token, which is required for this module.`)
-
-    this.token = token
+  constructor(options) {
+    this.options = options ? options : null
     this.req = new Requesting(this)
+  }
+  
+  async loginWithToken(token) {
+    if (!token) throw new moduleError(`You didn't specified a Brawl Stars access token, which is required for this method!`)
+    if (typeof token !== "string") throw new moduleError(`You didn't specified a valid type of Brawl Stars access token!`)
+    
+    this.token = token
+    
+    if (this.options && this.options.loginMessages && this.options.loginMessage === true) {
+     return console.log(`[BsClientLogin] Successfully logged into the Brawl Stars API!`)
+    }
+    
+    return true
   }
 
   /**
