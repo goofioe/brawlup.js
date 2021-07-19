@@ -1,6 +1,13 @@
+const config = {
+ "bsApiLink": 'api.brawlstars.com',
+ "brwlfyLink": 'api.brawlapi.com',
+ "bsApiVersion": 'v1',
+ "brwlfyVersion": 'v1'
+}
+
 const fetch = require('node-fetch')
-const BSApiUrl = 'https://api.brawlstars.com/v1/'
-const BrawlifyApiUrl = 'https://api.brawlapi.com/v1/'
+const BSApiUrl = `https://${config.bsApiLink}/${config.bsApiVersion}/`
+const BrawlifyApiUrl = `https://${config.brwlfyLink}/${config.brwlfyVersion}/`
 
 const apiError = require('./apiError')
 const moduleError = require('./moduleError')
@@ -8,6 +15,7 @@ const moduleError = require('./moduleError')
 class requesting {
   constructor(client) {
     this.client = client
+    this.dev = 
   }
   
  headers() {
