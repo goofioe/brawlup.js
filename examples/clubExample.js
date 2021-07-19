@@ -3,7 +3,7 @@ const bsClient = new bs.Client('BrawlStarsAccessToken')
 
 ;(async() => {
  
- //Get the player from the client.
+ //Get the club from the client.
  const club = await bsClient.getClub('#LQL')
  
  //Expected: Tribe Gaming ( #LQL )
