@@ -36,7 +36,8 @@ class Rankings {
         pctag = pctag.toUpperCase()
         if (!pctag.startsWith('#')) pctag = "#" + pctag
             
-        return this.ranks.find( ({ tag }) => tag === pctag )) ? this.ranks.find( ({ tag }) => tag === pctag )) : null
+        return this.ranks.find( ({ tag }) => tag === pctag ) ? this.ranks.find( ({ tag }) => tag === pctag ) : null
+}
 }
 
 module.exports = Rankings
