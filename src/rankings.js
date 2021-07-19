@@ -3,10 +3,7 @@ const Client = require('./client')
 const Requesting = require('./requesting')
 
 class Rankings {
-    constructor(data, client) {
-        
-        if (typeof data === Client) new Requesting(client).getRankings()
-        
+    constructor(data) {
         this.country = data.country
         this.type = data.type
         this.brawler = data.brawler ? data.brawler : null
