@@ -6,7 +6,15 @@ const Requesting = require('./requesting')
 class Club {
   constructor(tag, client) {
     
-    if (typeof tag === 'string') new Requesting(client).getClub(tag)
+  let data
+    
+  if (typeof tag === 'string') {
+  ;(async() => {
+  data = await new Requesting(client).getClub(tag)
+  })()
+  } else {
+    data = tag
+  }
     
     this.tag = data.tag
     this.name = data.name
