@@ -1,8 +1,8 @@
 const config = {
- "bsApiLink": 'api.brawlstars.com',
- "brwlfyLink": 'api.brawlapi.com',
- "bsApiVersion": 'v1',
- "brwlfyVersion": 'v1'
+ bsApiLink: 'api.brawlstars.com',
+ brwlfyLink: 'api.brawlapi.com',
+ bsApiVersion: 'v1',
+ brwlfyVersion: 'v1'
 }
 
 const fetch = require('node-fetch')
