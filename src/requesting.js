@@ -15,7 +15,7 @@ const moduleError = require('./moduleError')
 class requesting {
   constructor(client) {
     this.client = client
-    this.dev = 
+    this.dev = require('./other/devUrl')
   }
   
  headers() {
