@@ -8,7 +8,7 @@ const PowerLeagueMaps = require('./powerLeagueMaps')
 const Map = require('./map')
 const Events = require('./events')
 const Ranking = require('./rankings')
-const AllRecords = require('./allRecords')
+const BrawlerRecords = require('./brawlerRecords')
 
 const moduleError = require('./moduleError')
 
@@ -174,15 +174,16 @@ class Client {
     if (winrate > 52 && winrate < 65) return { rating: { result: "Good", id: 3 }, winRate: winrate }
     if (winrate > 65 && winrate < 75) return { rating: { result: "Very Good", id: 3 }, winRate: winrate }
     if (winrate > 75) return { rating: { result: "Godly", id: 4 }, winRate: winrate }
-   }
+  }
   
   /**
-  * @description Gets all the brawler records from BrawlAPI.
+  * @description Gets a brawler's records from BrawlAPI.
+  * @param {Number} [brawlerID] A brawler id in Brawl Stars.
   * @returns {Object} Brawler records object.
   */
   
-   async getAllRecords() {
-    return new AllRecords(await this.req.getAllRecords())
+   async getBrawlerRecords(brawlerID) {
+    return new BrawlerRecords(await this.req.getBrawlerRecords(brawlerID))
    }
 }
 
