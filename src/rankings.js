@@ -1,7 +1,8 @@
 class Rankings {
     constructor(data) {
         this.country = data.country
-        this.type = data.type   
+        this.type = data.type
+        this.brawler = data.brawler
         this.ranks = data.ranks["items"]
         this.rankCount = data.ranks["items"].length
     }
