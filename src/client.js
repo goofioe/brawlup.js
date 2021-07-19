@@ -41,7 +41,7 @@ class Client {
     return true
   }
   
-  async loginWithEmail(email, password) {
+  /* async loginWithEmail(email, password) {
     const res = await fetch(this.req.dev.login, {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -50,7 +50,7 @@ class Client {
     })
     const body = await res.json()
     this.dev = new devsAccount(this, body)
-  }
+  } */
 
   /**
   * @description Gets a player from the API.
