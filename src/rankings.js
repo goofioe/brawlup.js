@@ -26,7 +26,7 @@ class Rankings {
     /**
      * @description Finds the ranked player/club.
      * @param {String} [pctag] Player tag/Club tag
-     * @returns {Boolean}
+     * @returns {Object} Rank object (if they are ranked) | null (if they are not ranked)
      */
 
     findRanked(pctag) {
