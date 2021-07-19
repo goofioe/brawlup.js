@@ -6,8 +6,8 @@ const bsClient = new bs.Client('BrawlStarsAccessToken')
  //Get the player from the client.
  const player = await bsClient.getPlayer('#2YCC2P8U8')
  
- //Expected: Alpu TV (#2YCC2P8U8)
- console.log(`${player.name} (${player.tag})`)
+ //Expected: Alpu TV ( #2YCC2P8U8 )
+ console.log(`${player.name} ( ${player.tag} )`)
 })()
 
 /* 
