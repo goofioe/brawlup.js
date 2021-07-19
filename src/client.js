@@ -12,6 +12,8 @@ const BrawlerRecords = require('./brawlerRecords')
 
 const moduleError = require('./moduleError')
 
+const devsAccount = require('./devsAccount')
+
 class Client {
 
   /**
@@ -30,11 +32,22 @@ class Client {
     
     this.token = token
     
-    if (this.options && this.options.loginMessages && this.options.loginMessage === true) {
+    if (this.options && this.options.loginMessages && this.options.loginMessages === true) {
      return console.log(`[BsClientLogin] Successfully logged into the Brawl Stars API!`)
     }
     
     return true
+  }
+  
+  async loginWithEmail(email, password) {
+    const res = await this.req.request(this.req.dev.login, {
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email, password
+      })
+    })
+    const body = await res.json()
+    this.dev = new devsAccount(this, body)
   }
 
   /**
