@@ -1,6 +1,8 @@
 const moduleError = require('./moduleError')
 const Client = require('./client')
 
+const Requesting = require('./requesting')
+
 class Brawlers {
   constructor (data, client) {
     
