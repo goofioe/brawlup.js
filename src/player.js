@@ -1,8 +1,13 @@
 const moduleError = require('./moduleError')
 const Client = require('./client.js')
 
+const Requesting = require('./requesting')
+
 class Player {
-  constructor(data) {
+  constructor(tag, client) {
+  
+  if (typeof tag === 'string') new Requesting(client).getPlayer(tag)
+  
   this.tag = data.tag
   this.name = data.name
   this.icon = data.icon.id
