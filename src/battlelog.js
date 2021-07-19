@@ -1,5 +1,7 @@
 const moment = require('moment')
 
+const Requesting = require('./requesting')
+
 class BattleLog {
   constructor(tag, index, client) {
     
