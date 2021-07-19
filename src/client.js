@@ -1,4 +1,4 @@
-const fetch = require('node-fetch')
+const fetch = require('node-fetch').default
 
 const Requesting = require('./requesting')
 const Club = require('./club')
