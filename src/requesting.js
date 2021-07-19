@@ -12,6 +12,8 @@ const BrawlifyApiUrl = `https://${config.brwlfyLink}/${config.brwlfyVersion}/`
 const apiError = require('./apiError')
 const moduleError = require('./moduleError')
 
+const tagRslvr = require('./other/tagResolver')
+
 class requesting {
   constructor(client) {
     this.client = client
@@ -41,26 +43,26 @@ class requesting {
 
   async getPlayer(tag) {
     if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
-    tag = tag.toUpperCase()
-    return await this.request(`players/%23${tag.replace("#", "")}`)
+    tag = tagRslvr.toFetch(tag)
+    return await this.request(`players/${tag}`)
   }
 
   async getBattleLog(tag) {
     if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
-    tag = tag.toUpperCase()
-    return await this.request(`players/%23${tag.replace("#", "")}/battlelog`)
+    tag = tagRslvr.toFetch(tag)
+    return await this.request(`players/${tag}/battlelog`)
   }
 
   async getClub(tag) {
     if (!tag) throw new moduleError(`You didn't specified an in-game club tag, which is required for this method!`)
-    tag = tag.toUpperCase()
-    return await this.request(`clubs/%23${tag.replace("#", "")}`)
+    tag = tagRslvr.toFetch(tag)
+    return await this.request(`clubs/${tag}`)
   }
 
   async getClubMembers(tag) {
     if (!tag) throw new moduleError(`You didn't specified an in-game club tag, which is required for this method!`)
-    tag = tag.toUpperCase()
-    return await this.request(`clubs/%23${tag.replace("#", "")}/members`)
+    tag = tagRslvr.toFetch(tag)
+    return await this.request(`clubs/${tag}/members`)
   }
 
   async getBrawler(brawlerID) {
