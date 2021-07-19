@@ -1,7 +1,11 @@
 const moduleError = require('./moduleError')
+const Client = require('./client')
 
 class Brawlers {
-  constructor (data) {
+  constructor (data, client) {
+    
+    if (typeof data === Client) new Requesting(client).getBrawlers()
+    
     this.all = data['items']
     this.count = this.all.length
     this.gadgetCount = this.all.data.map(value => value.gadgets).flat().length
