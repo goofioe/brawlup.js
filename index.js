@@ -1,4 +1,4 @@
-const pkgjson = require('../package.json')
+const pkgjson = require('./package.json')
 
 /* Define every single class under this! */
 
