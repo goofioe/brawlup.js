@@ -25,7 +25,7 @@ class Client {
   }
   
   async loginWithToken(token) {
-    if (!token) throw new moduleError(`You didn't specified a Brawl Stars access token, which is required for this method!`)
+    if (!token) throw new moduleError(`You didn't specified a Brawl Stars access token, which is required for this module!`)
     if (typeof token !== "string") throw new moduleError(`You didn't specified a valid type of Brawl Stars access token!`)
     
     this.token = token
