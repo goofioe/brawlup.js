@@ -11,7 +11,6 @@ const bsClient = new bs.Client('BrawlStarsAccessToken')
 })()
 
 /* 
-
                 More Properties/Methods?
 See the docs here: https://brawlup.js.org/js/classes/player
 
