@@ -17,7 +17,6 @@ const tagRslvr = require('./other/tagResolver')
 class requesting {
   constructor(client) {
     this.client = client
-    this.dev = require('./other/devUrl')
   }
   
  headers() {

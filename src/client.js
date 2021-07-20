@@ -1,8 +1,13 @@
 const moduleError = require('./moduleError')
+const BaseClient = require('./baseClient')
 
-class Client {
+const Requesting = require('./requesting')
 
-constructor(options) {
+class Client extends BaseClient {
+
+constructor(token, options) {
+
+  super()
     
     /*
     Constructors below
@@ -10,17 +15,20 @@ constructor(options) {
     
     this.options = options ? options : null
     this.req = new Requesting(this)
+
     
+    if (token && typeof token === "string") {
+      this.token = token
+      this.emit('login', this)
+    }
+
     if (this.options) {
       
-    if (this.options.token && typeof this.options.token === "string") {
-      this.token = this.options.token
+      /*
+      Option things here
+      */
       
-      if (this.options.loginMessages && this.options.loginMessages === true) {
-     return console.log(`[BsClientLogin] Successfully logged into the Brawl Stars API!`)
-    }
-   }
-  }
+     }
     
     /*
     Constructors above
@@ -33,7 +41,7 @@ constructor(options) {
     this.records = require('./managers/records')
     this.clubs = require('./managers/club')
     this.brawlers = require('./managers/brawlers')
-    this.maps = require('./managers/map')
+    this.maps = require('./managers/maps')
     this.powerLeagueMaps = require('./managers/powerLeagueMaps')
     this.events = require('./managers/events')
  }
