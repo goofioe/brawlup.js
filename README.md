@@ -4,6 +4,7 @@
     <a href="https://brawlup.js.org"><img src="https://user-images.githubusercontent.com/86495381/126329940-37ba7281-55f8-4ed2-80b3-0ade1057774a.png" width="546" alt="brawlup.js" /></a>
   </p>
   <br />
+</div>
 
 
 Brawlup.js is an API wrapper for [official <img src="https://i.pinimg.com/474x/e8/44/db/e844db91a58d5ab88730e97b60704460.jpg" height="15" alt="Brawl Stars logo" style="border-radius:%50;"> Brawl Stars API](https://developer.brawlstars.com/) and also [<img src="https://cdn.brawlify.com/front/Star.svg" height="17" alt="BrawlAPI logo"> BrawlAPI](https://brawlapi.com/)!
