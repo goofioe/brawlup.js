@@ -1,7 +1,7 @@
 const Brawlers = require('../brawlers')
 const Client = require('../client')
 
-class playerManager extends Map {
+class brawlersManager extends Map {
   /**
    * @description Brawlers class's manager.
    * @param {Client} Brawl Stars client
@@ -44,4 +44,4 @@ class playerManager extends Map {
   
 }
 
-module.exports = brawlerManager
+module.exports = brawlersManager
