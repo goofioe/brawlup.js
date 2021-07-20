@@ -6,9 +6,7 @@ const Requesting = require('./requesting')
 class Client {
 
 constructor(token, options) {
-
-  super()
-    
+  
     /*
     Constructors below
     */
