@@ -3,7 +3,7 @@ const BaseClient = require('./baseClient')
 
 const Requesting = require('./requesting')
 
-class Client extends BaseClient {
+class Client {
 
 constructor(token, options) {
 
