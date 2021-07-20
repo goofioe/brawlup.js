@@ -1,5 +1,4 @@
 const moduleError = require('./moduleError')
-const BaseClient = require('./baseClient')
 
 const Requesting = require('./requesting')
 
