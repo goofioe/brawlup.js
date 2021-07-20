@@ -3,7 +3,7 @@ const Client = require('../client')
 
 class battleLogManager extends Map {
   /**
-   * @description Player class's manager.
+   * @description BattleLog class's manager.
    * @param {Client} Brawl Stars client
    */
   constructor (client) {
@@ -22,7 +22,7 @@ class battleLogManager extends Map {
   async json(tag) {
     if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
     if (typeof tag !== "string") throw new moduleError(`You didn't specified a valid type of player tag!`)
-    return new BattleLog(await this.req.getBattleLog(tag), index)
+    return new BattleLog(await this.req.request(`players/${tag}/battlelog`))
   }
   
   /*
