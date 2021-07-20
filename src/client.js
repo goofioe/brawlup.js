@@ -26,9 +26,9 @@ class Client {
     this.req = new Requesting(this)
   }
   
-  async loginWithToken(token) {
-    if (!token) throw new moduleError(`You didn't specified a Brawl Stars access token, which is required for this module!`)
-    if (typeof token !== "string") throw new moduleError(`You didn't specified a valid type of Brawl Stars access token!`)
+  async login(token) {
+    if (!token) throw new moduleError(`No token is provided, which is required for the module! Get one in https://developer.brawlstars.com/#/account`, `ClientLoginError`)
+    if (typeof token !== "string") throw new moduleError(`Access token must be a String!`, `ClientLoginError`)
     
     this.token = token
     
