@@ -33,6 +33,7 @@
   "homepage": "https://brawlup.js.org/js/stable/#brawlup-js",
   "dependencies": {
     "moment": "^2.29.1",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "chalk": "^4.1.1"
   }
 }
