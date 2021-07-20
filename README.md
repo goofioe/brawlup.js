@@ -29,14 +29,13 @@ and also we used [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb
 
 
 ## Examples
-<img src="https://i.imgur.com/H1uzS3w.png" alt="Example 1" height="400">
 
 ```js
 const bs = require('brawlup.js')
 const bsClient = new bs.Client('Your Brawl Stars API Token')
 
 ;(async() => {
- const player = await bsClient.getPlayer('#2YCC2P8U8')
+ const player = await bsClient.players.get('#2YCC2P8U8')
  console.log(`The player is: ${player.name} | ${player.tag}`)
 })()
 ```
