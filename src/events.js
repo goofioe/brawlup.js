@@ -28,7 +28,7 @@ class Events {
       } else if (status === 2) {
        if (index < this.upcoming.length || index > this.upcoming.length) throw new moduleError(`This number (event index) is too high or too low!`)
        const evnet = this.upcoming[index]
-       const mAp = await Client.getMap(evnet.map.id)
+       const mAp = await Client.maps.find(evnet.map.id)
        return { slot: evnet.slot, startsAt: evnet.startTime, endsAt: evnet.endTime, reward: evnet.reward, map: mAp ? mAp : null }
       } else {
        throw new moduleError(`You didn't specified a correct event status! (upcoming: 1 | active: 2)`)
