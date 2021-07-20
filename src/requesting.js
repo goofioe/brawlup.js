@@ -30,6 +30,8 @@ class requesting {
   }
   
  async request(endpoint) {
+    if (!this.client || !this.client.token || !this.client.token === null || typeof this.client.token !== "string") throw new moduleError(`An access token is NOT provided to this client.`, `ClientLoginError`)
+  
     const res = await fetch(BSApiUrl + endpoint, {
       headers: this.headers()
     })
