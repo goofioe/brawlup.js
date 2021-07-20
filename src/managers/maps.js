@@ -1,5 +1,5 @@
 const AllMaps = require('../allMaps')
-const Maap = require('../Map')
+const Maap = require('../map')
 const Client = require('../client')
 
 class mapsManager extends Map {
@@ -20,7 +20,7 @@ class mapsManager extends Map {
   */
   
   async json() {
-    return await this.req.getBrawlers()
+    return await this.req.getAllMaps()
   }
   
   /**
