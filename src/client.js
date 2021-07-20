@@ -16,12 +16,12 @@ const moduleError = require('./moduleError')
 
 class Client {
 
-  /**
-  * @description Your Brawl Stars client setup.
-  * @param {Object} [options] Client options.
-  */
-
-  constructor(options) {
+constructor(options) {
+    
+    /*
+    Constructors below
+    */
+    
     this.options = options ? options : null
     this.req = new Requesting(this)
     
@@ -35,6 +35,11 @@ class Client {
     }
    }
   }
+    
+    /*
+    Constructors above
+    Managers below
+    */
  }
   
   async login(token) {
