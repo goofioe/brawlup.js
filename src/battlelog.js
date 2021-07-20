@@ -3,15 +3,7 @@ const moment = require('moment')
 const Requesting = require('./requesting')
 
 class BattleLog {
-  constructor(tag, index, client) {
-    
-  if (typeof tag === 'string') {
-    ;(async() => {
-    data = await new Requesting(client).getBattleLog(tag)
-  })()
-  } else {
-    data = tag
-  }
+  constructor(data, index) {
   
   this.all = ourArray(data)
   this.index = index ? index : 1
