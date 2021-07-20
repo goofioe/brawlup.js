@@ -26,7 +26,7 @@ class Events {
        const mAp = await Client.getMap(evnet.map.id)
        return { slot: evnet.slot, startsAt: evnet.startTime, endsAt: evnet.endTime, reward: evnet.reward, map: mAp ? mAp : null }
       } else if (status === 2) {
-       if (index < this.upcoming.length || index > this.upcomin.length) throw new moduleError(`This number (event index) is too high or too low!`)
+       if (index < this.upcoming.length || index > this.upcoming.length) throw new moduleError(`This number (event index) is too high or too low!`)
        const evnet = this.upcoming[index]
        const mAp = await Client.getMap(evnet.map.id)
        return { slot: evnet.slot, startsAt: evnet.startTime, endsAt: evnet.endTime, reward: evnet.reward, map: mAp ? mAp : null }
