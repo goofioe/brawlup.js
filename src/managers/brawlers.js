@@ -1,9 +1,9 @@
-const Player = require('../player')
+const Brawlers = require('../brawlers')
 const Client = require('../client')
 
 class playerManager extends Map {
   /**
-   * @description Player class's manager.
+   * @description Brawlers class's manager.
    * @param {Client} Brawl Stars client
    */
   constructor (client) {
@@ -15,26 +15,11 @@ class playerManager extends Map {
  
   /*
   * @description Returns all the values that was fetched in a json format.
-  * @param {String} [tag] A player tag in Brawl Stars.
   * @returns {Object} Json object.
   */
   
-  async json(tag) {
-    if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
-    if (typeof tag !== "string") throw new moduleError(`You didn't specified a valid type of player tag!`)
-    return await this.req.getPlayer(tag)
-  }
-  
-  /*
-  * @description Make this value a class.
-  * @param {String} [tag] A player tag in Brawl Stars.
-  * @returns {Player}
-  */
-  
-  async get(tag) {
-    if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
-    if (typeof tag !== "string") throw new moduleError(`You didn't specified a valid type of player tag!`)
-    return new Player(await this.json(tag))
+  async json() {
+    return await this.req.getBrawlers()
   }
   
   /**
@@ -48,10 +33,10 @@ class playerManager extends Map {
   if (typeof brawler !== "number" || typeof brawler !== "string") throw new moduleError(`You didn't specified a valid type of brawler!`)
  
   if (!isNaN(brawler)) {
-  let b = this.all.filter(x => x.id == brawler)
+  let b = this.json().filter(x => x.id == brawler)
   return b ? b : false
   } else {
-  let b = this.all.filter(x => x.name == brawler.toUpperCase())
+  let b = this.json().filter(x => x.name == brawler.toUpperCase())
   return b ? b : false
   } 
   }
