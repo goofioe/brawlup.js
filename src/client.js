@@ -1,17 +1,3 @@
-const fetch = require('node-fetch').default
-
-const Requesting = require('./requesting')
-const Club = require('./club')
-const Player = require('./player')
-const BattleLog = require('./battlelog')
-const Brawlers = require('./brawlers')
-const AllMaps = require('./allMaps')
-const PowerLeagueMaps = require('./powerLeagueMaps')
-const Map = require('./map')
-const Events = require('./events')
-const Ranking = require('./rankings')
-const BrawlerRecords = require('./brawlerRecords')
-
 const moduleError = require('./moduleError')
 
 class Client {
@@ -44,6 +30,7 @@ constructor(options) {
     this.players = require('./managers/player')
     this.battleLogs = require('./managers/battlelog')
     this.rankings = require('./managers/rankings')
+    this.records = require('./managers/records')
     this.clubs = require('./managers/club')
     this.brawlers = require('./managers/brawlers')
     this.maps = require('./managers/map')
