@@ -45,7 +45,7 @@ class eventsManager extends Map {
       if (status === 1) {
       if (index < 0 || index > this.active.length) throw new moduleError(`This number (event index) is too high or too low!`)
        const evnet = this.active[index]
-       const mAp = await Client.getMap(evnet.map.id)
+       const mAp = await this..getMap(evnet.map.id)
        return { slot: evnet.slot, startsAt: evnet.startTime, endsAt: evnet.endTime, reward: evnet.reward, map: mAp ? mAp : null }
       } else if (status === 2) {
        if (index < this.upcoming.length || index > this.upcoming.length) throw new moduleError(`This number (event index) is too high or too low!`)
