@@ -4,17 +4,7 @@ const moduleError = require('./moduleError')
 const Requesting = require('./requesting')
 
 class Club {
-  constructor(tag, client) {
-    
-  let data
-    
-  if (typeof tag === 'string') {
-  ;(async() => {
-  data = await new Requesting(client).getClub(tag)
-  })()
-  } else {
-    data = tag
-  }
+  constructor(data) {
     
     this.tag = data.tag
     this.name = data.name
