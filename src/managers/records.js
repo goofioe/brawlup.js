@@ -19,7 +19,7 @@ class recordsManager extends Map {
   */
   
   async json() {
-    return await this.req.getBrawlerRecords()
+    return await this.req.requestBrawlify(`records`)
   }
   
  /**
