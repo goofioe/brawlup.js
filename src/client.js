@@ -44,7 +44,7 @@ constructor(options) {
     this.players = require('./managers/player')
     this.battleLogs = require('./managers/battlelog')
     this.rankings = require('./managers/rankings')
-    this.club = require('./managers/club')
+    this.clubs = require('./managers/club')
     this.brawlers = require('./managers/brawlers')
     this.maps = require('./managers/map')
     this.powerLeagueMaps = require('./managers/powerLeagueMaps')
