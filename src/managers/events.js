@@ -4,7 +4,7 @@ const Client = require('../client')
 
 class eventsManager extends Map {
   /**
-   * @description Maps class's manager.
+   * @description Events class's manager.
    * @param {Client} Brawl Stars client
    */
   constructor (client) {
