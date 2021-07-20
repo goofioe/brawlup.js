@@ -3,6 +3,7 @@ const pkgjson = require('./package.json')
 /* Define every single class under this! */
 
 const Client = require('./src/client.js')
+const CheckTeam = require('./src/checkTeam.js')
 const Player = require('./src/player.js')
 const Club = require('./src/club.js')
 const BattleLog = require('./src/battlelog.js')
