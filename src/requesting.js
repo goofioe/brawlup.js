@@ -21,6 +21,8 @@ class requesting {
   }
   
  headers() {
+    if (!this.client || !this.client.token || !this.client.token === null || typeof this.client.token !== "string") throw new moduleError(`An access token is NOT provided to this client.`, `ClientLoginError`)
+    
     return {
       Authorization: `Bearer ${this.client.token}`,
       Accept: 'application/json'
