@@ -4,17 +4,7 @@ const Client = require('./client.js')
 const Requesting = require('./requesting')
 
 class Player {
-  constructor(tag, client) {
-  
-  let data  
-    
-  if (typeof tag === 'string') {
-    ;(async() => {
-    data = await new Requesting(client).getPlayer(tag)
-  })()
-  } else {
-    data = tag
-  }
+  constructor(data) {
   
   this.tag = data.tag
   this.name = data.name
