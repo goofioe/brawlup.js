@@ -14,16 +14,15 @@ const PowerLeagueMaps = require('./src/powerLeagueMaps.js')
 const Map = require('./src/map.js')
 const Events = require('./src/events.js')
 
-const ClientMngr = require('./managers/client.js')
-const PlayerMngr = require('./managers/player.js')
-const ClubMngr = require('./managers/club.js')
-const BattleLogMngr = require('./managers/battlelog.js')
-const BrawlersMngr = require('./managers/brawlers.js')
-const RankingsMngr = require('./managers/rankings.js')
-const MapsMngr = require('./managers/maps.js')
-const PowerLeagueMapsMngr = require('./managers/powerLeagueMaps.js')
-const MapMngr = require('./managers/map.js')
-const EventsMngr = require('./managers/events.js')
+const PlayerMngr = require('./src/managers/player.js')
+const ClubMngr = require('./src/managers/club.js')
+const BattleLogMngr = require('./src/managers/battlelog.js')
+const BrawlersMngr = require('./src/managers/brawlers.js')
+const RankingsMngr = require('./src/managers/rankings.js')
+const MapsMngr = require('./src/managers/maps.js')
+const PowerLeagueMapsMngr = require('./src/managers/powerLeagueMaps.js')
+const MapMngr = require('./src/managers/map.js')
+const EventsMngr = require('./src/managers/events.js')
 
 /* 
 Define every single class above this! 
@@ -49,7 +48,6 @@ module.exports = {
   
   /* Managers */
   
-  ClientMngr,
   PlayerMngr,
   ClubMngr,
   BattleLogMngr,
