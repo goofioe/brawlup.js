@@ -24,10 +24,21 @@ class Client {
   constructor(options) {
     this.options = options ? options : null
     this.req = new Requesting(this)
+    
+    if (this.options) {
+      
+    if (this.options.token && typeof this.options.token === "string") {
+      this.token = this.options.token
+      
+      if (this.options.loginMessages && this.options.loginMessages === true) {
+     return console.log(`[BsClientLogin] Successfully logged into the Brawl Stars API!`)
+    }
+   }
   }
+ }
   
   async login(token) {
-    if (!token) throw new moduleError(`No token is provided, which is required for the module! Get one in https://developer.brawlstars.com/#/account`, `ClientLoginError`)
+    if (!token) throw new moduleError(`No token is provided to the client! Get one in https://developer.brawlstars.com/#/account`, `ClientLoginError`)
     if (typeof token !== "string") throw new moduleError(`Access token must be a String!`, `ClientLoginError`)
     
     this.token = token
