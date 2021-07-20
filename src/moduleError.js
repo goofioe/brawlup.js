@@ -1,10 +1,16 @@
 class moduleError extends Error {
-  constructor (err) {
+  constructor (err, type) {
     super()
     
-    this.name = '❌ brawlup.js Error'
-
+    if (!type) {
+    this.name = 'Brawlup.js Error'
     this.message = `${err}\n🔗 Read the docs for more info: https://brawlup.js.org/js/#welcome`
+    }
+    
+    if (type === 'ClientLoginError') {
+     this.name = type
+     this.message = `${err}`
+    }
   }
 }
 
