@@ -21,7 +21,6 @@ const BrawlersMngr = require('./src/managers/brawlers.js')
 const RankingsMngr = require('./src/managers/rankings.js')
 const MapsMngr = require('./src/managers/maps.js')
 const PowerLeagueMapsMngr = require('./src/managers/powerLeagueMaps.js')
-const MapMngr = require('./src/managers/map.js')
 const EventsMngr = require('./src/managers/events.js')
 
 /* 
@@ -55,7 +54,6 @@ module.exports = {
   RankingsMngr,
   MapsMngr,
   PowerLeagueMapsMngr,
-  MapMngr,
   EventsMngr
 
 }
