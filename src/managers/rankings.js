@@ -4,7 +4,7 @@ const Client = require('../client')
 class rankingsManager extends Map {
   /**
    * @description Rankings class's manager.
-   * @param {Client} Brawl Stars client
+   * @param {Client} [client] Brawl Stars client
    */
   constructor (client) {
   super()
@@ -78,5 +78,6 @@ class rankingsManager extends Map {
     return new Ranking(await this.req.getRankings(options.country, options.type))
     }
   }
-  
+}
+
 module.exports = rankingsManager

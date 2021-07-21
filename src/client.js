@@ -16,7 +16,6 @@ constructor(token, options) {
     
     if (token && typeof token === "string") {
       this.token = token
-      this.emit('login', this)
     }
 
     if (this.options) {
