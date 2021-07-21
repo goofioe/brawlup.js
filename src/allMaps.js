@@ -17,7 +17,7 @@ class AllMaps {
       if (typeof mapName !== "string") throw new moduleError(`You didn't specified a valid type of map name!`)
       const map = this.data.list.find( ({ name }) => name === mapName )
       if (!map) return null;
-      return await Client.maps.find(map.id)
+      return await Client.getMap(map.id)
     }
   }
 
