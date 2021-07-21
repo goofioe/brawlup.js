@@ -52,7 +52,7 @@ class Club {
     if (typeof tag !== "string") throw new moduleError(`You didn't specified a valid type of player tag!`)
     let x = this.members.map(x => x.tag)
     if (x.includes(tag)) return true
-    await Client.players.get(tag).then(p => {
+    await Client.getPlayer(tag).then(p => {
     return p.trophies >= this.requiredTrophies && this.type !== "closed"
     }).catch(e => {
     return moduleError(`${e.message}`)
