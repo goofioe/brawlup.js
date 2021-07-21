@@ -35,7 +35,7 @@ const bs = require('brawlup.js')
 const bsClient = new bs.Client('Your Brawl Stars API Token')
 
 ;(async() => {
- const player = await bsClient.players.get('#2YCC2P8U8')
+ const player = await bsClient.getPlayer('#2YCC2P8U8')
  console.log(`The player is: ${player.name} | ${player.tag}`)
 })()
 ```
