@@ -17,7 +17,7 @@ class PowerLeagueMaps {
         if (typeof mapName !== "string") throw new moduleError(`You didn't specified a valid type of map name!`)
         const mp = this.data.list.find( ({ map }) => map.name === mapName )
         if (!mp) return null;
-        return await Client.maps.find(mp.id)
+        return await Client.getMap(mp.id)
       }
 
 }
