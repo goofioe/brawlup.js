@@ -4,7 +4,7 @@ const Client = require('./client.js')
 const Requesting = require('./requesting')
 
 class Player {
-  constructor(data) {
+  constructor(data, client) {
   
   this.tag = data.tag
   this.name = data.name
@@ -29,6 +29,7 @@ class Player {
   this.club = data.club.tag ? data.club : null
   this.gadgetCount = data.brawlers.map(value => value.gadgets).flat().length
   this.starPowerCount = data.brawlers.map(value => value.starPowers).flat().length
+  this.client = client
 }
   
   /**
@@ -94,7 +95,7 @@ class Player {
   
   
   async missingBrawlers() {
-   return await missingBrawlers(this.brawlers)
+   return await missingBrawlers(this.brawlers, this.client)
   }
   
 }
@@ -217,10 +218,10 @@ function specialLevels(theNumber) {
   return { level: null, id: theNumber, insane: false, levelsLeft: null }
 }
 
-async function missingBrawlers(brawlers) {
+async function missingBrawlers(brawlers, client) {
   
   const arr = []
-  const allBrawlers = await Client.getBrawlers()['items']
+  const allBrawlers = await (await client.getBrawlers()).all
   
   allBrawlers.forEach(ab => {
   let data = brawlers.find( ({name}) => name === ab.name)
