@@ -24,7 +24,6 @@ class Player {
   this.bestRoboRumbleLevel = specialLevels(data.bestRoboRumbleTime)
   this.seasonEnd = { trophies: seasonTrophies(data), starPoints: seasonStarPoints(data) }
   this.brawlers = data.brawlers
-  this.missingBrawlers = data.brawlers
   this.listBrawlers = Array.from(data.brawlers.sort((a, b) => b.trophies - a.trophies).map(b => capitalLetters(b.name)))
   this.brawlerCount = data.brawlers.length
   this.club = data.club.tag ? data.club : null
@@ -93,6 +92,10 @@ class Player {
    if (sortBy === "rank") return this.brawlers.sort((a, b) => b.rank - a.rank)
   }
   
+  
+  async missingBrawlers() {
+   return await missingBrawlers(this.brawlers)
+  }
   
 }
   
