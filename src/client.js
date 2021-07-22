@@ -1,6 +1,16 @@
 const moduleError = require('./moduleError')
 
 const Requesting = require('./requesting')
+const Club = require('./club')
+const Player = require('./player')
+const BattleLog = require('./battlelog')
+const Brawlers = require('./brawlers')
+const AllMaps = require('./allMaps')
+const PowerLeagueMaps = require('./powerLeagueMaps')
+const Map = require('./map')
+const Events = require('./events')
+const Ranking = require('./rankings')
+const BrawlerRecords = require('./brawlerRecords')
 
 class Client {
   
