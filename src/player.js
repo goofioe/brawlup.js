@@ -24,6 +24,7 @@ class Player {
   this.bestRoboRumbleLevel = specialLevels(data.bestRoboRumbleTime)
   this.seasonEnd = { trophies: seasonTrophies(data), starPoints: seasonStarPoints(data) }
   this.brawlers = data.brawlers
+  this.missingBrawlers = data.brawlers
   this.listBrawlers = Array.from(data.brawlers.sort((a, b) => b.trophies - a.trophies).map(b => capitalLetters(b.name)))
   this.brawlerCount = data.brawlers.length
   this.club = data.club.tag ? data.club : null
@@ -211,6 +212,24 @@ function specialLevels(theNumber) {
   if (theNumber === 20) return { level: "Insane XVI", id: theNumber, insane: 16, otherInsane: "XVI", levelsLeft: 20-theNumber }
 
   return { level: null, id: theNumber, insane: false, levelsLeft: null }
+}
+
+async function missingBrawlers(brawlers) {
+  
+  const arr = []
+  const allBrawlers = await Client.getBrawlers()['items']
+  
+  allBrawlers.forEach(ab => {
+  let data = brawlers.find( ({name}) => name === ab.name)
+  if (!data) {
+  return arr.push(ab.name);
+  } else {
+  return;
+  }
+  })
+  
+  return arr
+  
 }
 
 module.exports = Player
