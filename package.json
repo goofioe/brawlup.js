@@ -1,6 +1,6 @@
 {
   "name": "brawlup.js",
-  "version": "1.12.4",
+  "version": "1.12.5",
   "description": "An API wrapper for the official Brawl Stars API.",
   "main": "index.js",
   "directories": {
@@ -26,7 +26,7 @@
       "email": "rekortmenstars@gmail.com"
     }
   ],
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/brawlup/brawlup.js/issues"
   },
