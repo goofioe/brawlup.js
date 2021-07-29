@@ -150,11 +150,7 @@ Declare interfaces below this!
 
 interface ClientOptions {
 
-/**
-There is nothing here.
-A monster eated everything here...
-*/
-
+loginMessages: Boolean
 }
 
 interface PlayerIcon {
