@@ -21,10 +21,6 @@ class Client {
   */
 
 constructor(token, options) {
-  
-    /*
-    Constructors below
-    */
     
     this.options = options ? options : null
     this.req = new Requesting(this)
@@ -41,56 +37,6 @@ constructor(token, options) {
       */
       
      }
-    
-    /*
-    Constructors above
-    Managers below
-    */
-    
-    /**
-     * @deprecated Managers are CURRENTLY deprecated.
-     */
-    this.players = require('./managers/player')
-    
-    /**
-     * @deprecated Managers are CURRENTLY deprecated.
-     */
-    this.battleLogs = require('./managers/battlelog')
-    
-    /**
-     * @deprecated Managers are CURRENTLY deprecated.
-     */
-    this.rankings = require('./managers/rankings')
-    
-    /**
-     * @deprecated Managers are CURRENTLY deprecated.
-     */
-    this.records = require('./managers/records')
-    
-    /**
-     * @deprecated Managers are CURRENTLY deprecated.
-     */
-    this.clubs = require('./managers/club')
-    
-    /**
-     * @deprecated Managers are CURRENTLY deprecated.
-     */
-    this.brawlers = require('./managers/brawlers')
-
-    /**
-     * @deprecated Managers are CURRENTLY deprecated.
-     */
-    this.maps = require('./managers/maps')
-
-    /**
-     * @deprecated Managers are CURRENTLY deprecated.
-     */
-    this.powerLeagueMaps = require('./managers/powerLeagueMaps')
-    
-    /**
-     * @deprecated Managers are CURRENTLY deprecated.
-     */
-    this.events = require('./managers/events')
  }
   
   async login(token) {
