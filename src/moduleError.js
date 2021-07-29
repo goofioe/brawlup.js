@@ -3,7 +3,7 @@ class moduleError extends Error {
     super()
     
     if (!type) {
-    this.name = 'Brawlup.js Error'
+    this.name = 'brawlup.js Error'
     this.message = `${err}\n🔗 Read the docs for more info: https://brawlup.js.org/js/#welcome`
     }
     
