@@ -9,7 +9,7 @@ class Club {
     this.tag = data.tag
     this.name = data.name
     this.type = data.type
-    this.badge = data.badgeId
+    this.badge = { id: data.badgeId, url: `${require('./constants/brawlifyCDN')}/club/${data.badgeId}.png` }
     this.description = data.description ? data.description : null
     this.trophies = data.trophies
     this.requiredTrophies = data.requiredTrophies
