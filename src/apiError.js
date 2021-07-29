@@ -2,7 +2,7 @@ class apiError extends Error {
   constructor (res, body) {
     super()
 
-    this.name = '❌ Brawl Stars API Error'
+    this.name = 'BrawlStarsAPI Error'
     this.res = res
     this.url = res.url
     this.code = res.status
