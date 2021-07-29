@@ -8,7 +8,7 @@ class Player {
   
   this.tag = data.tag
   this.name = data.name
-  this.icon = data.icon.id
+  this.icon = { id: data.icon.id, url: `${require('./constants/brawlifyCDN')}/profile/${data.icon.id}.png` }
   this.nameColor = data.nameColor
   this.hexColor = this.nameColor ? `#${this.nameColor.slice(4)}` : '#ffffff'
   this.trophies = data.trophies
