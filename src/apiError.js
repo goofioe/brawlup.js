@@ -9,7 +9,6 @@ class apiError extends Error {
     this.headers = res.headers
 
     this.reason = JSON.parse(body).message
-    .replace("Invalid authorization", "The access token is invalid!")
 
     this.message = `${this.reason}\n🔗 ${this.url}\n`
   }
