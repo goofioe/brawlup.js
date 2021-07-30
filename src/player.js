@@ -4,7 +4,7 @@ const Client = require('./client.js')
 const Requesting = require('./requesting')
 
 class Player {
-  constructor(data, client) {
+  constructor(data) {
   
   this.tag = data.tag
   this.name = data.name
@@ -29,7 +29,6 @@ class Player {
   this.club = data.club.tag ? data.club : null
   this.gadgetCount = data.brawlers.map(value => value.gadgets).flat().length
   this.starPowerCount = data.brawlers.map(value => value.starPowers).flat().length
-  this.client = client
 }
   
   /**
