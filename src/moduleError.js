@@ -3,13 +3,11 @@ class moduleError extends Error {
     super()
     
     if (!type) {
-    this.name = 'brawlup.js Error'
-    this.message = `${err}\n🔗 Read the docs for more info: https://brawlup.js.org/js/#welcome`
-    }
-    
-    if (type === 'ClientLoginError') {
+    this.name = ' Error'
+    this.message = `${err}\n🔗 https://brawlup.js.org/js/#welcome`
+    } else {
      this.name = type
-     this.message = `${err}`
+     this.message = `${err}\n🔗 https://brawlup.js.org/js/#welcome`
     }
   }
 }
