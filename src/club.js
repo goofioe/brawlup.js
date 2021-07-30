@@ -20,7 +20,7 @@ class Club {
 
   /**
   * @param {String} [tag] Player tag
-  * @returns {number} Player's club rank | null (if the player is not in this club)
+  * @returns {Number} Player's club rank | null (if the player is not in this club)
   */
 
   getMemberRank(tag) {
@@ -32,7 +32,7 @@ class Club {
 
   /**
   * @param {String} [tag] Player tag
-  * @returns {string} Player's club role (member, senior, vicePresident, president) | null (if the player is not in this club)
+  * @returns {String} Player's club role (member, senior, vicePresident, president) | null (if the player is not in this club)
   */
 
   getMemberRole(tag) {
@@ -44,7 +44,7 @@ class Club {
   /**
   * @param {String} [tag] Player tag
   * @description Checks if this player can join this club.
-  * @returns {boolean}
+  * @returns {Boolean}
   */
 
   async playerCanJoin(tag) {
@@ -61,7 +61,7 @@ class Club {
 
   /**
   * @description Sorts this club's members by trophies.
-  * @returns {object} Object
+  * @returns {Object} Object
   */
 
   sortMembersByTrophies() {
