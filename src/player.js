@@ -77,7 +77,7 @@ class Player {
   /**
    * @param {Object} [options] Which one you want to sort by? (trophies, highest trophies, power level, rank)
    * @description Player's brawlers will be sorted.
-   * @returns {object} The sorted brawlers in an object.
+   * @returns {Object} The sorted brawlers in an object.
    */
   
   sortBrawlers(options) {
