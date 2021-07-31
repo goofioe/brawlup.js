@@ -1,5 +1,4 @@
 module.exports = {
-  version: require('./package.json').version,
   Client: require('./src/client.js'),
   Player: require('./src/player.js'),
   Club: require('./src/club.js'),
@@ -11,5 +10,6 @@ module.exports = {
   PowerLeagueMaps: require('./src/powerLeagueMaps.js'),
   Map: require('./src/map.js'),
   Events: require('./src/events.js'),
-  CheckTeam: require('./src/checkTeam.js')
+  CheckTeam: require('./src/checkTeam.js'),
+  PackageInfo: require('./package.json')
 }
