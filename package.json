@@ -39,5 +39,8 @@
   "dependencies": {
     "moment": "^2.29.1",
     "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+   "@discordjs/docgen": "^0.10.0", 
   }
 }
