@@ -1,4 +1,4 @@
-name: [ Docs ] 'Dev' branch
+name: Docs 'Dev' branch
 
 on:
   push:
