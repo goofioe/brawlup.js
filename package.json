@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs",
-    "docs:devbuild": "docgen --source src --custom docs/index.yml --output docs/dev.json",
-    "docs:build": "docgen --source src --custom docs/index.yml --output docs/main.json"
+    "build": "vuepress build docs"
   }, 
   "directories": {
     "src": "src"
