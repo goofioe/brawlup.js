@@ -8,7 +8,7 @@
     "build": "vuepress build docs",
     "docs:devbuild": "docgen --source src --custom docs/index.yml --output docs/dev.json",
     "docs:build": "docgen --source src --custom docs/index.yml --output docs/main.json"
-  },
+  }, 
   "directories": {
     "src": "src"
   },
