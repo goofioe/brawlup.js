@@ -3,6 +3,12 @@
   "version": "1.12.5",
   "description": "An API wrapper for the official Brawl Stars API.",
   "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "docs:devbuild": "docgen --source src --custom .json --output docs/dev.json",
+    "docs:build": "docgen --source src --custom .json --output docs/main.json"
+  },
   "directories": {
     "src": "src"
   },
@@ -30,7 +36,7 @@
   "bugs": {
     "url": "https://github.com/brawlup/brawlup.js/issues"
   },
-  "homepage": "https://brawlup.js.org/js/stable/#brawlup-js",
+  "homepage": "https://brawlup.js.org/js/#brawlup-js",
   "dependencies": {
     "moment": "^2.29.1",
     "node-fetch": "^2.6.0"
