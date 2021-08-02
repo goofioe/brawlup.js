@@ -1,6 +1,6 @@
 {
   "name": "brawlup.js",
-  "version": "1.12.3",
+  "version": "2.0.0-dev",
   "description": "An API wrapper for the official Brawl Stars API.",
   "main": "index.js",
   "directories": {
