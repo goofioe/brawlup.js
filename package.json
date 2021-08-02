@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-    "docs:devbuild": "docgen --source src --custom .json --output docs/dev.json",
-    "docs:build": "docgen --source src --custom .json --output docs/main.json"
+    "docs:devbuild": "docgen --source src --custom docs/index.yml --output docs/dev.json",
+    "docs:build": "docgen --source src --custom docs/index.yml --output docs/main.json"
   },
   "directories": {
     "src": "src"
