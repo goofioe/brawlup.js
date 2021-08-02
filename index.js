@@ -11,5 +11,5 @@ module.exports = {
   Map: require('./src/map.js'),
   Events: require('./src/events.js'),
   CheckTeam: require('./src/checkTeam.js'),
-  PackageInfo: require('./package.json')
+  Version: require('./package.json').version
 }
