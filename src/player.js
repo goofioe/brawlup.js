@@ -14,6 +14,8 @@ class Player {
   this.trophies = data.trophies
   this.expLevel = data.expLevel
   this.expPoints = data.expPoints
+  this.expMax = maxExp(data)
+  this.expNeeded = this.expMax - this.expPoints
   this.highestTrophies = data.highestTrophies
   this.powerPlayPoints = data.powerPlayPoints
   this.highestPowerPlayPoints = data.highestPowerPlayPoints
@@ -233,6 +235,10 @@ async function missingBrawlers(brawlers, client) {
   
   return arr
   
+}
+
+function maxExp(data) {
+  return 40 + 10 * (data.expLevel - 1)
 }
 
 module.exports = Player
