@@ -1,5 +1,6 @@
 const Client = require('./client')
 const moduleError = require('./moduleError')
+const ClubArray = require('./clubArray')
 
 const Requesting = require('./requesting')
 
@@ -16,6 +17,9 @@ class Club {
     this.members = data.members
     this.memberCount = data.members.length
     this.isFull = this.memberCount === 100 ? true : false
+    this.president = new ClubArray(this.members.filter(m => m.role === 'president')[0])
+    this.vicePresidents = new ClubArray(this.members.filter(m => m.role === 'vicePresident').map(d => d))
+    this.seniors = new ClubArray(this.members.filter(m => m.role === 'senior').map(d => d))
   }
 
   /**
