@@ -8,5 +8,6 @@ class ClubArray extends Array {
   
   this.count = this.length
 }
+}
   
 module.exports = ClubArray
