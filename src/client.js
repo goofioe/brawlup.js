@@ -12,17 +12,30 @@ const Events = require('./events')
 const Ranking = require('./rankings')
 const BrawlerRecords = require('./brawlerRecords')
 
+/**
+* Your Brawl Stars client.
+*/
 class Client {
   
   /**
-  * @description Your Brawl Stars client setup.
-  * @param {String} [token] Your Brawl Stars API access token.
-  * @param {Object} [options] Client options
+  * Brawl Stars client options.
+  * @typedef {Object} ClientOptions
+  * @property {String} [token] Brawl Stars API access token.
+  * @property {Object} [options] Client options
   */
 
 constructor(token, options) {
     
+   /**
+    * This client's ClientOptions.
+    * @type {ClientOptions}
+    */
     this.options = options ? options : null
+  
+    /**
+    * Requesting data for the module.
+    * @type {Requesting}
+    */
     this.req = new Requesting(this)
 
     
@@ -39,6 +52,12 @@ constructor(token, options) {
      }
  }
   
+  /**
+   * Login to Brawl Stars API.
+   * @param {string} [token] Brawl Stars API access token.
+   * @returns {void}
+   */
+  
   async login(token) {
     if (!token) throw new moduleError(`No token is provided to the client! Get one in https://developer.brawlstars.com/#/account`, `ClientLoginError`)
     if (typeof token !== "string") throw new moduleError(`Access token must be a String!`, `ClientLoginError`)
@@ -48,12 +67,10 @@ constructor(token, options) {
     if (this.options && this.options.loginMessages && this.options.loginMessages === true) {
      return console.log(`[BsClientLogin] Successfully logged into the Brawl Stars API!`)
     }
-    
-    return true
   }
   
   /**
-  * @description Gets a player from the API.
+  * Gets a player from the API.
   * @param {String} [tag] A player tag in Brawl Stars.
   * @returns {Object} Player object.
   */
@@ -65,7 +82,7 @@ constructor(token, options) {
   }
   
   /**
-  * @description Gets a player's battle log from the API.
+  * Gets a player's battle log from the API.
   * @param {String} [tag] A player tag in Brawl Stars.
   * @param {String} [index] The battle log match index.
   * @returns {Object} Player battle log object.
@@ -80,7 +97,7 @@ constructor(token, options) {
   }
   
   /**
-  * @description Gets the rankings (aka leaderboard) from the API.
+  * Gets the rankings (aka leaderboard) from the API.
   * @param {Object} [options] RankingsOptions
   * @param {String} [options.country] Rankings country code or 'global'
   * @param {String} [options.type] Rankings type (clubs, players or brawlers)
@@ -113,7 +130,7 @@ constructor(token, options) {
   }
   
   /**
-  * @description Gets a club from the API.
+  * Gets a club from the API.
   * @param {String} [tag] A player tag in Brawl Stars.
   * @returns {Object} Player object.
   */
@@ -125,7 +142,7 @@ constructor(token, options) {
   }
 
   /**
-  * @description Gets all the brawlers from the API.
+  * Gets all the brawlers from the API.
   * @returns {Object} Brawlers object.
   */
   
@@ -134,7 +151,7 @@ constructor(token, options) {
   }
 
   /**
-  * @description Gets all the maps from BrawlAPI.
+  * Gets all the maps from BrawlAPI.
   * @returns {Object} All the map's object.
   */
   
@@ -143,7 +160,7 @@ constructor(token, options) {
   }
   
   /**
-  * @description Gets all the Power League maps from BrawlAPI.
+  * Gets all the Power League maps from BrawlAPI.
   * @returns {Object} All the Power League map's object.
   */
   
@@ -152,7 +169,7 @@ constructor(token, options) {
   }
   
   /**
-  * @description Gets a map's info from BrawlAPI.
+  * Gets a map's info from BrawlAPI.
   * @param {Number} Map id.
   * @returns {Object} This map's object.
   */
@@ -164,7 +181,7 @@ constructor(token, options) {
   }
 
   /**
-  * @description Gets the active and upcoming events from BrawlAPI.
+  * Gets the active and upcoming events from BrawlAPI.
   * @returns {Object} Events object.
   */
   
@@ -173,7 +190,7 @@ constructor(token, options) {
   }
   
   /**
-  * @description Gets a brawler's records from BrawlAPI.
+  * Gets a brawler's records from BrawlAPI.
   * @param {Number} [brawlerID] A brawler id in Brawl Stars.
   * @returns {Object} Brawler records object.
   */

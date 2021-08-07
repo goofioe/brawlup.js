@@ -1,42 +1,196 @@
 const moduleError = require('./moduleError')
 const Client = require('./client.js')
+const Club = require('./club')
 
 const Requesting = require('./requesting')
 
+/**
+* Detailed information about an in-game player.
+*/
 class Player {
   constructor(data) {
   
+  /**
+  * This player's tag.
+  * @type {string}
+  */
   this.tag = data.tag
+    
+  /**
+  * This player's name.
+  * @type {string}
+  */
   this.name = data.name
+    
+  /**
+   * Player icon object.
+   * @typedef {Object} PlayerIcon
+   * @property {number} [id] This icon's id.
+   * @property {string} [name] This icon's url, from {link https://brawlify.com}.
+   */
+    
+    /**
+     * This player's icon.
+     * @type {PlayerIcon}
+     */
   this.icon = { id: data.icon.id, url: `${require('./constants/brawlifyCDN')}/profile/${data.icon.id}.png` }
+    
+  /**
+  * This player's name color.
+  * @type {string}
+  */
   this.nameColor = data.nameColor
+    
+  /**
+  * This player's hex color.
+  * @type {string}
+  */
   this.hexColor = this.nameColor ? `#${this.nameColor.slice(4)}` : '#ffffff'
+    
+  /**
+  * This player's trophies.
+  * @type {number}
+  */
   this.trophies = data.trophies
+    
+  /**
+  * This player's exp level.
+  * @type {number}
+  */
   this.expLevel = data.expLevel
+    
+  /**
+  * This player's current exp points.
+  * @type {number}
+  */
   this.expPoints = data.expPoints
+    
+  /**
+  * This player's xp that will level them up.
+  * @type {number}
+  */
   this.expMax = maxExp(data)
+    
+  /**
+  * This player's needed xp points to level up.
+  * @type {number}
+  */
   this.expNeeded = this.expMax - this.expPoints
+    
+  /**
+  * This player's highest trophies.
+  * @type {number}
+  */
   this.highestTrophies = data.highestTrophies
+    
+  /**
+  * This player's current power play points.
+  * @type {number}
+  * @deprecated
+  */
   this.powerPlayPoints = data.powerPlayPoints
+    
+  /**
+  * This player's highest power play points.
+  * @type {number}
+  * @deprecated
+  */
   this.highestPowerPlayPoints = data.highestPowerPlayPoints
+    
+  /**
+  * This player's total solo victories.
+  * @type {number}
+  */
   this.soloVictories = data.soloVictories
+    
+  /**
+  * This player's total 3v3 victories.
+  * @type {number}
+  */
   this.duoVictories = data.duoVictories
+    
+  /**
+  * This player's total 3v3 victories.
+  * @type {number}
+  */
   this.trioVictories = data['3vs3Victories']
+    
+  /**
+  * This player's total victories in `soloVictories`, `duoVictories`, `trioVictories`.
+  * @type {number}
+  */
   this.totalVictories = parseInt(this.soloVictories + this.duoVictories + this.trioVictories)
+    
+  /**
+   * Player's best special event level in an object.
+   * @typedef {Object} PlayerSpecialEventLevel
+   * @property {?string} [level] This best level's level name.
+   * @property {number} [id] This best level's id.
+   * @property {?number} [insane] This best level's insane level.
+   * @property {?string} [otherInsane] This best level's insane level (in roman numbers).
+   * @property {?number} [levelsLeft] This best level's levels left to reach the max. (insane 16) level.
+   */
+    
+    /**
+     * This player's all time best robo rumble level.
+     * @type {PlayerSpecialEventLevel}
+     */
   this.bestRoboRumbleLevel = specialLevels(data.bestRoboRumbleTime)
+    
+  /**
+   * Player's season end data in an object.
+   * @typedef {Object} PlayerSeasonEnd
+   * @property {number} [trophies] This player's total trophies that will be set when this season ends.
+   * @property {number} [starPoints] This player's star point gain when this season ends.
+   */
+    
+    /**
+     * This player's season end data.
+     * @type {PlayerSeasonEnd}
+     */
   this.seasonEnd = { trophies: seasonTrophies(data), starPoints: seasonStarPoints(data) }
+    
+  /**
+  * This player's unlocked brawlers in an array.
+  * @type {Array}
+  */
   this.brawlers = data.brawlers
+    
+  /**
+  * This player's unlocked brawlers listed by their names.
+  * @type {Array}
+  */
   this.listBrawlers = Array.from(data.brawlers.sort((a, b) => b.trophies - a.trophies).map(b => capitalLetters(b.name)))
+    
+  /**
+  * This player's unlocked brawler count.
+  * @type {number}
+  */
   this.brawlerCount = data.brawlers.length
+    
+  /**
+  * This player's club data, if they joined one.
+  * @type {?Club}
+  */
   this.club = data.club.tag ? data.club : null
+    
+  /**
+  * This player's gadget count for all the brawlers they unlocked.
+  * @type {number}
+  */
   this.gadgetCount = data.brawlers.map(value => value.gadgets).flat().length
+    
+  /**
+  * This player's star power count for all the brawlers they unlocked.
+  * @type {number}
+  */
   this.starPowerCount = data.brawlers.map(value => value.starPowers).flat().length
 }
   
   /**
-  * @param {String} [brawler] The brawler's name or id.
-  * @description Finds the brawler from this player data.
-  * @returns null (if the brawler doesn't found or this player doesn't have this brawler) | Object (if the player have this brawler)
+  * Finds the brawler from this player data.
+  * @param {string} [brawler] The brawler's name or id.
+  * @returns {?Object}
   */
   
   findBrawler(brawler) {
@@ -55,8 +209,8 @@ class Player {
   }
   
   /**
-  * @param {Number} [index] The index of the battle log data.
-  * @description Gets the battle log (last battles) of this player.
+  * Gets the battle log (last battles) of this player.
+  * @param {number} [index] The index of the battle log data.
   * @returns {Array} Array of this player's battle log.
   */
   
@@ -67,8 +221,8 @@ class Player {
   }
   
   /**
-  * @description Gets the club of this player.
-  * @returns {Object} Object of this player's club.
+  * Gets the club of this player.
+  * @returns {?Object} Object of this player's club.
   */
   
   async getClub() {
@@ -76,9 +230,9 @@ class Player {
   }
   
   /**
-   * @param {Object} [options] Which one you want to sort by? (trophies, highest trophies, power level, rank)
-   * @description Player's brawlers will be sorted.
-   * @returns {Object} The sorted brawlers in an object.
+   * Player's brawlers will be sorted.
+   * @param {?Object} [options] Which one you want to sort by? (trophies, highest trophies, power level, rank)
+   * @returns {?Array} The sorted brawlers in an array.
    */
   
   sortBrawlers(options) {
@@ -94,7 +248,10 @@ class Player {
    if (sortBy === "rank") return this.brawlers.sort((a, b) => b.rank - a.rank)
   }
   
-  
+  /**
+   * This player's missing brawlers.
+   * @returns {Array}
+   */
   async missingBrawlers() {
    return await missingBrawlers(this.brawlers, this.client)
   }

@@ -1,8 +1,18 @@
 const Requesting = require('./requesting')
 const moduleError = require('./moduleError')
 
+/**
+* Checks a team of three.
+*/
 class CheckTeam {
 
+/**
+* Checks a team of three.
+* @param {string} [brawler1] First brawler of this team.
+* @param {string} [brawler2] Second brawler of this team.
+* @param {string} [brawler3] Third brawler of this team.
+*/ 
+  
 constructor(brawler1, brawler2, brawler3) {
   this.req = new Requesting()
   
@@ -14,14 +24,43 @@ constructor(brawler1, brawler2, brawler3) {
     if (typeof brawler2 !== "string") throw new moduleError(`You didn't specified a valid type of brawler! (second)`)
     if (typeof brawler3 !== "string") throw new moduleError(`You didn't specified a valid type of brawler! (third)`)   
 
+  /**
+  * First brawler of this team.
+  * @type {string}
+  */
   this.brawler1 = brawler1
+  
+  /**
+  * Second brawler of this team.
+  * @type {string}
+  */
   this.brawler2 = brawler2
+  
+  /**
+  * Third brawler of this team.
+  * @type {string}
+  */
   this.brawler3 = brawler3
 
 }
+  
+  /**
+   * Team checker's rating.
+   * @typedef {Object} TeamCheckerRating
+   * @property {number} [result] This team's rating result.
+   * @property {string} [id] This team's rating result's id.
+   */
 
+  /**
+   * Team checker's returned object.
+   * @typedef {Object} TeamCheckerResult
+   * @property {TeamCheckerRating} [rating] This team's rating.
+   * @property {?number} [winRate] This team's win rate.
+   */
+  
   /** 
-  * @returns {Object} Team checker results.
+  * Checks this team.
+  * @returns {TeamCheckerResult} Team checker results.
   */
   async check() {
   const urArray = ourArray(await (await this.req.getPowerLeagueMaps()).active)

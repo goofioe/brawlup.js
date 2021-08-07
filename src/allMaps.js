@@ -1,15 +1,23 @@
 const Client = require('./client.js')
 const moduleError = require('./moduleError')
 
+/**
+* Gets all the maps from {@link https://brawlapi.com/}.
+*/
 class AllMaps {
     constructor(data) {
-    this.data = data
+    
+   /**
+   * Returns all the map data in an array.
+   * @type {Array}
+   */   
+   this.data = data
     }
 
     /**
-     * @param {String} [mapName] The map's name you want to get stats about.
-     * @description Finds the map you specified.
-     * @returns {Object} (if the map exists) | null (if the map doesn't exists)
+     * Finds the map you specified.
+     * @param {string} [mapName] The map's name you want to get stats about.
+     * @returns {?Object}
      */
 
     async findMap(mapName) {
