@@ -1,15 +1,23 @@
 const Client = require('./client.js')
 const moduleError = require('./moduleError')
 
+/**
+* Gets all the Power League maps from {@link https://brawlapi.com/}.
+*/
 class PowerLeagueMaps {
     constructor(data) {
+        
+   /**
+   * Returns all the map data in an array.
+   * @type {Array}
+   */   
     this.data = data
     }
     
     /**
-     * @param {String} [mapName] The map's name you want to get stats about.
+     * @param {string} [mapName] The map's name you want to get stats about.
      * @description Finds the map you specified.
-     * @returns {Object} (if the map exists) | null (if the map doesn't exists)
+     * @returns {?Object}
      */
 
      async findMap(mapName) {

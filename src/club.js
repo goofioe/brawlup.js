@@ -1,23 +1,105 @@
 const Client = require('./client')
 const moduleError = require('./moduleError')
+const ClubArray = require('./clubArray')
 
+const Requesting = require('./requesting')
+
+/**
+* Detailed information about a club.
+*/
 class Club {
   constructor(data) {
+    
+    /**
+     * This club's tag.
+     * @type {string}
+     */
     this.tag = data.tag
+    
+    /**
+     * This club's name.
+     * @type {string}
+     */
     this.name = data.name
+    
+    /**
+     * This club's type. (open, closed, inviteOnly)
+     * @type {string}
+     */
     this.type = data.type
-    this.badge = data.badgeId
+    
+  /**
+   * Club badge object.
+   * @typedef {Object} ClubBadge
+   * @property {number} [id] This badge's id.
+   * @property {string} [name] This badge's url, from {link https://brawlify.com}.
+   */
+    
+    /**
+     * This club's badge.
+     * @type {ClubBadge}
+     */
+    this.badge = { id: data.badgeId, url: `${require('./constants/brawlifyCDN')}/club/${data.badgeId}.png` }
+    
+    /**
+     * This club's description.
+     * @type {?string}
+     */
     this.description = data.description ? data.description : null
+    
+    /**
+     * This club's tag.
+     * @type {Array}
+     */
     this.trophies = data.trophies
+    
+    /**
+     * This club's required trophies.
+     * @type {number}
+     */
     this.requiredTrophies = data.requiredTrophies
+    
+    /**
+     * This club's members in an array.
+     * @type {Array}
+     */
     this.members = data.members
+    
+    /**
+     * This club's member count.
+     * @type {number}
+     */
     this.memberCount = data.members.length
+    
+    /**
+     * Is this club full?
+     * @type {boolean}
+     */
     this.isFull = this.memberCount === 100 ? true : false
+    
+    /**
+     * This club's president.
+     * @type {Array}
+     */
+    this.president = new ClubArray(this.members.filter(m => m.role === 'president')[0])
+    
+    /**
+     * This club's vice presidents.
+     * @type {Array}
+     */
+    this.vicePresidents = new ClubArray(this.members.filter(m => m.role === 'vicePresident').map(d => d))
+    
+    /**
+     * This club's seniors.
+     * @type {Array}
+     */
+    this.seniors = new ClubArray(this.members.filter(m => m.role === 'senior').map(d => d))
   }
 
   /**
-  * @param {String} [tag] Player tag
-  * @returns {number} Player's club rank | null (if the player is not in this club)
+  * A player's club rank
+  * @param {?string} [tag] Player tag
+  * @returns {?number}
   */
 
   getMemberRank(tag) {
@@ -28,8 +110,9 @@ class Club {
   }
 
   /**
-  * @param {String} [tag] Player tag
-  * @returns {string} Player's club role (member, senior, vicePresident, president) | null (if the player is not in this club)
+  * A player's club role
+  * @param {string} [tag] Player tag
+  * @returns {?string} Player's club role (member, senior, vicePresident, president)
   */
 
   getMemberRole(tag) {
@@ -39,7 +122,8 @@ class Club {
   }
 
   /**
-  * @param {String} [tag] Player tag
+  * Checks if this player can join this club.
+  * @param {string} [tag] Player tag
   * @description Checks if this player can join this club.
   * @returns {boolean}
   */
@@ -57,8 +141,9 @@ class Club {
   }
 
   /**
+  * Sorts this club's members by trophies.
   * @description Sorts this club's members by trophies.
-  * @returns {object} Object
+  * @returns {?Object}
   */
 
   sortMembersByTrophies() {

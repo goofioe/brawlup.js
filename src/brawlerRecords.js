@@ -1,16 +1,29 @@
 const Client = require('./client.js')
 const moduleError = require('./moduleError')
 
+/**
+* Gets all the brawler records from {@link https://brawlapi.com/}.
+*/
 class BrawlerRecords {
     constructor(data) {
+        
+    /**
+     * Returns all the records in an array.
+     * @type {Array}
+     */
     this.records = data.records
+     
+     /**
+     * Returns the brawler that you are looking for.
+     * @type {string}
+     */
     this.brawler = data.brawler
     }
     
      /**
-     * @description Is this player ranked in this records?
+     * Is this player ranked in this records?
      * @param {String} [tag] Player tag
-     * @returns {Boolean}
+     * @returns {boolean}
      */
 
     isRanked(tag) {
@@ -24,9 +37,9 @@ class BrawlerRecords {
     }
     
     /**
-     * @description Finds the ranked player.
+     * Finds the ranked player.
      * @param {String} [tag] Player tag
-     * @returns {Object} Record object (if they have a record) | null (if they don't have a record)
+     * @returns {?Object}
      */
 
     findRanked(tag) {

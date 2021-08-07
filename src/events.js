@@ -1,18 +1,36 @@
 const Client = require('./client.js')
 const moduleError = require('./moduleError')
 
+/**
+* Detailed information about in-game events.
+*/
 class Events {
     constructor(data) {
+      
+      /**
+       * Returns all the event data in an array.
+       * @type {Array}
+       */
       this.data = data
+       
+      /**
+       * Returns all the active event data in an array.
+       * @type {Array}
+       */
       this.active = data.active
+        
+      /**
+       * Returns all the upcoming event data in an array.
+       * @type {Array}
+       */
       this.upcoming = data.upcoming
     }
 
   /**
-  * @param {Number} [status] 1: Active | 2: Upcoming
-  * @param {Number} [index] The index of the event.
-  * @description Gets the event from this event data.
-  * @returns {Object} Event object. 
+  * Gets the event from this event data.
+  * @param {number} [status] 1: Active | 2: Upcoming
+  * @param {number} [index] The index of the event
+  * @returns {?Object} Event object. 
   */
 
    async getEvent(status, index) {
@@ -26,7 +44,7 @@ class Events {
        const mAp = await Client.getMap(evnet.map.id)
        return { slot: evnet.slot, startsAt: evnet.startTime, endsAt: evnet.endTime, reward: evnet.reward, map: mAp ? mAp : null }
       } else if (status === 2) {
-       if (index < this.upcoming.length || index > this.upcomin.length) throw new moduleError(`This number (event index) is too high or too low!`)
+       if (index < this.upcoming.length || index > this.upcoming.length) throw new moduleError(`This number (event index) is too high or too low!`)
        const evnet = this.upcoming[index]
        const mAp = await Client.getMap(evnet.map.id)
        return { slot: evnet.slot, startsAt: evnet.startTime, endsAt: evnet.endTime, reward: evnet.reward, map: mAp ? mAp : null }

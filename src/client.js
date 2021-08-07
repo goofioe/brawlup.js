@@ -1,3 +1,5 @@
+const moduleError = require('./moduleError')
+
 const Requesting = require('./requesting')
 const Club = require('./club')
 const Player = require('./player')
@@ -10,38 +12,77 @@ const Events = require('./events')
 const Ranking = require('./rankings')
 const BrawlerRecords = require('./brawlerRecords')
 
-const moduleError = require('./moduleError')
-
+/**
+* Your Brawl Stars client.
+*/
 class Client {
-
+  
   /**
-  * @description Your Brawl Stars client setup.
-  * @param {String} [token] Your Brawl Stars API access token.
-  * @param {Object} [options] Client options.
-  * @param {Boolean} [options.sendWarnings] Should the module send warnings like updates?
+  * Brawl Stars client options.
+  * @typedef {Object} ClientOptions
+  * @property {String} [token] Brawl Stars API access token.
+  * @property {Object} [options] Client options
   */
 
-  constructor(token) {
-    if (!token) throw new moduleError(`You didn't provided a Brawl Stars API token, which is required for this module.`)
-
-    this.token = token
+constructor(token, options) {
+    
+   /**
+    * This client's ClientOptions.
+    * @type {ClientOptions}
+    */
+    this.options = options ? options : null
+  
+    /**
+    * Requesting data for the module.
+    * @type {Requesting}
+    */
     this.req = new Requesting(this)
-  }
 
+    
+    if (token && typeof token === "string") {
+      this.token = token
+    }
+
+    if (this.options) {
+      
+      /*
+      Option things here
+      */
+      
+     }
+ }
+  
   /**
-  * @description Gets a player from the API.
+   * Login to Brawl Stars API.
+   * @param {string} [token] Brawl Stars API access token.
+   * @returns {void}
+   */
+  
+  async login(token) {
+    if (!token) throw new moduleError(`No token is provided to the client! Get one in https://developer.brawlstars.com/#/account`, `ClientLoginError`)
+    if (typeof token !== "string") throw new moduleError(`Access token must be a String!`, `ClientLoginError`)
+    
+    this.token = token
+    
+    if (this.options && this.options.loginMessages && this.options.loginMessages === true) {
+     return console.log(`[BsClientLogin] Successfully logged into the Brawl Stars API!`)
+    }
+  }
+  
+  /**
+  * Gets a player from the API.
   * @param {String} [tag] A player tag in Brawl Stars.
   * @returns {Object} Player object.
   */
   
-  async getPlayer(tag) {
+ async getPlayer(tag) {
     if (!tag) throw new moduleError(`You didn't specified an in-game player tag, which is required for this method!`)
     if (typeof tag !== "string") throw new moduleError(`You didn't specified a valid type of player tag!`)
     return new Player(await this.req.getPlayer(tag))
   }
   
   /**
-  * @description Gets a player's battle log from the API.
+  * Gets a player's battle log from the API.
   * @param {String} [tag] A player tag in Brawl Stars.
   * @param {String} [index] The battle log match index.
   * @returns {Object} Player battle log object.
@@ -56,7 +97,7 @@ class Client {
   }
   
   /**
-  * @description Gets the rankings (aka leaderboard) from the API.
+  * Gets the rankings (aka leaderboard) from the API.
   * @param {Object} [options] RankingsOptions
   * @param {String} [options.country] Rankings country code or 'global'
   * @param {String} [options.type] Rankings type (clubs, players or brawlers)
@@ -89,7 +130,7 @@ class Client {
   }
   
   /**
-  * @description Gets a club from the API.
+  * Gets a club from the API.
   * @param {String} [tag] A player tag in Brawl Stars.
   * @returns {Object} Player object.
   */
@@ -101,7 +142,7 @@ class Client {
   }
 
   /**
-  * @description Gets all the brawlers from the API.
+  * Gets all the brawlers from the API.
   * @returns {Object} Brawlers object.
   */
   
@@ -110,7 +151,7 @@ class Client {
   }
 
   /**
-  * @description Gets all the maps from BrawlAPI.
+  * Gets all the maps from BrawlAPI.
   * @returns {Object} All the map's object.
   */
   
@@ -119,7 +160,7 @@ class Client {
   }
   
   /**
-  * @description Gets all the Power League maps from BrawlAPI.
+  * Gets all the Power League maps from BrawlAPI.
   * @returns {Object} All the Power League map's object.
   */
   
@@ -128,7 +169,7 @@ class Client {
   }
   
   /**
-  * @description Gets a map's info from BrawlAPI.
+  * Gets a map's info from BrawlAPI.
   * @param {Number} Map id.
   * @returns {Object} This map's object.
   */
@@ -140,7 +181,7 @@ class Client {
   }
 
   /**
-  * @description Gets the active and upcoming events from BrawlAPI.
+  * Gets the active and upcoming events from BrawlAPI.
   * @returns {Object} Events object.
   */
   
@@ -149,35 +190,7 @@ class Client {
   }
   
   /**
-  * @description Checks a team using Power League map data.
-  * @param {String} [brawler1] A brawler name in Brawl Stars.
-  * @param {String} [brawler2] A brawler name in Brawl Stars.
-  * @param {String} [brawler3] A brawler name in Brawl Stars.
-  * @returns {Object} Team's data.
-  */
-  
-  async checkTeam(brawler1, brawler2, brawler3) {
-    if (!brawler1) throw new moduleError(`You didn't specified a brawler (min. 3), which is required for this method!`)
-    if (!brawler2) throw new moduleError(`You didn't specified the second brawler (min. 3), which is required for this method!`)
-    if (!brawler3) throw new moduleError(`You didn't specified the third, which is required for this method!`)
-    
-    if (typeof brawler1 !== "string") throw new moduleError(`You didn't specified a valid type of brawler! (first)`)
-    if (typeof brawler2 !== "string") throw new moduleError(`You didn't specified a valid type of brawler! (second)`)
-    if (typeof brawler3 !== "string") throw new moduleError(`You didn't specified a valid type of brawler! (third)`)
- 
-    const data = ourArray(await this.req.getPowerLeagueMaps()).find( ({ hash }) => hash === `${brawler1}+${brawler2}+${brawler3}` )
-    if (!data) return { rating: { result: "Unknown", id: 0 }, winRate: null }
- 
-    let winrate = data.data.winRate
-    if (winrate < 47) return { rating: { result: "Bad", id: 1 }, winRate: winrate }
-    if (winrate > 47 && winrate < 51) return { rating: { result: "Average", id: 2 }, winRate: winrate }
-    if (winrate > 52 && winrate < 65) return { rating: { result: "Good", id: 3 }, winRate: winrate }
-    if (winrate > 65 && winrate < 75) return { rating: { result: "Very Good", id: 3 }, winRate: winrate }
-    if (winrate > 75) return { rating: { result: "Godly", id: 4 }, winRate: winrate }
-  }
-  
-  /**
-  * @description Gets a brawler's records from BrawlAPI.
+  * Gets a brawler's records from BrawlAPI.
   * @param {Number} [brawlerID] A brawler id in Brawl Stars.
   * @returns {Object} Brawler records object.
   */

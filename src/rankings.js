@@ -1,14 +1,46 @@
+const Client = require('./client')
+
+const Requesting = require('./requesting')
+
+/**
+* Detailed information about the Brawl Stars rankings/leaderboards.
+*/
 class Rankings {
     constructor(data) {
+        
+       /**
+       * This ranking's country that the data got from.
+       * @type {string}
+       */
         this.country = data.country
+        
+       /**
+       * This ranking's type (player, club or brawler)
+       * @type {string}
+       */
         this.type = data.type
+        
+       /**
+       * This ranking's brawler that the data got from.
+       * @type {?string}
+       */
         this.brawler = data.brawler ? data.brawler : null
+        
+       /**
+       * This ranking's ranked players.
+       * @type {Array}
+       */
         this.ranks = data.ranks["items"]
+        
+       /**
+       * This ranking's ranked player count.
+       * @type {Array}
+       */
         this.rankCount = data.ranks["items"].length
     }
 
     /**
-     * @description Is this player/club ranked in this rankings?
+     * Is this player/club ranked in this rankings?
      * @param {String} [tag] Player tag/Club tag
      * @returns {Boolean}
      */
@@ -24,9 +56,9 @@ class Rankings {
     }
     
     /**
-     * @description Finds the ranked player/club.
-     * @param {String} [pctag] Player tag/Club tag
-     * @returns {Object} Rank object (if they are ranked) | null (if they are not ranked)
+     * Finds the ranked player/club.
+     * @param {string} [pctag] Player tag/Club tag
+     * @returns {?Object}
      */
 
     findRanked(pctag) {
