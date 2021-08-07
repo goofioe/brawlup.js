@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs",
+    "docs:devbuild": "docgen --source src --custom docs/index.yml --output docs/dev.json",
+    "docs:build": "docgen --source src --custom docs/index.yml --output docs/main.json",
+    "docs:test": "docgen --source src"
   }, 
   "directories": {
     "src": "src"
@@ -37,6 +40,9 @@
   "homepage": "https://brawlup.js.org/js/#brawlup-js",
   "dependencies": {
     "moment": "^2.29.1",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "chalk": "^4.1.1",
+    "@discordjs/docgen": "^0.10.0",
+    "@types/node": "^16.3.3"
   }
 }
