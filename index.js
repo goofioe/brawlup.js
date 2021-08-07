@@ -1,11 +1,15 @@
-exports.Brawlers = require('./src/brawlers.js')
-exports.Client = require('./src/client.js')
-exports.Player = require('./src/player.js')
-exports.AllMaps = require('./src/allMaps.js')
-exports.PowerLeagueMaps = require('./src/powerLeagueMaps.js')
-exports.Map = require('./src/map.js')
-exports.Events = require('./src/events.js')
-exports.BattleLog = require('./src/battlelog.js')
-exports.Club = require('./src/club.js')
-exports.Rankings = require('./src/rankings.js')
-exports.BrawlerRecords = require('./src/brawlerRecords.js')
+module.exports = {
+  Client: require('./src/client.js'),
+  Player: require('./src/player.js'),
+  Club: require('./src/club.js'),
+  BattleLog: require('./src/battlelog.js'),
+  Brawlers: require('./src/brawlers.js'),
+  Rankings: require('./src/rankings.js'),
+  BrawlerRecords: require('./src/brawlerRecords.js'),
+  AllMaps: require('./src/allMaps.js'),
+  PowerLeagueMaps: require('./src/powerLeagueMaps.js'),
+  Map: require('./src/map.js'),
+  Events: require('./src/events.js'),
+  CheckTeam: require('./src/checkTeam.js'),
+  Version: require('./package.json').version
+}
