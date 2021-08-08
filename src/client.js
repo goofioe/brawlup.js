@@ -20,7 +20,7 @@ class Client {
   /**
   * Brawl Stars client options.
   * @typedef {Object} ClientOptions
-  * @property {String} [token] Brawl Stars API access token.
+  * @property {string} [token] Brawl Stars API access token.
   * @property {Object} [options] Client options
   */
 
@@ -54,7 +54,7 @@ constructor(token, options) {
   
   /**
    * Login to Brawl Stars API.
-   * @param {string} [token] Brawl Stars API access token.
+   * @param {string} token - Brawl Stars API access token.
    * @returns {void}
    */
   
@@ -71,8 +71,8 @@ constructor(token, options) {
   
   /**
   * Gets a player from the API.
-  * @param {String} [tag] A player tag in Brawl Stars.
-  * @returns {Object} Player object.
+  * @param {string} tag - A player tag in Brawl Stars.
+  * @returns {Player}
   */
   
  async getPlayer(tag) {
@@ -83,9 +83,9 @@ constructor(token, options) {
   
   /**
   * Gets a player's battle log from the API.
-  * @param {String} [tag] A player tag in Brawl Stars.
-  * @param {String} [index] The battle log match index.
-  * @returns {Object} Player battle log object.
+  * @param {string} tag - A player tag in Brawl Stars.
+  * @param {string} index - The battle log match index.
+  * @returns {BattleLog}
   */
   
   async getBattleLog(tag, index) {
@@ -98,11 +98,11 @@ constructor(token, options) {
   
   /**
   * Gets the rankings (aka leaderboard) from the API.
-  * @param {Object} [options] RankingsOptions
-  * @param {String} [options.country] Rankings country code or 'global'
-  * @param {String} [options.type] Rankings type (clubs, players or brawlers)
-  * @param {String|Number} [options.brawler] Rankings brawler id. ONLY USE IF 'options.type' IS 'brawlers'.
-  * @returns {Object} Player object.
+  * @param {Object} options - RankingsOptions
+  * @param {string} options.country - Rankings country code or 'global'
+  * @param {string} options.type - Rankings type (clubs, players or brawlers)
+  * @param {string|number} options.brawler - Rankings brawler id. ONLY USE IF 'options.type' IS 'brawlers'.
+  * @returns {Ranking}
   */
 
   async getRankings(options) {
@@ -131,8 +131,8 @@ constructor(token, options) {
   
   /**
   * Gets a club from the API.
-  * @param {String} [tag] A player tag in Brawl Stars.
-  * @returns {Object} Player object.
+  * @param {String} tag - A club tag in Brawl Stars.
+  * @returns {Club}
   */
 
   async getClub(tag) {
@@ -143,7 +143,7 @@ constructor(token, options) {
 
   /**
   * Gets all the brawlers from the API.
-  * @returns {Object} Brawlers object.
+  * @returns {Brawlers}
   */
   
   async getBrawlers() {
@@ -152,7 +152,7 @@ constructor(token, options) {
 
   /**
   * Gets all the maps from BrawlAPI.
-  * @returns {Object} All the map's object.
+  * @returns {AllMaps}
   */
   
   async getAllMaps() {
@@ -161,7 +161,7 @@ constructor(token, options) {
   
   /**
   * Gets all the Power League maps from BrawlAPI.
-  * @returns {Object} All the Power League map's object.
+  * @returns {PowerLeagueMaps}
   */
   
   async getPowerLeagueMaps() {
@@ -170,8 +170,8 @@ constructor(token, options) {
   
   /**
   * Gets a map's info from BrawlAPI.
-  * @param {Number} Map id.
-  * @returns {Object} This map's object.
+  * @param {number} mapID - In-game map id
+  * @returns {Map}
   */
 
   async getMap(mapID) {
@@ -182,7 +182,7 @@ constructor(token, options) {
 
   /**
   * Gets the active and upcoming events from BrawlAPI.
-  * @returns {Object} Events object.
+  * @returns {Events}
   */
   
   async getEvents() {
@@ -191,8 +191,8 @@ constructor(token, options) {
   
   /**
   * Gets a brawler's records from BrawlAPI.
-  * @param {Number} [brawlerID] A brawler id in Brawl Stars.
-  * @returns {Object} Brawler records object.
+  * @param {number} brawlerID - A brawler id in Brawl Stars.
+  * @returns {BrawlerRecords}
   */
   
    async getBrawlerRecords(brawlerID) {
