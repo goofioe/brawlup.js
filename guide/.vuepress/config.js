@@ -37,6 +37,7 @@ module.exports = {
     repo: 'brawlup/brawlup.js',
     docsDir: 'guide',
     docsBranch: 'docs',
+    editLink: true,
     notFound: ['You lost in time with Collette!', 'Sweet dreams...', 'You got a Shelly super in the face!', 'And don\'t forget to stay hydrated...', 'Flying Hook took you to a wrong place!', 'Tell the bank I\'m busy...', 'You wanna play the flame game?', 'Hey, you clipped me.', 'Not there!'],
     nav: [
       {
