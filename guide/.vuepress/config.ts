@@ -23,8 +23,15 @@ const config = defineUserConfig<DefaultThemeOptions, ViteBundlerOptions>({
     ['meta', { property: 'og:locale', content: 'en' }],
     ['meta', { property: 'og:image', content: 'https://i.imgur.com/WwnlQ57.png' }],
   ],
-  theme: path.join(__dirname, 'theme', 'index.ts'),
-	themeConfig: {
+  theme: 'jac',
+  themeConfig: {
+    jac: {
+      logo: 'JacLogo',
+      extraOptions: {
+        before: 'BranchSelector',
+        below: 'LanguageSelector'
+      }
+    },
 		contributors: false,
 		sidebar,
 		repo: 'brawlup/brawlup.js',
@@ -54,6 +61,7 @@ const config = defineUserConfig<DefaultThemeOptions, ViteBundlerOptions>({
 });
 
 
+if (process.env.NODE_ENV === 'production') {
 config.plugins.push(
 		[
 			'@vuepress/plugin-docsearch',
@@ -68,3 +76,7 @@ config.plugins.push(
 			{ id: '2ELF0EPC7J' },
 		],
 	);
+
+}
+
+export default config;
