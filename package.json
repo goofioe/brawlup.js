@@ -1,28 +1,48 @@
 {
-  "name": "brawlup-docs",
-  "version": "4.2.9",
-  "description": "",
+  "name": "brawlup.js",
+  "version": "1.12.5",
+  "description": "An API wrapper for the official Brawl Stars API.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:dev": "vuepress dev guide",
-    "build": "vuepress build guide"
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "docs:devbuild": "docgen --source src --custom docs/index.yml --output docs/dev.json",
+    "docs:build": "docgen --source src --custom docs/index.yml --output docs/main.json",
+    "docs:test": "docgen --source src"
+  }, 
+  "directories": {
+    "src": "src"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brawlup/brawlup.js.git"
+  },
+  "keywords": [
+    "brawlstars",
+    "brawl stars",
+    "brawl stars api",
+    "brawlup",
+    "brawl",
+    "api wrapper",
+    "javascript"
+  ],
+  "author": "@brawlup",
+  "contributors": [
+    {
+      "name": "@alputv",
+      "email": "rekortmenstars@gmail.com"
+    }
+  ],
   "license": "Apache-2.0",
-  "devDependencies": {
-    "@discordjs/docgen": "^0.10.0",
-    "@vuepress/plugin-back-to-top": "^1.8.2",
-    "@vuepress/plugin-docsearch": "^2.0.0-beta.20",
-    "@vuepress/plugin-medium-zoom": "^1.8.2",
-    "vuepress": "^2.0.0-beta.23"
+  "bugs": {
+    "url": "https://github.com/brawlup/brawlup.js/issues"
   },
+  "homepage": "https://brawlup.js.org/js/#brawlup-js",
   "dependencies": {
-    "@vue/component-compiler-utils": "^3.2.2",
-    "@vuepress/shared-utils": "^1.8.2",
-    "@xiaopanda/vuepress-plugin-code-copy": "^1.0.3",
-    "vue-click-outside": "^1.1.0",
-    "vue-discord-message": "^5.0.3",
-    "vuepress-theme-jac": "^2.0.0"
+    "moment": "^2.29.1",
+    "node-fetch": "^2.6.0",
+    "chalk": "^4.1.1",
+    "@discordjs/docgen": "^0.10.0",
+    "@types/node": "^16.3.3"
   }
 }
