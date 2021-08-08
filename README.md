@@ -39,5 +39,4 @@ to [<img src="https://cdn.brawlify.com/front/Star.svg" height="17" width="19" al
 and also we used [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" height="17" width="17" alt="GitHub logo"> brawlstars.js](https://github.com/dannyhpy/brawlstars-nodejs) as well.
 
 ## Support
-
-[<img src="https://user-images.githubusercontent.com/77716705/127508433-785cf7bc-330b-4716-a77d-174b3ec96340.png" alt="Discord logo" height="25" width="35">](https://discord.gg/PhW2XJa2yy) [<img src="https://user-images.githubusercontent.com/77716705/127509436-ec9d2752-ae15-4c28-9581-11c923da6eb9.png" alt="Twitter logo" height="25" width="35">](https://twitter.com/UpBotsOfficial) 
+You can get support for this module in our [Discord server](https://discord.gg/PhW2XJa2yy)
