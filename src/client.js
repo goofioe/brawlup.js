@@ -98,10 +98,10 @@ constructor(token, options) {
   
   /**
   * Gets the rankings (aka leaderboard) from the API.
-  * @param {Object} options - RankingsOptions
-  * @param {string} options.country - Rankings country code or 'global'
-  * @param {string} options.type - Rankings type (clubs, players or brawlers)
-  * @param {string|number} options.brawler - Rankings brawler id. ONLY USE IF 'options.type' IS 'brawlers'.
+  * @typedef {Object} options - RankingsOptions
+  * @property {string} country - Rankings country code or 'global'
+  * @property {string} type - Rankings type (clubs, players or brawlers)
+  * @property {string|number} brawler - Rankings brawler id. ONLY USE IF 'options.type' IS 'brawlers'.
   * @returns {Ranking}
   */
 
