@@ -3,7 +3,7 @@ home: true
 heroImage: /yellow-icon.png
 heroText: Brawlup
 tagline: An API wrapper for the official Brawl Stars API.
-actionText: Get Started (brawlup.js) →
+actionText: Get Started →
 actionLink: /js/#brawlup-js
 features:
 - title: Easy to use!
