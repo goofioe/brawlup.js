@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
+    "docs": "docgen --source src --custom docs/index.yml --output docs/docs.json",
     "docs:devbuild": "docgen --source src --custom docs/index.yml --output docs/dev.json",
     "docs:build": "docgen --source src --custom docs/index.yml --output docs/main.json",
     "docs:test": "docgen --source src"
