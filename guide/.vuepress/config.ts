@@ -1,7 +1,12 @@
 import path from 'path';
 import sidebar from './sidebar';
+import { defineUserConfig } from 'vuepress-vite';
+import type { DefaultThemeOptions, ViteBundlerOptions } from 'vuepress-vite';
 
-const config = ({
+const config = defineUserConfig<DefaultThemeOptions, ViteBundlerOptions>({
+  bundler: '@vuepress/vite',
+  templateDev: path.join(__dirname, 'templates', 'index.dev.html'),
+  templateSSR: path.join(__dirname, 'templates', 'index.ssr.html'),
   title: "Brawlup",
   base: '/guide/',
   head: [
