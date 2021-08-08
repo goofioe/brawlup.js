@@ -12,6 +12,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
       
+    - name: Install Node v16
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
+      
     - name: Download
       run: npm i
       
