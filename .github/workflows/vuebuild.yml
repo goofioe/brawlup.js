@@ -19,6 +19,9 @@ jobs:
       
     - name: Download
       run: npm i
+      
+    - name: Download 2
+      run: npm i @vue/server-renderer
 
     - name: Build
       run: npm run build
