@@ -1,5 +1,6 @@
 module.exports = {
   title: "Brawlup",
+  base: "/guide/",
   head: [
     ['meta', { charset: 'utf-8' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }],
@@ -31,8 +32,9 @@ module.exports = {
       }
     },
     smoothScroll: true,
-    searchPlaceholder: 'Search',
-    docsDir: '',
+    lastUpdated: true,
+    //srchPlaceholder: 'Search',
+    docsDir: 'guide',
     notFound: ['You lost in time with Collette!', 'Sweet dreams...', 'You got a Shelly super in the face!', 'And don\'t forget to stay hydrated...', 'Flying Hook took you to a wrong place!', 'Tell the bank I\'m busy...', 'You wanna play the flame game?', 'Hey, you clipped me.', 'Not there!'],
     nav: [
       {
