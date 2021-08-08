@@ -18,7 +18,7 @@ const tagRslvr = require('./other/tagResolver')
 /**
 * Requesting data for the module.
 */
-class requesting {
+class Requesting {
   constructor(client) {
    
     /**
@@ -230,4 +230,4 @@ class requesting {
   }
 }
 
-module.exports = requesting
+module.exports = Requesting
