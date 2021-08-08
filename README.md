@@ -40,4 +40,4 @@ and also we used [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb
 
 ## Support
 
-[<img src="https://user-images.githubusercontent.com/77716705/127508433-785cf7bc-330b-4716-a77d-174b3ec96340.png" alt="Discord logo" height="25">](https://discord.gg/PhW2XJa2yy) [<img src="https://user-images.githubusercontent.com/77716705/127509436-ec9d2752-ae15-4c28-9581-11c923da6eb9.png" alt="Discord logo" height="25">](https://twitter.com/UpBotsOfficial)
+[<img src="https://user-images.githubusercontent.com/77716705/127508433-785cf7bc-330b-4716-a77d-174b3ec96340.png" alt="Discord logo" height="25">](https://discord.gg/PhW2XJa2yy) [<img src="https://user-images.githubusercontent.com/77716705/127509436-ec9d2752-ae15-4c28-9581-11c923da6eb9.png" alt="Discord logo" height="25">](https://twitter.com/UpBotsOfficial) 
