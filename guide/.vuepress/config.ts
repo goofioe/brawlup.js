@@ -41,6 +41,10 @@ const config = defineUserConfig<DefaultThemeOptions, ViteBundlerOptions>({
 				text: 'Documentation',
 				link: 'https://brawlup.js.org/docs/',
 			},
+	    {
+		text: 'Original',
+		link: 'https://discordjs.guide/'
+	    },
 		],
     themePlugins: {
 			mediumZoom: false,
