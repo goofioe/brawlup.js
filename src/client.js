@@ -131,7 +131,7 @@ constructor(token, options) {
   
   /**
   * Gets a club from the API.
-  * @param {String} tag - A club tag in Brawl Stars.
+  * @param {string} tag - A club tag in Brawl Stars.
   * @returns {Club}
   */
 
