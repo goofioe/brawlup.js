@@ -14,11 +14,20 @@ const BrawlerRecords = require('./brawlerRecords')
 
 /**
 * Your Brawl Stars client.
-* @typedef {Object} ClientOptions
-* @property {string} [token] Brawl Stars API access token.
-* @property {Object} [options] Client options
 */
 class Client {
+    
+/**
+ * Brawl Stars client options.
+ * @typedef {Object} ClientOptions
+ * @property {boolean} [loginMessages] Should the module send login messages (in your console)?
+ */
+ 
+/**
+* Brawl Stars client constructor.
+* @property {string} [token] Brawl Stars API access token.
+* @property {ClientOptions} [options] Client options
+*/
 
 constructor(token, options) {
     
