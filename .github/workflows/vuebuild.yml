@@ -15,8 +15,8 @@ jobs:
     - name: Download
       run: npm i vue-discord-message@5.0.2 vuepress-theme-yuu@3.0.1 vuepress@1.8.2
 
-    #- name: Build
-     # run: npm run build
+    - name: Build
+      run: npm run build
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
