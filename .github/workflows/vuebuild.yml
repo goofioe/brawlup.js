@@ -14,6 +14,9 @@ jobs:
       
     - name: Download
       run: npm i
+      
+    - name: Dependa
+      run: npm ci
 
     - name: Build
       run: npm run build
