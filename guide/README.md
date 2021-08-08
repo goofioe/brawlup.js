@@ -1,16 +1,16 @@
 ---
 home: true
-heroImage: /gcommands.png
-heroText: GCommands
-tagline: An easy to use, advanced Discord Slash commands
-actionText: Get Started →
-actionLink: /guide/
+heroImage: /yellow-icon.png
+heroText: Brawlup
+tagline: An API wrapper for the official Brawl Stars API.
+actionText: Get Started (brawlup.js) →
+actionLink: /js/#brawlup-js
 features:
-- title: Easy to use
-  details: With GCommands, you can setup a bot few minutes.
-- title: Customizable
-  details: You can adjust everything. Default messages and more!
-- title: Commands
-  details: GCommands is framework for bot with command and event handler.
-footer: Made by with ❤️ Garlic Team
+- title: Easy to use!
+  details: We made the module for you to use easily
+- title: Improving with your suggestions!
+  details: We are listening your suggestions in our server And we are improving the module with you ✌
+- title: Supporting every endpoint at the Brawl Stars API!
+  details: This module supports every endpoint at the Brawl Stars API and we added some useful properties/methods!
+footer: Made by Up Bots team with ❤️
 ---
