@@ -6,12 +6,6 @@ const moduleError = require('./moduleError')
 */
 class AllMaps {
     
-    /**
-    * @example
-    * await bsClient.getAllMaps()
-    * @example
-    */
-    
     constructor(data) {
     
    /**
