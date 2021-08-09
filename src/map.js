@@ -81,9 +81,9 @@ class Map {
    /**
    * Map enverioment object.
    * @typedef {Object} MapEnverioment
-   * @property {string} [name] This environment's name.
-   * @property {number} [id] This environment's in-game id.
-   * @property {string} [image] This environment's image from {@link https://brawlify.com}
+   * @property {string} name - This environment's name.
+   * @property {number} id - This environment's in-game id.
+   * @property {string} image - This environment's image from {@link https://brawlify.com}
    */ 
         
     /**
@@ -95,12 +95,12 @@ class Map {
    /** 
    * Map game mode object.
    * @typedef {Object} MapGameMode
-   * @property {number} [name] This game mode's name.
-   * @property {string} [id] This game mode's in-game id.
-   * @property {string} [hash] This game mode's hash.
-   * @property {string} [link] This game mode's link at {@link https://brawlify.com}
-   * @property {string} [color] This game mode's hex color.
-   * @property {string} [image] This game mode's image from {@link https://brawlify.com}
+   * @property {number} name - This game mode's name.
+   * @property {string} id - This game mode's in-game id.
+   * @property {string} hash - This game mode's hash.
+   * @property {string} link - This game mode's link at {@link https://brawlify.com}
+   * @property {string} color - This game mode's hex color.
+   * @property {string} image - This game mode's image from {@link https://brawlify.com}
    */     
         
     /**
