@@ -3,9 +3,6 @@ const moduleError = require('./moduleError')
 
 /**
 * Gets all the brawler records from {@link https://brawlapi.com/}.
-* @example
-* await bsClient.()
-* @example
 */
 class BrawlerRecords {
     constructor(data) {
