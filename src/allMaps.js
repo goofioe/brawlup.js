@@ -3,11 +3,15 @@ const moduleError = require('./moduleError')
 
 /**
 * Gets all the maps from {@link https://brawlapi.com/}.
-* @example
-* await bsClient.getAllMaps()
-* @example
 */
 class AllMaps {
+    
+    /**
+    * @example
+    * await bsClient.getAllMaps()
+    * @example
+    */
+    
     constructor(data) {
     
    /**
