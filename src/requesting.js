@@ -17,6 +17,7 @@ const tagRslvr = require('./other/tagResolver')
 
 /**
 * Requesting data for the module.
+* @private
 */
 class Requesting {
   constructor(client) {
@@ -31,7 +32,6 @@ class Requesting {
  /**
   * Request headers.
   * @returns {Object}
-  * @private
   */
  
  headers() {
@@ -76,7 +76,6 @@ class Requesting {
   * Gets a player from the API.
   * @param {string} tag - A player tag in Brawl Stars.
   * @returns {Object}
-  * @private
   */
 
   async getPlayer(tag) {
@@ -89,7 +88,6 @@ class Requesting {
   * Gets player battle log data from the API.
   * @param {string} tag - A player tag in Brawl Stars.
   * @returns {Object}
-  * @private
   */
 
   async getBattleLog(tag) {
@@ -102,7 +100,6 @@ class Requesting {
   * Gets a club from the API.
   * @param {string} tag - A club tag in Brawl Stars.
   * @returns {Object}
-  * @private
   */
 
   async getClub(tag) {
@@ -115,7 +112,6 @@ class Requesting {
   * Gets a club's members from the API.
   * @param {string} tag - A club tag in Brawl Stars.
   * @returns {Array}
-  * @private
   */
 
   async getClubMembers(tag) {
@@ -128,7 +124,6 @@ class Requesting {
   * Gets a brawler from the API.
   * @param {string|number} brawlerID - In-game brawler id.
   * @returns {Object}
-  * @private
   */
 
   async getBrawler(brawlerID) {
@@ -142,7 +137,6 @@ class Requesting {
   * @param {boolean} [after]
   * @param {boolean} [limit]
   * @returns {Array}
-  * @private
   */
 
   async getBrawlers(before, after, limit) {
@@ -154,7 +148,6 @@ class Requesting {
   * @param {string} country - Rankings country code or 'global'
   * @param {string|number} type - Rankings type (clubs, players or brawlers)
   * @returns {Array}
-  * @private
   */
 
   async getRankings(country, type) {
@@ -168,7 +161,6 @@ class Requesting {
   * @param {string} country - Rankings country code or 'global'
   * @param {string|number} brawler - Rankings brawler id.
   * @returns {Array}
-  * @private
   */
 
   async getBrawlersRankings(country, brawler) {
@@ -180,7 +172,6 @@ class Requesting {
  /**
   * Gets all the maps from BrawlAPI.
   * @returns {Array}
-  * @private
   */
 
   async getAllMaps() {
@@ -191,7 +182,6 @@ class Requesting {
   * Gets a map data from BrawlAPI.
   * @param {number} mapID - In-game map id
   * @returns {Object}
-  * @private
   */
 
   async getMap(mapID) {
@@ -202,7 +192,6 @@ class Requesting {
  /**
   * Gets Power League maps from BrawlAPI.
   * @returns {Object}
-  * @private
   */
 
   async getPowerLeagueMaps() {
@@ -212,7 +201,6 @@ class Requesting {
  /**
   * Gets events data from BrawlAPI.
   * @returns {Array}
-  * @private
   */
 
   async getEvents() {
@@ -223,7 +211,6 @@ class Requesting {
   * Gets brawler records from BrawlAPI.
   * @param {number} brawlerID - A brawler id in Brawl Stars.
   * @returns {Array}
-  * @private
   */
   
   async getBrawlerRecords(brawlerID) {
