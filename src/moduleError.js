@@ -4,7 +4,7 @@
  * @private
  */
 
-class moduleError extends Error {
+class BJSError extends Error {
   
 /**
 * An error for this module.
@@ -16,36 +16,20 @@ class moduleError extends Error {
   
   constructor (err, type) {
     super()
-    
-    if (!type) {
-    
+        
     /**
     * This error's name.
     * @type {string}
     */
-    this.name = ' Error'
+    this.name = type ? type : 'BJSError'
       
     /**
     * This error's message. (which is logged)
     * @type {string}
     */
     this.message = `${err}\n🔗 https://brawlup.js.org/js/#welcome`
-    
-    } else {
-      
-    /**
-    * This error's name.
-    * @type {string}
-    */
-     this.name = type
-      
-    /**
-    * This error's message. (which is logged)
-    * @type {string}
-    */
-     this.message = `${err}\n🔗 https://brawlup.js.org/js/#welcome`
     }
   }
 }
 
-module.exports = moduleError
+module.exports = BJSError
