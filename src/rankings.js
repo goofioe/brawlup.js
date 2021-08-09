@@ -41,7 +41,7 @@ class Rankings {
 
     /**
      * Is this player/club ranked in this rankings?
-     * @param {string} [tag] Player tag/Club tag
+     * @param {string} tag - Player tag/Club tag
      * @returns {boolean}
      */
 
@@ -57,7 +57,7 @@ class Rankings {
     
     /**
      * Finds the ranked player/club.
-     * @param {string} [pctag] Player tag/Club tag
+     * @param {string} pctag - Player tag/Club tag
      * @returns {?Object}
      */
 
