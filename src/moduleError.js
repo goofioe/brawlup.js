@@ -28,7 +28,6 @@ class BJSError extends Error {
     * @type {string}
     */
     this.message = `${err}\n🔗 https://brawlup.js.org/js/#welcome`
-    }
   }
 }
 
