@@ -25,8 +25,8 @@ class Client {
  
 /**
 * Brawl Stars client constructor.
-* @property {string} [token] Brawl Stars API access token.
-* @property {ClientOptions} [options] Client options
+* @param {string} token - Brawl Stars API access token.
+* @param {ClientOptions} options - Client options
 */
 
 constructor(token, options) {
