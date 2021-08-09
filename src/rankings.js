@@ -41,8 +41,8 @@ class Rankings {
 
     /**
      * Is this player/club ranked in this rankings?
-     * @param {String} [tag] Player tag/Club tag
-     * @returns {Boolean}
+     * @param {string} [tag] Player tag/Club tag
+     * @returns {boolean}
      */
 
     isRanked(tag) {

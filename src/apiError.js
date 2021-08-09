@@ -10,7 +10,7 @@ class APIError extends Error {
 
     /**
     * This error's name.
-    * @type {String}
+    * @type {string}
     */
     this.name = 'BrawlStarsAPIError'
     
@@ -22,13 +22,13 @@ class APIError extends Error {
     
    /**
     * This error's url. (where it happened)
-    * @type {String}
+    * @type {string}
     */
     this.url = res.url
     
    /**
     * This error's code.
-    * @type {Number}
+    * @type {number}
     */
     this.code = res.status
     
@@ -40,14 +40,14 @@ class APIError extends Error {
 
    /**
     * This error's reason. (what/why happened)
-    * @type {String}
+    * @type {string}
     */
     this.reason = JSON.parse(body).message
     
     
     /**
     * This error's message. (which is logged)
-    * @type {String}
+    * @type {string}
     */
     this.message = `${this.reason}\n🔗 ${this.url}\n`
   }
