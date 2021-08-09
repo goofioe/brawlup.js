@@ -138,9 +138,9 @@ class Requesting {
  
  /**
   * Gets brawlers from the API.
-  * @param {any} [before]
-  * @param {any} [after]
-  * @param {any} [limit]
+  * @param {boolean} [before]
+  * @param {boolean} [after]
+  * @param {boolean} [limit]
   * @returns {Array}
   * @private
   */
