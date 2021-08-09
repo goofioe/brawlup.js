@@ -115,7 +115,7 @@ class Club {
   /**
   * A player's club role
   * @param {string} tag - Player tag
-  * @returns {?string} Player's club role (member, senior, vicePresident, president)
+  * @returns {?string} (member, senior, vicePresident, president)
   */
 
   getMemberRole(tag) {
