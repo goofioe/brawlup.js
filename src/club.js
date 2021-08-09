@@ -6,6 +6,9 @@ const Requesting = require('./requesting')
 
 /**
 * Detailed information about a club.
+* @example
+* await bsClient.getClub(tag)
+* @example
 */
 class Club {
   constructor(data) {
@@ -31,8 +34,8 @@ class Club {
   /**
    * Club badge object.
    * @typedef {Object} ClubBadge
-   * @property {number} [id] This badge's id.
-   * @property {string} [name] This badge's url, from {link https://brawlify.com}.
+   * @property {number} id - This badge's id.
+   * @property {string} name - This badge's url, from {link https://brawlify.com}.
    */
     
     /**
@@ -98,7 +101,7 @@ class Club {
 
   /**
   * A player's club rank
-  * @param {?string} [tag] Player tag
+  * @param {?string} tag - Player tag
   * @returns {?number}
   */
 
@@ -111,7 +114,7 @@ class Club {
 
   /**
   * A player's club role
-  * @param {string} [tag] Player tag
+  * @param {string} tag - Player tag
   * @returns {?string} Player's club role (member, senior, vicePresident, president)
   */
 
@@ -123,8 +126,7 @@ class Club {
 
   /**
   * Checks if this player can join this club.
-  * @param {string} [tag] Player tag
-  * @description Checks if this player can join this club.
+  * @param {string} tag - Player tag
   * @returns {boolean}
   */
 
@@ -142,7 +144,6 @@ class Club {
 
   /**
   * Sorts this club's members by trophies.
-  * @description Sorts this club's members by trophies.
   * @returns {?Object}
   */
 
