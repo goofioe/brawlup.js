@@ -10,7 +10,6 @@ class BJSError extends Error {
 * An error for this module.
 * @param {string} err - The error reason/message.
 * @param {string} [type] Error type/error name.
-* @param {string} [brawler3] Third brawler of this team.
 * @private
 */ 
   
