@@ -25,8 +25,8 @@ class Player {
   /**
    * Player icon object.
    * @typedef {Object} PlayerIcon
-   * @property {number} [id] This icon's id.
-   * @property {string} [name] This icon's url, from {link https://brawlify.com}.
+   * @property {number} id - This icon's id.
+   * @property {string} name - This icon's url, from {link https://brawlify.com}.
    */
     
     /**
@@ -124,11 +124,11 @@ class Player {
   /**
    * Player's best special event level in an object.
    * @typedef {Object} PlayerSpecialEventLevel
-   * @property {?string} [level] This best level's level name.
-   * @property {number} [id] This best level's id.
-   * @property {?number} [insane] This best level's insane level.
-   * @property {?string} [otherInsane] This best level's insane level (in roman numbers).
-   * @property {?number} [levelsLeft] This best level's levels left to reach the max. (insane 16) level.
+   * @property {?string} level - This best level's level name.
+   * @property {number} id - This best level's id.
+   * @property {?number} insane - This best level's insane level.
+   * @property {?string} otherInsane - This best level's insane level (in roman numbers).
+   * @property {?number} levelsLeft - This best level's levels left to reach the max. (insane 16) level.
    */
     
     /**
@@ -140,8 +140,8 @@ class Player {
   /**
    * Player's season end data in an object.
    * @typedef {Object} PlayerSeasonEnd
-   * @property {number} [trophies] This player's total trophies that will be set when this season ends.
-   * @property {number} [starPoints] This player's star point gain when this season ends.
+   * @property {number} trophies - This player's total trophies that will be set when this season ends.
+   * @property {number} starPoints - This player's star point gain when this season ends.
    */
     
     /**
@@ -189,7 +189,7 @@ class Player {
   
   /**
   * Finds the brawler from this player data.
-  * @param {string} [brawler] The brawler's name or id.
+  * @param {string} brawler - The brawler's name or id.
   * @returns {?Object}
   */
   
@@ -210,8 +210,8 @@ class Player {
   
   /**
   * Gets the battle log (last battles) of this player.
-  * @param {number} [index] The index of the battle log data.
-  * @returns {Array} Array of this player's battle log.
+  * @param {number} index - The index of the battle log data.
+  * @returns {Array}
   */
   
   async getBattleLog(index) {
@@ -222,7 +222,7 @@ class Player {
   
   /**
   * Gets the club of this player.
-  * @returns {?Object} Object of this player's club.
+  * @returns {?Object}
   */
   
   async getClub() {
@@ -231,8 +231,8 @@ class Player {
   
   /**
    * Player's brawlers will be sorted.
-   * @param {?Object} [options] Which one you want to sort by? (trophies, highest trophies, power level, rank)
-   * @returns {?Array} The sorted brawlers in an array.
+   * @param {?Object} options - Which one you want to sort by? (trophies, highest trophies, power level, rank)
+   * @returns {?Array}
    */
   
   sortBrawlers(options) {
