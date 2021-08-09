@@ -8,9 +8,9 @@ class CheckTeam {
 
 /**
 * Checks a team of three.
-* @param {string} [brawler1] First brawler of this team.
-* @param {string} [brawler2] Second brawler of this team.
-* @param {string} [brawler3] Third brawler of this team.
+* @param {string} brawler1 - First brawler of this team.
+* @param {string} brawler2 - Second brawler of this team.
+* @param {string} brawler3 - Third brawler of this team.
 */ 
   
 constructor(brawler1, brawler2, brawler3) {
