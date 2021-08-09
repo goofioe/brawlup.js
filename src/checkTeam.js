@@ -47,15 +47,15 @@ constructor(brawler1, brawler2, brawler3) {
   /**
    * Team checker's rating.
    * @typedef {Object} TeamCheckerRating
-   * @property {number} [result] This team's rating result.
-   * @property {string} [id] This team's rating result's id.
+   * @property {number} result - This team's rating result.
+   * @property {string} id - This team's rating result's id.
    */
 
   /**
    * Team checker's returned object.
    * @typedef {Object} TeamCheckerResult
-   * @property {TeamCheckerRating} [rating] This team's rating.
-   * @property {?number} [winRate] This team's win rate.
+   * @property {TeamCheckerRating} rating - This team's rating.
+   * @property {?number} winRate - This team's win rate.
    */
   
   /** 
