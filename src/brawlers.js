@@ -36,7 +36,7 @@ class Brawlers {
   
   /**
   * Finds the brawler from the game.
-  * @param {String|Object} [brawler] The brawler's name or id.
+  * @param {string|Object} brawler - The brawler's name or id.
   * @returns {?Object}
   */
   
