@@ -4,7 +4,7 @@ const moduleError = require('./moduleError')
 /**
 * Gets all the maps from {@link https://brawlapi.com/}.
 * @example
-* await bsClient.allMaps()
+* await bsClient.getAllMaps()
 * @example
 */
 class AllMaps {
