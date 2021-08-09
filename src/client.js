@@ -102,14 +102,19 @@ constructor(token, options) {
   }
   
   /**
-  * Gets the rankings (aka leaderboard) from the API.
+  * Rankings (leaderboards) options.
   * @typedef {Object} RankingsOptions
   * @property {string} country - Rankings country code or 'global'
   * @property {string} type - Rankings type (clubs, players or brawlers)
   * @property {string|number} brawler - Rankings brawler id. ONLY USE IF 'options.type' IS 'brawlers'.
+  */
+    
+  /**
+  * Gets the rankings (aka leaderboard) from the API.
+  * @param {RankingsOptions} Rankings options.
   * @returns {Ranking}
   */
-
+    
   async getRankings(options) {
     if (!options) throw new moduleError(`You didn't specified RankingsOptions, which is required for this method!`)
     if (!options.country) throw new moduleError(`You didn't specified a country, which is required for this method!`)
