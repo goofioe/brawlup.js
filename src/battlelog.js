@@ -4,9 +4,6 @@ const Requesting = require('./requesting')
 
 /**
 * Detailed information about the player's battle log.
-* @example
-* await bsClient.getBattleLog(tag, index)
-* @example
 */
 class BattleLog {
   constructor(data, index) {
