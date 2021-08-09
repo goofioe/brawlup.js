@@ -30,7 +30,7 @@ class Events {
   * Gets the event from this event data.
   * @param {number} status - 1: Active | 2: Upcoming
   * @param {number} index - The index of the event
-  * @returns {?Object} Event object. 
+  * @returns {?Object}
   */
 
    async getEvent(status, index) {
