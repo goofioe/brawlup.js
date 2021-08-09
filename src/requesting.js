@@ -45,6 +45,7 @@ class Requesting {
  
  /**
   * Requests data from {@link https://developer.brawlstars.com/}
+  * @param {string} endpoint - Brawl Stars API endpoint.
   * @returns {Object|Array}
   */
   
@@ -60,6 +61,7 @@ class Requesting {
  
  /**
   * Requests data from {@link https://brawlapi.com/}
+  * @param {string} endpoint - BrawlAPI endpoint.
   * @returns {Object|Array}
   */
 
@@ -136,9 +138,9 @@ class Requesting {
  
  /**
   * Gets brawlers from the API.
-  * @param {*} [before]
-  * @param {*} [after]
-  * @param {*} [limit]
+  * @param {any} [before]
+  * @param {any} [after]
+  * @param {any} [limit]
   * @returns {Array}
   * @private
   */
