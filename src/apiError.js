@@ -2,6 +2,7 @@
 /**
  * An error for responses from Brawl Stars API.
  * @extends {Error}
+ * @private
  */
 
 class APIError extends Error {
