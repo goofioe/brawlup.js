@@ -16,7 +16,7 @@ class AllMaps {
 
     /**
      * Finds the map you specified.
-     * @param {string} [mapName] The map's name you want to get stats about.
+     * @param {string} mapName - The map's name you want to get stats about.
      * @returns {?Object}
      */
 
