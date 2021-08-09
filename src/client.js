@@ -9,7 +9,7 @@ const AllMaps = require('./allMaps')
 const PowerLeagueMaps = require('./powerLeagueMaps')
 const Map = require('./map')
 const Events = require('./events')
-const Ranking = require('./rankings')
+const Rankings = require('./rankings')
 const BrawlerRecords = require('./brawlerRecords')
 
 /**
@@ -112,7 +112,7 @@ constructor(token, options) {
   /**
   * Gets the rankings (aka leaderboard) from the API.
   * @param {RankingsOptions} Rankings options.
-  * @returns {Ranking}
+  * @returns {Rankings}
   */
     
   async getRankings(options) {
@@ -133,9 +133,9 @@ constructor(token, options) {
     
     if (options.type === 'brawlers' && options.brawler) {
     if (typeof options.brawler !== "number") throw new moduleError(`You didn't specified a valid type of brawler!`)
-    return new Ranking(await this.req.getBrawlersRankings(options.country, options.brawler))
+    return new Rankings(await this.req.getBrawlersRankings(options.country, options.brawler))
     } else {
-    return new Ranking(await this.req.getRankings(options.country, options.type))
+    return new Rankings(await this.req.getRankings(options.country, options.type))
     }
   }
   
