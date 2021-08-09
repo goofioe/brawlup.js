@@ -6,9 +6,6 @@ const Requesting = require('./requesting')
 
 /**
 * Detailed information about a club.
-* @example
-* await bsClient.getClub(tag)
-* @example
 */
 class Club {
   constructor(data) {
