@@ -106,7 +106,7 @@ constructor(token, options) {
   * @typedef {Object} RankingsOptions
   * @property {string} country - Rankings country code or 'global'
   * @property {string} type - Rankings type (clubs, players or brawlers)
-  * @property {string|number} brawler - Rankings brawler id. ONLY USE IF 'options.type' IS 'brawlers'.
+  * @property {string|number} brawler - Rankings brawler id. <b>ONLY USE IF 'options.type' IS 'brawlers'</b>.
   */
     
   /**
