@@ -22,7 +22,7 @@ class Rankings {
         
        /**
        * This ranking's brawler that the data got from.
-       * @type {?string}
+       * @type {?number}
        */
         this.brawler = data.brawler ? data.brawler : null
         
