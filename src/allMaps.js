@@ -1,4 +1,5 @@
 const Client = require('./client.js')
+const Map = require('./map.js')
 const moduleError = require('./moduleError')
 
 /**
@@ -18,7 +19,7 @@ class AllMaps {
     /**
      * Finds the map you specified.
      * @param {string} mapName - The map's name you want to get stats about.
-     * @returns {?Object}
+     * @returns {?Map}
      */
 
     async findMap(mapName) {
