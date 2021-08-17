@@ -7,6 +7,21 @@ const Requesting = require('./requesting')
 */
 class BattleLog {
   constructor(data, index) {
+    
+  /**
+   * Battle log player's brawler object.
+   * @typedef {Object} BattleLogPlayerBrawler
+   * @property {number} id - This brawler's id.
+   * @property {string} name - This brawler's name.
+   */
+    
+   /**
+   * Battle log player object.
+   * @typedef {Object} BattleLogPlayer
+   * @property {number} tag - This player's in-game tag.
+   * @property {string} name - This player's in-game name.
+   * @property {BattleLogPlayerBrawler} brawler - This player's brawler that was playing with in this match.
+   */ 
   
   /**
   * All of the battle log data of this player.
@@ -78,40 +93,25 @@ class BattleLog {
     
   /**
   * This match's players that was in this match. <warn>Only for `soloShowdown` and `bigGame`.</warn>
-  * @type {Array}
+  * @type {Array<BattleLogPlayer>}
   */
   this.players = this.object.matchInfo.players ? this.object.matchInfo.players : null
     
   /**
   * This match's teams that was in this match. <warn>Only for 3v3 game modes.</warn>
-  * @type {Array}
+  * @type {Array<BattleLogPlayer>}
   */
   this.teams = this.object.matchInfo.teams ? this.object.matchInfo.teams : null
     
   /**
   * This match's big brawler. <warn>Only for `bigGame`.</warn>
-  * @type {Object}
+  * @type {?BattleLogPlayer}
   */
-  this.bigBrawler = this.object.matchInfo.bigBrawler ? this.object.matchInfo.bigBrawler : null
-    
-   /**
-   * Battle log player's brawler object.
-   * @typedef {Object} BattleLogPlayerBrawler
-   * @property {number} id - This brawler's id.
-   * @property {string} name - This brawler's name.
-   */
-    
-   /**
-   * Battle log player object.
-   * @typedef {Object} BattleLogPlayer
-   * @property {number} tag - This player's in-game tag.
-   * @property {string} name - This player's in-game name.
-   * @property {BattleLogPlayerBrawler} brawler - This player's brawler that was playing with in this match.
-   */  
+  this.bigBrawler = this.object.matchInfo.bigBrawler ? this.object.matchInfo.bigBrawler : null 
     
   /**
   * This match's star player. <warn>Only for 3v3 game modes, `roboRumble` and `bossFight`</warn>
-  * @type {Array}
+  * @type {?BattleLogPlayer}
   */
   this.starPlayer = { tag: this.object.matchInfo.starPlayer.tag, name: this.object.matchInfo.starPlayer.name, brawler: { id: this.object.matchInfo.starPlayer.brawler.id, name: this.object.matchInfo.starPlayer.brawler.name } }
   }
