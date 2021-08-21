@@ -26,7 +26,7 @@ class Player {
    * Player icon object.
    * @typedef {Object} PlayerIcon
    * @property {number} id - This icon's id.
-   * @property {string} name - This icon's url, from {link https://brawlify.com}.
+   * @property {string} name - This icon's url, from Brawlify.
    */
     
     /**
