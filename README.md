@@ -29,7 +29,7 @@ npm i brawlup.js
 ```
 
 * Create an API key [here](https://developer.brawlstars.com/#/account)
-* Read our [docs](https://brawlup.js.org/js/)
+* Read our [docs](https://brawlup.js.org)
 
 📝 Examples avaible [here](https://github.com/brawlup/brawlup.js/tree/main/examples)
 
