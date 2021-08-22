@@ -28,13 +28,6 @@ class Club {
      */
     this.type = data.type
     
-  /**
-   * Club badge object.
-   * @typedef {Object} ClubBadge
-   * @property {number} id - This badge's id.
-   * @property {string} name - This badge's url, from Brawlify.
-   */
-    
     /**
      * This club's badge.
      * @type {ClubBadge}
