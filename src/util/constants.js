@@ -1,3 +1,5 @@
+exports.BrawlifyCDN = 'https://cdn.brawlify.com/'
+
 //---------------👉 Brawlers
 
 /**
