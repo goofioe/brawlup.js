@@ -32,7 +32,7 @@ class Club {
      * This club's badge.
      * @type {ClubBadge}
      */
-    this.badge = { id: data.badgeId, url: `${require('./constants/brawlifyCDN')}/club/${data.badgeId}.png` }
+    this.badge = { id: data.badgeId, url: `${require('./util/constants').brawlifyCDN}/club/${data.badgeId}.png` }
     
     /**
      * This club's description.
