@@ -22,13 +22,6 @@ class Player {
   */
   this.name = data.name
     
-  /**
-   * Player icon object.
-   * @typedef {Object} PlayerIcon
-   * @property {number} id - This icon's id.
-   * @property {string} name - This icon's url, from Brawlify.
-   */
-    
     /**
      * This player's icon.
      * @type {PlayerIcon}
