@@ -78,30 +78,11 @@ class Map {
     */
     this.dataUpdated = data.dataUpdated
         
-   /**
-   * Map enverioment object.
-   * @typedef {Object} MapEnverioment
-   * @property {string} name - This environment's name.
-   * @property {number} id - This environment's in-game id.
-   * @property {string} image - This environment's image from {@link https://brawlify.com}
-   */ 
-        
     /**
     * This map's environment.
     * @type {MapEnverioment}
     */
     this.environment = { name: data.environment.name, id: data.environment.id, image: data.environment.imageUrl }
-        
-   /** 
-   * Map game mode object.
-   * @typedef {Object} MapGameMode
-   * @property {number} name - This game mode's name.
-   * @property {string} id - This game mode's in-game id.
-   * @property {string} hash - This game mode's hash.
-   * @property {string} link - This game mode's link at {@link https://brawlify.com}
-   * @property {string} color - This game mode's hex color.
-   * @property {string} image - This game mode's image from {@link https://brawlify.com}
-   */     
         
     /**
     * This map's game mode.
