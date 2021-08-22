@@ -94,3 +94,15 @@ exports.PlayerBrawlerSortingOptions = {
    * @property {number} id - This game mode's id.
    * @property {string} name - This game mode's name.
    */
+
+   /**
+    * All the brawlers grouped by their rarities in game.
+    * @typedef {Object} BrawlerRarities
+    * @property {string[]} trophyRoad - All the trophy road brawlers in game.
+    * @property {string[]} rare - All the rare brawlers in game.
+    * @property {string[]} superRare - All the super rare brawlers in game.
+    * @property {string[]} epic - All the epic brawlers in game.
+    * @property {string[]} mythic - All the mythic brawlers in game.
+    * @property {string[]} legendary - All the legendary brawlers in game.
+    * @property {string[]} chromatic - All the chromatic brawlers in game.
+    */
