@@ -26,7 +26,7 @@ class Player {
      * This player's icon.
      * @type {PlayerIcon}
      */
-  this.icon = { id: data.icon.id, url: `${require('./constants/brawlifyCDN')}/profile/${data.icon.id}.png` }
+  this.icon = { id: data.icon.id, url: `${require('./util/constants').brawlifyCDN}/profile/${data.icon.id}.png` }
     
   /**
   * This player's name color.
