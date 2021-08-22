@@ -75,7 +75,7 @@ class Club {
      * Is this club full?
      * @type {boolean}
      */
-    this.isFull = this.memberCount === 100 ? true : false
+    this.isFull = this.memberCount === 30
     
     /**
      * This club's president.
@@ -144,7 +144,7 @@ class Club {
   * @returns {?Object}
   */
 
-  sortMembersByTrophies() {
+  sortMembers() {
     return this.members ? this.members.sort((a, b) => b.trophies - a.trophies) : moduleError(`The club you provided is invalid.`)
   }
 }
