@@ -231,21 +231,23 @@ class Player {
   
   /**
    * Player's brawlers will be sorted.
-   * @param {?Object} options - Which one you want to sort by? (trophies, highest trophies, power level, rank)
+   * @param {PlayerBrawlerSortingOptions} sortBy - Which one you want to sort by? (trophies, highest trophies, power level, rank)
    * @returns {?Array}
    */
   
-  sortBrawlers(options) {
-   if (typeof options === 'string') options = { sortBy: options }
-   if (!options.sortBy) throw new moduleError(`You didn't specified the sortBy option, which is required for this method! ( Ex: player.sortBrawlers({sortBy: 'rank'}) )`) 
-   
-   let sortBy = options.sortBytoLowerCase()
-   if (sortBy !== "trophies" && sortBy !== "highest trophies" && sortBy !== "power level" && sortBy !== "rank") throw new moduleError(`You didn't specified a correct sortBy option! (trophies, highest trophies, power level, rank)`) 
+  sortBrawlers(sortBy) {
+   if (!sortBy) throw new moduleError(`You didn't specified the sorting option, which is required for this method!`) 
+   if (typeof sortBy !== 'string' || typeof sortBy !== 'number') throw new moduleError(`You didn't specified a correct sorting option!`)
+    
+   typeof sortBy === 'number' ? sortBy = sortByConstant(sortBy) : sortBy = sortBy.toLowerCase()
+   if (sortBy !== "trophies" && sortBy !== "highest trophies" && sortBy !== "power level" && sortBy !== "rank" && sortBy !== "rarity" && sortBy !== "rarity descending") throw new moduleError(`You didn't specified a correct sorting option!`) 
    
    if (sortBy === "trophies") return this.brawlers.sort((a, b) => b.trophies - a.trophies)
    if (sortBy === "highest trophies") return this.brawlers.sort((a, b) => b.highestTrophies - a.highestTrophies)
    if (sortBy === "power level") return this.brawlers.sort((a, b) => b.power - a.power)
    if (sortBy === "rank") return this.brawlers.sort((a, b) => b.rank - a.rank)
+   if (sortBy === "rarity") return 'Work in progress 🔧'
+   if (sortBy === "rarity descending") return 'Work in progress 🔧'
   }
   
   /**
@@ -265,6 +267,19 @@ class Player {
 
 function capitalLetters(str) {
         return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase();
+   }
+
+function sortByConstant(code) {
+     let result
+     
+     if (code === 1) result = 'trophies'
+     if (code === 2) result = 'highest trophies'
+     if (code === 3) result = 'power level'
+     if (code === 4) result = 'rank'
+     if (code === 5) result = 'rarity'
+     if (code === 6) result = 'rarity descending'
+     
+     return result;
    }
 
 function seasonStarPoints(player) {
