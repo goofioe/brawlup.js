@@ -22,13 +22,6 @@ class Player {
   */
   this.name = data.name
     
-  /**
-   * Player icon object.
-   * @typedef {Object} PlayerIcon
-   * @property {number} id - This icon's id.
-   * @property {string} name - This icon's url, from Brawlify.
-   */
-    
     /**
      * This player's icon.
      * @type {PlayerIcon}
@@ -121,28 +114,11 @@ class Player {
   */
   this.totalVictories = parseInt(this.soloVictories + this.duoVictories + this.trioVictories)
     
-  /**
-   * Player's best special event level in an object.
-   * @typedef {Object} PlayerSpecialEventLevel
-   * @property {?string} level - This best level's level name.
-   * @property {number} id - This best level's id.
-   * @property {?number} insane - This best level's insane level.
-   * @property {?string} otherInsane - This best level's insane level (in roman numbers).
-   * @property {?number} levelsLeft - This best level's levels left to reach the max. (insane 16) level.
-   */
-    
     /**
      * This player's all time best robo rumble level.
      * @type {PlayerSpecialEventLevel}
      */
   this.bestRoboRumbleLevel = specialLevels(data.bestRoboRumbleTime)
-    
-  /**
-   * Player's season end data in an object.
-   * @typedef {Object} PlayerSeasonEnd
-   * @property {number} trophies - This player's total trophies that will be set when this season ends.
-   * @property {number} starPoints - This player's star point gain when this season ends.
-   */
     
     /**
      * This player's season end data.

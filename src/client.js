@@ -100,14 +100,6 @@ constructor(token, options) {
     if (typeof index !== "number") throw new moduleError(`You didn't specified a valid type of battle log match index!`)
     return new BattleLog(await this.req.getBattleLog(tag), index)
   }
-  
-  /**
-  * Rankings (leaderboards) options.
-  * @typedef {Object} RankingsOptions
-  * @property {string} country - Rankings country code or 'global'
-  * @property {string} type - Rankings type (clubs, players or brawlers)
-  * @property {string|number} brawler - Rankings brawler id. <b>ONLY USE IF 'options.type' IS 'brawlers'</b>.
-  */
     
   /**
   * Gets the rankings (aka leaderboard) from the API.

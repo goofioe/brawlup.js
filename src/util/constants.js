@@ -1,3 +1,5 @@
+//---------------👉 Brawlers
+
 /**
   * The sorting option for player brawler sorting.
   * * `trophies` or `1`
@@ -9,6 +11,18 @@
   * @typedef {string|number} PlayerBrawlerSortingOptions
   */
 
+   /**
+    * All the brawlers grouped by their rarities in game.
+    * @typedef {Object} BrawlerRarities
+    * @property {string[]} trophyRoad - All the trophy road brawlers in game.
+    * @property {string[]} rare - All the rare brawlers in game.
+    * @property {string[]} superRare - All the super rare brawlers in game.
+    * @property {string[]} epic - All the epic brawlers in game.
+    * @property {string[]} mythic - All the mythic brawlers in game.
+    * @property {string[]} legendary - All the legendary brawlers in game.
+    * @property {string[]} chromatic - All the chromatic brawlers in game.
+    */
+
 exports.PlayerBrawlerSortingOptions = {
   1: 'trophies',
   2: 'highest trophies',
@@ -18,6 +32,8 @@ exports.PlayerBrawlerSortingOptions = {
   6: 'rarity descending'
 }
 
+//---------------👉 Club
+
 /**
    * Club badge object.
    * @typedef {Object} ClubBadge
@@ -25,13 +41,34 @@ exports.PlayerBrawlerSortingOptions = {
    * @property {string} name - This badge's url, from Brawlify.
    */
 
+//---------------👉 Player
+
 /**
    * Player icon object.
    * @typedef {Object} PlayerIcon
    * @property {number} id - This icon's id.
    * @property {string} name - This icon's url, from Brawlify.
    */
+
+/**
+   * Player's best special event level in an object.
+   * @typedef {Object} PlayerSpecialEventLevel
+   * @property {?string} level - This best level's level name.
+   * @property {number} id - This best level's id.
+   * @property {?number} insane - This best level's insane level.
+   * @property {?string} otherInsane - This best level's insane level (in roman numbers).
+   * @property {?number} levelsLeft - This best level's levels left to reach the max. (insane 16) level.
+   */
+
+/**
+   * Player's season end data in an object.
+   * @typedef {Object} PlayerSeasonEnd
+   * @property {number} trophies - This player's total trophies that will be set when this season ends.
+   * @property {number} starPoints - This player's star point gain when this season ends.
+   */
    
+//---------------👉 Rankings
+
  /**
   * Rankings (leaderboards) options.
   * @typedef {Object} RankingsOptions
@@ -40,6 +77,8 @@ exports.PlayerBrawlerSortingOptions = {
   * @property {string|number} brawler - Rankings brawler id. <b>ONLY USE IF 'options.type' IS 'brawlers'</b>.
   */
   
+//---------------👉 Team Checker
+
   /**
    * Team checker's rating.
    * @typedef {Object} TeamCheckerRating
@@ -53,6 +92,8 @@ exports.PlayerBrawlerSortingOptions = {
    * @property {TeamCheckerRating} rating - This team's rating.
    * @property {?number} winRate - This team's win rate.
    */
+
+//---------------👉 Map
 
    /**
    * Map enverioment object.
@@ -73,6 +114,8 @@ exports.PlayerBrawlerSortingOptions = {
    * @property {string} image - This game mode's image from {@link https://brawlify.com}
    */     
    
+//---------------👉 Battle Log
+
    /**
    * Battle log player's brawler object.
    * @typedef {Object} BattleLogPlayerBrawler
