@@ -53,6 +53,14 @@ exports.PlayerBrawlerSortingOptions = {
    * @property {TeamCheckerRating} rating - This team's rating.
    * @property {?number} winRate - This team's win rate.
    */
+
+   /**
+   * Map enverioment object.
+   * @typedef {Object} MapEnverioment
+   * @property {string} name - This environment's name.
+   * @property {number} id - This environment's in-game id.
+   * @property {string} image - This environment's image from {@link https://brawlify.com}
+   */ 
    
    /** 
    * Map game mode object.
