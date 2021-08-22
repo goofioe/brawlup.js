@@ -1,4 +1,4 @@
-exports.BrawlifyCDN = 'https://cdn.brawlify.com/'
+exports.BrawlifyCDN = 'https://cdn.brawlify.com'
 
 //---------------👉 Brawlers
 
