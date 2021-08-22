@@ -32,7 +32,7 @@ class Club {
    * Club badge object.
    * @typedef {Object} ClubBadge
    * @property {number} id - This badge's id.
-   * @property {string} name - This badge's url, from {link https://brawlify.com}.
+   * @property {string} name - This badge's url, from Brawlify.
    */
     
     /**

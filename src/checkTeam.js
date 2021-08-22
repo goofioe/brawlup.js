@@ -41,6 +41,12 @@ constructor(brawler1, brawler2, brawler3) {
   * @type {string}
   */
   this.brawler3 = brawler3
+  
+  /**
+  * Sends this team's Brawlify check link.
+  * @type {string}
+  */
+  this.link = `https://brawlify.com/team/check/${brawler1}+${brawler2}+${brawler3}`
 
 }
   

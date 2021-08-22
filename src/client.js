@@ -20,7 +20,7 @@ class Client {
 /**
  * Brawl Stars client options.
  * @typedef {Object} ClientOptions
- * @property {boolean} [loginMessages] Should the module send login messages (in your console)?
+ * @property {boolean} [loginMessages=false] Should the module send login messages (in your console)?
  */
  
 /**
