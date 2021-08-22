@@ -7,21 +7,6 @@ const Requesting = require('./requesting')
 */
 class BattleLog {
   constructor(data, index) {
-    
-  /**
-   * Battle log player's brawler object.
-   * @typedef {Object} BattleLogPlayerBrawler
-   * @property {number} id - This brawler's id.
-   * @property {string} name - This brawler's name.
-   */
-    
-   /**
-   * Battle log player object.
-   * @typedef {Object} BattleLogPlayer
-   * @property {number} tag - This player's in-game tag.
-   * @property {string} name - This player's in-game name.
-   * @property {BattleLogPlayerBrawler} brawler - This player's brawler that was playing with in this match.
-   */ 
   
   /**
   * All of the battle log data of this player.
@@ -46,14 +31,6 @@ class BattleLog {
   * @type {string}
   */
   this.matchAt = this.object.matchAt
-   
-  
-  /**
-   * Battle log game mode object.
-   * @typedef {Object} BattleLogMode
-   * @property {number} id - This game mode's id.
-   * @property {string} name - This game mode's name.
-   */
     
   /**
   * This match's game mode.
