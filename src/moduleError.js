@@ -1,3 +1,5 @@
+const Errors = require('./other/errors')
+
 /**
  * An error for this module.
  * @extends {Error}
@@ -13,20 +15,20 @@ class BJSError extends Error {
 * @private
 */ 
   
-  constructor (err, type) {
+  constructor (errorName) {
     super()
         
     /**
     * This error's name.
     * @type {string}
     */
-    this.name = type ? type : 'BJSError'
+    this.name = errorName
       
     /**
     * This error's message. (which is logged)
     * @type {string}
     */
-    this.message = `${err}\n🔗 https://brawlup.js.org/js/#welcome`
+    this.message = Errors[errorName] ? Errors[errorName] : 'Unknown error'
   }
 }
 
