@@ -1,6 +1,6 @@
 - name: 'ask to the BS team'
   description: 'We don't know this or this problem's solution. Ask this to the BS team on Twitter'
-  color: 'D876E3'
+  color: 'F29686'
 - name: 'help wanted'
   description: 'Extra attention is needed'
   color: '008672'
