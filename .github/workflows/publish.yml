@@ -1,9 +1,6 @@
 name: "Main Release"
 
-on:
-  schedule:
-    - cron: '0 18 * * *'
-# [workflow_dispatch]
+on: [workflow_dispatch]
 
 jobs:
   build:
