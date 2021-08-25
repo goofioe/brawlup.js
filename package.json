@@ -38,7 +38,7 @@
   "bugs": {
     "url": "https://github.com/brawlup/brawlup.js/issues"
   },
-  "homepage": "https://brawlup.js.org/js/#brawlup-js",
+  "homepage": "https://brawlup.js.org/",
   "dependencies": {
     "moment": "^2.29.1",
     "node-fetch": "^2.6.0",
