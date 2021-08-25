@@ -92,5 +92,6 @@ class Brawlers {
     return descending? === true ? theArray.reverse() : theArray;
   }
 }
+}
 
 module.exports = Brawlers
