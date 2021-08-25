@@ -90,7 +90,6 @@ class Brawlers {
     })
     
     return theArray;
-  }
 }
 }
 
