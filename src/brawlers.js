@@ -89,8 +89,7 @@ class Brawlers {
       })
     })
     
-    return descending? === true ? theArray.reverse() : theArray;
-  }
+    return descending && descending === true ? theArray.reverse() : theArray;
 }
 }
 
