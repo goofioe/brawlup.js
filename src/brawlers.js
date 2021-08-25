@@ -92,5 +92,6 @@ class Brawlers {
     return theArray;
   }
 }
+}
 
 module.exports = Brawlers
