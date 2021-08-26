@@ -1,8 +1,8 @@
 {
-  "name": "brawlup.js",
-  "version": "2.1.3",
-  "description": "An API wrapper for the official Brawl Stars API.",
-  "main": "index.js",
+  "name": "updev.db",
+  "version": "0.0.1",
+  "description": "An useful data-base for your projects. Helpful for storing your datas.",
+  "main": "src/index.js",
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
@@ -11,35 +11,27 @@
     "docs:build": "docgen --source src --custom docs/index.yml --output docs/main.json",
     "docs:test": "docgen --source src"
   }, 
-  "directories": {
-    "src": "src"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brawlup/brawlup.js.git"
+    "url": "git+https://github.com/Up-Devs/updev.db.git"
   },
   "keywords": [
-    "brawlstars",
-    "brawl stars",
-    "brawl stars api",
-    "brawlup",
-    "brawl",
-    "api wrapper",
-    "javascript"
+    "database",
+    "projects",
+    "json",
+    "mongo",
+    "db",
+    "up"
   ],
-  "author": "@brawlup",
-  "contributors": [
-    {
-      "name": "@alputv",
-      "email": "rekortmenstars@gmail.com"
-    }
-  ],
-  "license": "Apache-2.0",
+  "author": "Alpu TV",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brawlup/brawlup.js/issues"
+    "url": "https://github.com/Up-Devs/updev.db/issues"
   },
-  "homepage": "https://brawlup.js.org/js/#brawlup-js",
+  "homepage": "https://github.com/Up-Devs/updev.db#readme",
   "dependencies": {
+    "fs": "^0.0.1-security",
+    "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "node-fetch": "^2.6.0",
     "chalk": "^4.1.1",
