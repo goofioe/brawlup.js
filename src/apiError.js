@@ -5,7 +5,7 @@
  * @private
  */
 
-class APIError extends Error {
+class BrawlAPIError extends Error {
   constructor (res, body) {
     super()
 
@@ -54,4 +54,4 @@ class APIError extends Error {
   }
 }
 
-module.exports = APIError
+module.exports = BrawlAPIError
