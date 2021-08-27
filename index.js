@@ -11,7 +11,7 @@ module.exports = {
   Map: require('./src/map.js'),
   Events: require('./src/events.js'),
   CheckTeam: require('./src/checkTeam.js'),
-  BrawlAPIError: require('./src/apiError.js'),
-  BJSError: require('./src/BJSError.js'),
+  APIError: require('./src/apiError.js'),
+  BJSError: require('./src/moduleError.js'),
   Version: require('./package.json').version
 }
