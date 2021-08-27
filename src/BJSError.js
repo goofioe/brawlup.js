@@ -16,7 +16,7 @@ class BJSError extends Error {
   constructor (errorMessage, errorName) {
     super()
     
-    if (!errorMessage) throw new TypeError('Error message not provided')
+    if (!errorMessage) throw new TypeError('Error message was not provided')
     if (typeof errorMessage !== 'string') throw new TypeError(`Expected string for error message, received ${typeof errorMessage}`)
     
     if (typeof errorName !== 'string') throw new TypeError(`Expected string for error name (type), received ${typeof errorName}`)
