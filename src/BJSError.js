@@ -1,5 +1,3 @@
-const Errors = require('./other/errors')
-
 /**
  * An error for this module.
  * @extends {Error}
@@ -10,25 +8,25 @@ class BJSError extends Error {
   
 /**
 * An error for this module.
-* @param {string} err - The error reason/message.
-* @param {string} [type] Error type/error name.
+* @param {string} errorMessage - The error reason/message.
+* @param {string} [errorName] Error type/error name.
 * @private
 */ 
   
-  constructor (errorName) {
+  constructor (errorMessage, errorName) {
     super()
         
     /**
     * This error's name.
     * @type {string}
     */
-    this.name = errorName
+    this.name = errorName ? 'BJS' + errorName : 'BJSError'
       
     /**
     * This error's message. (which is logged)
     * @type {string}
     */
-    this.message = Errors[errorName] ? Errors[errorName] : 'Unknown error'
+    this.message = errorMessage
   }
 }
 
