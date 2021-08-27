@@ -1,6 +1,7 @@
 const moduleError = require('./BJSError')
 
 const Requesting = require('./requesting')
+const BaseClient = require('./baseClient')
 const Club = require('./club')
 const Player = require('./player')
 const BattleLog = require('./battlelog')
@@ -14,13 +15,13 @@ const BrawlerRecords = require('./brawlerRecords')
 
 /**
 * Your Brawl Stars client.
+* @extends {BaseClient}
 */
-class Client {
+class Client extends BaseClient {
     
 /**
  * Brawl Stars client options.
  * @typedef {Object} ClientOptions
- * @property {boolean} [loginMessages=false] Should the module send login messages (in your console)?
  */
  
 /**
@@ -46,6 +47,7 @@ constructor(token, options) {
     
     if (token && typeof token === "string") {
       this.token = token
+      this.emit('ready', this)
     }
 
     if (this.options) {
@@ -69,9 +71,7 @@ constructor(token, options) {
     
     this.token = token
     
-    if (this.options && this.options.loginMessages && this.options.loginMessages === true) {
-     return console.log(`[BsClientLogin] Successfully logged into the Brawl Stars API!`)
-    }
+    this.emit('ready', this)
   }
   
   /**
