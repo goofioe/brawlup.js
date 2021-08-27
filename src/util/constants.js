@@ -1,5 +1,13 @@
 exports.BrawlifyCDN = 'https://cdn.brawlify.com'
 
+//---------------👉 Client
+
+/**
+* Emitter whenever the Brawl Stars client is ready.
+* @event Client#ready
+* @param {Client} client - This Brawl Stars client.
+*/
+
 //---------------👉 Brawlers
 
 /**
