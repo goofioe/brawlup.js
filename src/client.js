@@ -1,4 +1,4 @@
-const moduleError = require('./moduleError')
+const moduleError = require('./BJSError')
 
 const Requesting = require('./requesting')
 const Club = require('./club')
@@ -64,8 +64,8 @@ constructor(token, options) {
    */
   
   async login(token) {
-    if (!token) throw new moduleError(`No token is provided to the client! Get one in https://developer.brawlstars.com/#/account`, `ClientLoginError`)
-    if (typeof token !== "string") throw new moduleError(`Access token must be a String!`, `ClientLoginError`)
+    if (!token) throw new moduleError(`Access token was not provided`)
+    if (typeof token !== "string") throw new moduleError(`Expected string for key, received ${typeof key}`)
     
     this.token = token
     
