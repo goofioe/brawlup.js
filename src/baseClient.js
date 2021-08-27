@@ -31,3 +31,7 @@ class BaseClient extends EventEmitter {
       this.setMaxListeners(maxListeners - 1);
     }
   }
+
+}
+
+module.exports = BaseClient
