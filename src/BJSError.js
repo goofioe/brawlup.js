@@ -1,3 +1,5 @@
+const BJSError = require('./BJSError');
+
 /**
  * An error for this module.
  * @extends {Error}
@@ -15,12 +17,17 @@ class BJSError extends Error {
   
   constructor (errorMessage, errorName) {
     super()
+    
+    if (!errorMessage) throw new this()
+    
+    if (!errorName && errorMessage.includes('was not provided') && errorMessage.includes('Expected')) errorName = 'BJSTypeError'
+    if (!errorName && !errorMessage.includes('was not provided') && !errorMessage.includes('Expected')) errorName = 'BJSError'
         
     /**
     * This error's name.
     * @type {string}
     */
-    this.name = errorName ? 'BJS' + errorName : 'BJSError'
+    this.name = errorName ? 'BJS' + errorName.replace('BJS') : 'BJSError'
       
     /**
     * This error's message. (which is logged)
