@@ -65,7 +65,7 @@ exports.PlayerBrawlerSortingOptions = {
  * Club badge object.
  * @typedef {Object} ClubBadge
  * @property {number} id - This badge's id.
- * @property {string} name - This badge's url, from Brawlify.
+ * @property {string} url - This badge's url, from Brawlify.
  */
 
  /**
@@ -94,7 +94,7 @@ exports.PlayerBrawlerSortingOptions = {
    * Player icon object.
    * @typedef {Object} PlayerIcon
    * @property {number} id - This icon's id.
-   * @property {string} name - This icon's url, from Brawlify.
+   * @property {string} url - This icon's url, from Brawlify.
    */
 
 /**
