@@ -188,6 +188,7 @@ class Player {
   * Gets the battle log (last battles) of this player.
   * @param {number} index - The index of the battle log data.
   * @returns {Array}
+  * @async
   */
   
   async getBattleLog(index) {
@@ -199,6 +200,7 @@ class Player {
   /**
   * Gets the club of this player.
   * @returns {?Object}
+  * @async
   */
   
   async getClub() {
@@ -229,6 +231,7 @@ class Player {
   /**
    * This player's missing brawlers.
    * @returns {Array}
+   * @async
    */
   async missingBrawlers() {
    return await missingBrawlers(this.brawlers, this.client)
