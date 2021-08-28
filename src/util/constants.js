@@ -45,11 +45,20 @@ exports.PlayerBrawlerSortingOptions = {
 //---------------👉 Club
 
 /**
-   * Club badge object.
-   * @typedef {Object} ClubBadge
-   * @property {number} id - This badge's id.
-   * @property {string} name - This badge's url, from Brawlify.
-   */
+ * Club badge object.
+ * @typedef {Object} ClubBadge
+ * @property {number} id - This badge's id.
+ * @property {string} name - This badge's url, from Brawlify.
+ */
+
+ /**
+  * Club roles for players.
+  * @typedef {string} ClubRole
+  * * `member`
+  * * `senior`
+  * * `vicePresident`
+  * * `president`
+  */
 
 //---------------👉 Player
 
