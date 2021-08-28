@@ -31,6 +31,7 @@ class Events {
   * @param {number} status - 1: Active | 2: Upcoming
   * @param {number} index - The index of the event
   * @returns {?Object}
+  * @async
   */
 
    async getEvent(status, index) {
