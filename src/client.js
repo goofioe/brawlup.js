@@ -76,7 +76,7 @@ constructor(token, options) {
   
   /**
   * Gets a player from the API.
-  * @param {string} tag - A player tag in Brawl Stars.
+  * @param {TagResolver} tag - A player tag in Brawl Stars.
   * @returns {Player}
   */
   
@@ -88,7 +88,7 @@ constructor(token, options) {
   
   /**
   * Gets a player's battle log from the API.
-  * @param {string} tag - A player tag in Brawl Stars.
+  * @param {TagResolver} tag - A player tag in Brawl Stars.
   * @param {string} index - The battle log match index.
   * @returns {BattleLog}
   */
@@ -133,7 +133,7 @@ constructor(token, options) {
   
   /**
   * Gets a club from the API.
-  * @param {string} tag - A club tag in Brawl Stars.
+  * @param {TagResolver} tag - A club tag in Brawl Stars.
   * @returns {Club}
   */
 
