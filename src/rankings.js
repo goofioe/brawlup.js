@@ -34,14 +34,14 @@ class Rankings {
         
        /**
        * This ranking's ranked player count.
-       * @type {Array}
+       * @type {number}
        */
         this.rankCount = data.ranks["items"].length
     }
 
     /**
      * Is this player/club ranked in this rankings?
-     * @param {string} tag - Player tag/Club tag
+     * @param {TagResolver} tag - Player tag/Club tag
      * @returns {boolean}
      */
 
@@ -57,8 +57,8 @@ class Rankings {
     
     /**
      * Finds the ranked player/club.
-     * @param {string} pctag - Player tag/Club tag
-     * @returns {?Object}
+     * @param {TagResolver} pctag - Player tag/Club tag
+     * @returns {?Player}
      */
 
     findRanked(pctag) {
