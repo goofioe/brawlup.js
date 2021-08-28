@@ -1,6 +1,7 @@
 const moduleError = require('./moduleError')
 const Client = require('./client.js')
 const Club = require('./club')
+const BattleLog = require('./battlelog')
 
 const Requesting = require('./requesting')
 
@@ -187,7 +188,7 @@ class Player {
   /**
   * Gets the battle log (last battles) of this player.
   * @param {number} index - The index of the battle log data.
-  * @returns {Array}
+  * @returns {?BattleLog}
   * @async
   */
   
@@ -199,7 +200,7 @@ class Player {
   
   /**
   * Gets the club of this player.
-  * @returns {?Object}
+  * @returns {?Club}
   * @async
   */
   
