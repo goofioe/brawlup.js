@@ -76,7 +76,7 @@ class Requesting {
  
   /**
   * Gets a player from the API.
-  * @param {string} tag - A player tag in Brawl Stars.
+  * @param {TagResolver} tag - A player tag in Brawl Stars.
   * @returns {Object}
   * @async
   */
@@ -89,7 +89,7 @@ class Requesting {
  
  /**
   * Gets player battle log data from the API.
-  * @param {string} tag - A player tag in Brawl Stars.
+  * @param {TagResolver} tag - A player tag in Brawl Stars.
   * @returns {Object}
   * @async
   */
@@ -102,7 +102,7 @@ class Requesting {
  
  /**
   * Gets a club from the API.
-  * @param {string} tag - A club tag in Brawl Stars.
+  * @param {TagResolver} tag - A club tag in Brawl Stars.
   * @returns {Object}
   * @async
   */
@@ -115,7 +115,7 @@ class Requesting {
  
  /**
   * Gets a club's members from the API.
-  * @param {string} tag - A club tag in Brawl Stars.
+  * @param {TagResolver} tag - A club tag in Brawl Stars.
   * @returns {Array}
   * @async
   */
