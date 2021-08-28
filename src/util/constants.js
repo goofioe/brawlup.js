@@ -1,3 +1,20 @@
+/**
+ * A Brawl Stars tag is a unique string for defining a {@link Club club} or a {@link Player player}.
+ * 
+ * This string can <b>ONLY</b> include
+ * * Letters: `P`, `Y`, `L`, `Q`, `G`, `R`, `J`, `C`, `U`, `V`
+ * * Numbers: `0`, `2`, `8`, `9`
+ * 
+ * <b>Note:</b> While fetching/requesting data using HTML, the tag's `#` will be replaced with `%23`
+ * @typedef {string} TagResolver
+ * @example
+ * // #208UR80
+ * // #2YCC2P8U8
+ * // #29V9CY0Q9
+ * // #2Q2YRCGYP
+ */
+ 
+
 exports.BrawlifyCDN = 'https://cdn.brawlify.com'
 
 //---------------👉 Client
