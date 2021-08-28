@@ -12,7 +12,7 @@ class Club {
     
     /**
      * This club's tag.
-     * @type {string}
+     * @type {TagResolver}
      */
     this.tag = data.tag
     
@@ -91,7 +91,7 @@ class Club {
 
   /**
   * A player's club rank
-  * @param {?string} tag - Player tag
+  * @param {TagResolver} tag - Player tag
   * @returns {?number}
   */
 
@@ -104,7 +104,7 @@ class Club {
 
   /**
   * A player's club role
-  * @param {string} tag - Player tag
+  * @param {TagResolver} tag - Player tag
   * @returns {?ClubRole}
   */
 
@@ -116,7 +116,7 @@ class Club {
 
   /**
   * Checks if this player can join this club.
-  * @param {string} tag - Player tag
+  * @param {TagResolver} tag - Player tag
   * @returns {boolean}
   * @async
   */
