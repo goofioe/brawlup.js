@@ -60,6 +60,17 @@ exports.PlayerBrawlerSortingOptions = {
   * * `president`
   */
 
+ /**
+  * Club array's player object.
+  * @typedef {Object} ClubPlayer
+  * @property {PlayerIcon} icon - This player's icon object. (only `id` property)
+  * @property {TagResolver} tag - This player's tag.
+  * @property {string} name - This player's name.
+  * @property {number} trophies - This player's total trophies.
+  * @property {string} role - This player's club role.
+  * @property {string} nameColor - This player's name color (not in hex format)
+  */
+
 //---------------👉 Player
 
 /**
