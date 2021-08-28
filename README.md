@@ -40,3 +40,5 @@ and also we used [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb
 
 ## Support
 You can get support for this module in our [<img src="https://user-images.githubusercontent.com/77716705/130312581-8e3406be-0552-43ce-b550-0b444462e15e.png" height="15" width="20" alt="Discord logo"> Discord server](https://discord.gg/PhW2XJa2yy)
+
+<a href="https://github.com/Up-Devs"><img src="https://user-images.githubusercontent.com/77716705/131206350-6c6e7c66-8fde-43a7-aff7-217d5736d887.png" width="20" alt="Up Devs"></a> Made by <a href="https://github.com/Up-Devs">Up Devs</a>
