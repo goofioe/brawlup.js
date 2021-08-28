@@ -173,7 +173,7 @@ exports.PlayerBrawlerSortingOptions = {
    /**
    * Battle log player object.
    * @typedef {Object} BattleLogPlayer
-   * @property {number} tag - This player's in-game tag.
+   * @property {TagResolver} tag - This player's in-game tag.
    * @property {string} name - This player's in-game name.
    * @property {BattleLogPlayerBrawler} brawler - This player's brawler that was playing with in this match.
    */ 
