@@ -118,6 +118,7 @@ class Club {
   * Checks if this player can join this club.
   * @param {string} tag - Player tag
   * @returns {boolean}
+  * @async
   */
 
   async playerCanJoin(tag) {
