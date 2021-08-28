@@ -53,11 +53,11 @@ exports.PlayerBrawlerSortingOptions = {
 
  /**
   * Club roles for players.
-  * @typedef {string} ClubRole
   * * `member`
   * * `senior`
   * * `vicePresident`
   * * `president`
+  * @typedef {string} ClubRole
   */
 
  /**
