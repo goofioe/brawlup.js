@@ -72,19 +72,19 @@ class Club {
     
     /**
      * This club's president.
-     * @type {Array}
+     * @type {ClubArray<ClubPlayer>}
      */
     this.president = new ClubArray(this.members.filter(m => m.role === 'president')[0])
     
     /**
      * This club's vice presidents.
-     * @type {Array}
+     * @type {ClubArray<ClubPlayer>}
      */
     this.vicePresidents = new ClubArray(this.members.filter(m => m.role === 'vicePresident').map(d => d))
     
     /**
      * This club's seniors.
-     * @type {Array}
+     * @type {ClubArray<ClubPlayer>}
      */
     this.seniors = new ClubArray(this.members.filter(m => m.role === 'senior').map(d => d))
   }
@@ -105,7 +105,7 @@ class Club {
   /**
   * A player's club role
   * @param {string} tag - Player tag
-  * @returns {?string} (member, senior, vicePresident, president)
+  * @returns {?ClubRole}
   */
 
   getMemberRole(tag) {
@@ -135,7 +135,7 @@ class Club {
 
   /**
   * Sorts this club's members by trophies.
-  * @returns {?Object}
+  * @returns {?Array<ClubPlayer>}
   */
 
   sortMembers() {
