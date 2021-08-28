@@ -18,6 +18,7 @@ class PowerLeagueMaps {
      * @param {string} mapName -  The map's name you want to get stats about.
      * @description Finds the map you specified.
      * @returns {?Object}
+     * @async
      */
 
      async findMap(mapName) {
