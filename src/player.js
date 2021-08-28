@@ -13,7 +13,7 @@ class Player {
   
   /**
   * This player's tag.
-  * @type {string}
+  * @type {TagResolver}
   */
   this.tag = data.tag
     
