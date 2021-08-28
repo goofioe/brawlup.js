@@ -53,6 +53,7 @@ constructor(brawler1, brawler2, brawler3) {
   /** 
   * Checks this team.
   * @returns {TeamCheckerResult}
+  * @async
   */
   async check() {
   const urArray = ourArray(await (await this.req.getPowerLeagueMaps()).active)
