@@ -41,8 +41,8 @@ class Club {
     this.description = data.description ? data.description : null
     
     /**
-     * This club's tag.
-     * @type {Array}
+     * This club's total trophies.
+     * @type {number}
      */
     this.trophies = data.trophies
     
