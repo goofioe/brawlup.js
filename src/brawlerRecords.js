@@ -22,7 +22,7 @@ class BrawlerRecords {
     
      /**
      * Is this player ranked in this records?
-     * @param {string} tag - Player tag
+     * @param {TagResolver} tag - Player tag
      * @returns {boolean}
      */
 
@@ -38,7 +38,7 @@ class BrawlerRecords {
     
     /**
      * Finds the ranked player.
-     * @param {string} tag - Player tag
+     * @param {TagResolver} tag - Player tag
      * @returns {?Object}
      */
 
